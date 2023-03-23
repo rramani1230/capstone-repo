@@ -1,0 +1,44 @@
+#forest-background {
+    position: relative;
+    transform: scale(0.80);
+    right: 7%;
+    bottom: 10px;
+
+}
+
+#forest-logo {
+    position: relative;
+    bottom: 145%;
+    right: 3%;
+    transform: scale(0.75)
+}
+
+#catch-line {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: scale(0.9)
+}
+
+#get-started {
+    position: absolute;
+    top: 53%;
+    left: 60%;
+    transform: scale(0.66)
+}
+
+#landing-line {
+    position: absolute;
+    width: 1050px;
+    color: blue;
+    top: 72%;
+    /* left: 200px; */
+    left: 12%
+}
+
+#landing-text {
+    position: absolute;
+    width: 600px;
+    top: 75%;
+    left: 30%;
+}
