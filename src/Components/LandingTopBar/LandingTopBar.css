@@ -4,21 +4,29 @@
 
 #sustainify-logo {
     position: relative;
-    top: 20px;
-    left: 40px;
+    overflow: hidden;
+    top: 25%;
+    left: 3%;
 }
 
-#login_logo {
+#login-logo {
     position: relative;
     left: 70%;
     top: 30%;
-    transform: scale(0.60)
+    transform: scale(0.30)
 }
 
-#signup_logo {
+#signup-logo {
     position: relative;
     left: 70%;
     top: 31%;
     transform: scale(0.60)
 }
 
+#login-image {
+    transform: scale(0.60)
+}
+
+#signup-image {
+    transform: scale(0.60)
+}

@@ -1,9 +1,9 @@
 import React from "react";
-import './Landing.css';
+import './LandingScreen.css';
 import LandingTopBar from "../LandingTopBar/LandingTopBar";
 import LandingMainBar from "../LandingMainBar/LandingMainBar";
 
-export default function Landing () {
+export default function LandingScreen () {
     return (
         <div id="grid-container"> 
             <LandingTopBar id="landing-top-bar"/>

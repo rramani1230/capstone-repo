@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Landing from './Components/Landing/Landing';
+import LandingScreen from './Components/LandingScreen/LandingScreen';
+import SignUpScreen from './Components/SignUpScreen/SignUpScreen';
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Landing/>
+  <LandingScreen/>
+  // <SignUpScreen/>
 );
 
