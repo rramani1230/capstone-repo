@@ -4,6 +4,7 @@ This is the Capstone Repository with the code for our capstone
 #Alicia Zhao
 #Adeel Chaudhry
 #Haritha Ramakrishnan
+<<<<<<< HEAD
 
 #Components Map
 
@@ -12,3 +13,5 @@ This is the Capstone Repository with the code for our capstone
     3) LandingMainBar - Splash page essentially
 4) SignUpScreen
     2) LandingTopBar - Unsigned in Top Bar
+=======
+>>>>>>> d50f4d2fe175a69fcadaf50a9d4123c7bddb7cd4
