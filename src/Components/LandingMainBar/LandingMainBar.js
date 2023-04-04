@@ -1,35 +1,35 @@
 import React from "react";
-import catch_line from '../../images/catch_line.svg';
-import get_started from '../../images/get_started.svg';
-import landing_text from '../../images/landing_text.svg';
-import forest_with_background from '../../images/forest_with_background.svg';
-import Image from 'react-bootstrap/Image';
-import './LandingMainBar.css';
+import ForestWithBackground from '../../Images/ForestWithBackground.svg';
+import { Image } from "react-bootstrap";
+import './LandingMainBar.css'
+import SustainifyText from '../../Images/SustainifyText.svg'
+import GetStartedButton from '../../Images/GetStartedButton.svg';
+import LearnActTrack from '../../Images/LearnActTrack.svg';
 
 export default function LandingMainBar () {
+
     return (
-        <div id="landing-main-bar">
+        <div>
+            <div id="forest-with-background"> 
+                <Image id="forest-with-background-image" src={ForestWithBackground}/>
+            </div>
 
-            <span id="forest-with-background">
-                <Image src={forest_with_background}/>
-            </span>
+            
+            <div id="sustainify-text">
+                <Image id="sustainify-text-image" src={SustainifyText}/>
+            </div>
 
-            <span id="catch-line">
-                <Image src={catch_line}/>
-            </span>
+            <div id="get-started-button">
+                <Image id="get-started-button-image" src={GetStartedButton}/>
+            </div>
 
-            <span id="get-started">
-                <Image src={get_started}/>
-            </span>
+            <div id="landing-line">
+                <hr id="landing-line-image"/>
+            </div>
 
-            <span id="landing-line">
-                <hr id="landing-line-line" style={{borderColor: "lightgreen"}}/>
-            </span>
-
-            <span id="landing-text">
-                <Image src={landing_text}/>
-            </span>
-
+            <div id="learn-act-track">
+                <Image id="learn-act-track-image" src={LearnActTrack}/>
+            </div>
         </div>
     )
 }
