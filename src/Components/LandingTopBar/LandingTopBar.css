@@ -1,0 +1,25 @@
+#sustainify-landing-logo {
+    position: relative;
+    top: 15px;
+    left: 40px;
+}
+
+#login-button {
+    position: relative;
+    left: 65%;
+    top: 20px;
+}
+
+#login-button-image {
+    transform: scale(0.70);
+}
+
+#signup-button {
+    position: relative;
+    left: 65%;
+    top: 20px;
+}
+
+#signup-button-image {
+    transform: scale(0.70);
+}
