@@ -1,28 +1,26 @@
 import React from "react";
-import { Image, } from "react-bootstrap";
-import SustainifyLogo from '../../Images/SustainifyLogo.svg';
-import LoginButton from '../../Images/LoginButton.svg';
-import SignUpButton from '../../Images/SignUpButton.svg';
+import { Button } from "@blueprintjs/core";
+import { Image } from "react-bootstrap";
+import SustainifyLogo from '../../images/SustainifyLogo.svg';
+import LoginButton from '../../images/LoginButton.svg';
+import SignUpButton from '../../images/SignUpButton.svg';
+import './LandingTopBar.css'
 
-
-import './LandingTopBar.css';
 
 export default function LandingTopBar () {
-
-    return ( 
-        <div> 
-            <span id="sustainify-landing-logo"> 
-                <Image src={SustainifyLogo}/>
-            </span>
-
-            <span id="login-button">
+    return (
+        <div id="landing-top-bar-component">
+            
+            <Image id="sustainify-logo-image" src={SustainifyLogo}/>
+            
+            <Button id="login-button"> 
                 <Image id="login-button-image" src={LoginButton}/>
-            </span>
+            </Button>
 
-            <span id="signup-button">
+            <Button id="signup-button">
                 <Image id="signup-button-image" src={SignUpButton}/>
-            </span>
+            </Button>
 
         </div>
-    );
+    )
 }

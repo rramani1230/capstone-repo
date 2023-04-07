@@ -1,18 +1,20 @@
 import React from "react";
-import LandingMainBar from "../LandingMainBar/LandingMainBar";
+import './LandingScreen.css';
 import LandingTopBar from "../LandingTopBar/LandingTopBar";
-import './LandingScreen.css'
+import LandingMainBar from "../LandingMainBar/LandingMainBar";
 
 export default function LandingScreen () {
+
     return (
         <>
-            <div id="landing-top-bar">
+            <div id="landing-topbar">
                 <LandingTopBar/>
             </div>
 
-            <div id="landing-main-bar">
+            <div id="landing-mainbar">
                 <LandingMainBar/>
             </div>
+        
         </>
-    )
+    );
 }

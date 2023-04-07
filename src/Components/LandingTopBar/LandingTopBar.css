@@ -1,25 +1,28 @@
-#sustainify-landing-logo {
+#landing-top-bar-component {
+    background-color: #FDFDF6;
+    height: 85px;
+}
+
+#sustainify-logo-image {
     position: relative;
-    top: 15px;
-    left: 40px;
+    top: 25px;
+    left: 60px;
 }
 
 #login-button {
     position: relative;
-    left: 65%;
-    top: 20px;
-}
-
-#login-button-image {
-    transform: scale(0.70);
+    left: 68%;
+    top: 33px;
+    transform: scale(0.65);
+    border-width: 0px;
+    background-color: #FDFDF6;
 }
 
 #signup-button {
     position: relative;
-    left: 65%;
-    top: 20px;
-}
-
-#signup-button-image {
-    transform: scale(0.70);
+    left: 68%;
+    top: 33px;
+    transform: scale(0.65);
+    border-width: 0px;
+    background-color: #FDFDF6;
 }

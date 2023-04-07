@@ -1,35 +1,32 @@
 import React from "react";
-import ForestWithBackground from '../../Images/ForestWithBackground.svg';
+import './LandingMainBar.css';
 import { Image } from "react-bootstrap";
-import './LandingMainBar.css'
-import SustainifyText from '../../Images/SustainifyText.svg'
-import GetStartedButton from '../../Images/GetStartedButton.svg';
-import LearnActTrack from '../../Images/LearnActTrack.svg';
+import { Button } from "@blueprintjs/core";
+import ForestWithBackground from '../../images/ForestWithBackground.svg';
+import SustainifyLandingText from '../../images/SustainifyLandingText.svg';
+import GetStartedImage from '../../images/GetStarted.svg';
+import LearnActTrack from '../../images/LearnActTrack.svg';
+
 
 export default function LandingMainBar () {
 
     return (
-        <div>
-            <div id="forest-with-background"> 
+        <div id="landing-main-bar-component">
+
+            <div>
                 <Image id="forest-with-background-image" src={ForestWithBackground}/>
             </div>
 
+            <Image id="sustainify-landing-text-image" src={SustainifyLandingText}/>
             
-            <div id="sustainify-text">
-                <Image id="sustainify-text-image" src={SustainifyText}/>
-            </div>
+            <Button id="get-started-button">
+                <Image src={GetStartedImage}/>
+            </Button>
 
-            <div id="get-started-button">
-                <Image id="get-started-button-image" src={GetStartedButton}/>
-            </div>
+            <hr id="landing-line"/>
 
-            <div id="landing-line">
-                <hr id="landing-line-image"/>
-            </div>
+            <Image id="learn-act-track-image" src={LearnActTrack}/>
 
-            <div id="learn-act-track">
-                <Image id="learn-act-track-image" src={LearnActTrack}/>
-            </div>
         </div>
     )
 }

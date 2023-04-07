@@ -1,52 +1,33 @@
-#forest-with-background {
-    position: relative;
-    right: 250px;
-    top: 10px;
-}
-
 #forest-with-background-image {
-    transform: scale(0.85)
-}
-
-#sustainify-text {
     position: relative;
-    bottom: 370px;
-    left: 675px;
-    min-width: 3000px;
+    transform: scale(0.8);
+    right: 260px;
 }
 
-#sustainify-text-image {
-    transform: scale(1.1);
+#sustainify-landing-text-image {
+    position: relative;
+    bottom: 380px;
+    left: 620px;
 }
 
 #get-started-button {
     position: relative;
-    bottom: 320px;
-    left: 825px;
-}
-
-#get-started-button-image {
-    transform: scale(0.875)
+    bottom: 280px;
+    left: 250px;
+    transform: scale(0.80);
+    background-color: #FDFDF6;
+    border-width: 0px;
 }
 
 #landing-line {
     position: relative;
-    bottom: 245px;
-    left: 150px;
-    
-}
-
-#landing-line-image {
-    width: 1030px;
-    border-top: 1px solid #538E3E;
-}
-
-#learn-act-track {
-    position: relative;
+    width: 1000px;
     bottom: 200px;
-    left: 420px;
+    left: 170px;
 }
 
 #learn-act-track-image {
-    transform: scale(1.05);
+    position: relative;
+    left: 460px;
+    bottom: 180px;
 }
