@@ -6,7 +6,6 @@ import LoginButton from '../../Images/LoginButton.svg';
 import SignUpButton from '../../Images/SignUpButton.svg';
 import './LandingTopBar.css'
 import { navigate } from 'hookrouter';
-import SignUpForm from "../SignUp/SignUpForm";
 
 
 const goToSignUp = () => {

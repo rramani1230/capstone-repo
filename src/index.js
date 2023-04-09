@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import LandingScreen from './Components/LandingScreen/LandingScreen';
 import './index.css'
 import App from './App';
 

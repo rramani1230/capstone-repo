@@ -1,5 +1,4 @@
 import React from 'react'
-import { navigate } from 'hookrouter';
 
 
 function SignUpForm() {
