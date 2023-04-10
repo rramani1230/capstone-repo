@@ -1,0 +1,157 @@
+#blank-card-image {
+    position: relative;
+
+    transform: scale(0.85);
+}
+
+#signup-form-group {
+    position: relative;
+    bottom: 380px;
+    left: 65px
+    /* left: 530px;
+    bottom: 320px; */
+
+}
+
+#first-name-text {
+    opacity: 1;
+    color: #386667;
+    font-size: 15px;
+}
+
+#signup-form-first-name {
+    position: relative;
+    padding: 10px;
+    width: 150px;
+}
+
+#last-name-text {
+    position: relative;
+    bottom: 58px;
+    left: 270px;
+    color: #386667;
+    font-size: 15px;
+}
+
+#signup-form-last-name {
+    position: relative;
+    bottom: 58px;
+    left: 270px;
+    padding: 10px;
+    width: 150px;
+}
+
+#email-text {
+    position: relative;
+    bottom: 40px;
+    color: #386667;
+    font-size: 15px;
+}
+
+#signup-form-email{
+    position: relative;
+    bottom: 40px;
+    padding: 10px;
+    width: 150px;
+}
+
+#email-text {
+    position: relative;
+    bottom: 40px;
+    color: #386667;
+    font-size: 15px;
+}
+
+#signup-form-email{
+    position: relative;
+    bottom: 40px;
+    padding: 10px;
+    width: 150px;
+}
+
+#confirm-email-text {
+    position: relative;
+    bottom: 97.4px;
+    left: 270px;
+    color: #386667;
+    font-size: 15px;
+}
+
+#signup-form-confirm-email{
+    position: relative;
+    bottom: 97.4px;
+    left: 270px;
+    padding: 10px;
+    width: 150px;
+}
+
+#username-text {
+    position: relative;
+    bottom: 80px;
+    color: #386667;
+    font-size: 15px;
+}
+
+#signup-form-username {
+    position: relative;
+    bottom: 80px;
+    padding: 10px;
+    width: 150px;
+}
+
+#password-text {
+    position: relative;
+    bottom: 65px;
+    color: #386667;
+    font-size: 15px;
+}
+
+#signup-form-password {
+    position: relative;
+    bottom: 65px;
+    padding: 10px;
+    width: 150px;
+}
+
+#confirm-password-text {
+    position: relative;
+    bottom: 122.4px;
+    left: 270px;
+    color: #386667;
+    font-size: 15px;
+}
+
+#signup-form-confirm-password{
+    position: relative;
+    bottom: 122.4px;
+    left: 270px;
+    padding: 10px;
+    width: 150px;
+}
+
+#password-unlock-icon {
+    position: relative;
+    bottom: 152px;
+    left: 140px;
+    color: grey;
+}
+
+#password-lock-icon {
+    position: relative;
+    bottom: 152px;
+    left: 139px;
+}
+
+#confirm-password-unlock-icon {
+    position: relative;
+    bottom: 152px;
+    left: 400px;
+    color: grey;
+}
+
+#confirm-password-lock-icon {
+    position: relative;
+    bottom: 152px;
+    left: 400px;
+}
+
