@@ -17,7 +17,6 @@ export const FilledInContext = createContext();
 export default function SignUpScreen() {
 
     const [filled_in, set_filled_in] = useState(false);
-    
 
     return (
         <>

@@ -19,6 +19,16 @@
     border-width: 0px;
 }
 
+#get-started-button:hover {
+position: relative;
+    bottom: 280px;
+    left: 250px;
+    transform: scale(0.80);
+    background-color: #FDFDF6;
+    border-width: 0px;
+    cursor: pointer;
+}
+
 #landing-line {
     position: relative;
     width: 1000px;

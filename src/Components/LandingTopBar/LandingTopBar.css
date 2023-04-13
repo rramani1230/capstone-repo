@@ -18,6 +18,16 @@
     background-color: #FDFDF6;
 }
 
+#login-button:hover {
+    position: relative;
+    left: 68%;
+    top: 25px;
+    transform: scale(0.60);
+    border-width: 0px;
+    cursor: pointer;
+}
+
+
 #signup-button {
     position: relative;
     left: 68%;
@@ -25,4 +35,14 @@
     transform: scale(0.60);
     border-width: 0px;
     background-color: #FDFDF6;
+}
+
+#signup-button:hover {
+    position: relative;
+    left: 68%;
+    top: 25px;
+    transform: scale(0.60);
+    border-width: 0px;
+    background-color: #FDFDF6;
+    cursor: pointer;
 }

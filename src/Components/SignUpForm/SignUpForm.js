@@ -17,10 +17,13 @@ export default function SignUpForm () {
     const [password, set_password] = useState("");
     const [confirm_password, set_confirm_password] = useState("");
     const [show_password, set_show_password] = useState(false);
-    const [show_confirm_password, set_show_confirm_password] = useState(false);
-    const [filled_in, set_filled_in] = useContext(FilledInContext);
+    const [show_confirm_password, set_show_confirm_password] = useState(false); 
+ 
+    //we use the useContext hook to access the values from the FilledInContext object
+    const { form_data, set_form_data, filled_in, set_filled_in } = useContext(FilledInContext);
 
-    function check_all_fields () {
+    function check_all_fields() {
+
         return (
             first_name != "" && 
             last_name != "" && 
