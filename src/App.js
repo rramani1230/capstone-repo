@@ -3,6 +3,7 @@ import LandingScreen from './Components/LandingScreen/LandingScreen';
 import './index.css'
 import SignUpScreen from './Components/SignUpScreen/SignUpScreen';
 import LoginScreen from './Components/Login/LoginScreen';
+import WelcomeScreen from './Components/WelcomeScreen/WelcomeScreen';
 
 import { useRoutes } from 'hookrouter';
 
@@ -11,7 +12,7 @@ function App() {
     console.log("In the App component");
 
     const routes = {
-        "/capstone-repo": () => <LandingScreen />, //when we have home in the URL that is default, we will call the LandingScreen component
+        "/capstone-repo": () => <WelcomeScreen />, //when we have home in the URL that is default, we will call the LandingScreen component
         "/signup": () => { //when we have /signup in the web URL, we will call whatever is in the arrow function 
             return (
                 <SignUpScreen />
