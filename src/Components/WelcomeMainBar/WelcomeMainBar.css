@@ -1,0 +1,39 @@
+#welcome-message-image {
+    position: relative;
+    left: 500px;
+    top: 100px;
+    transform: scale(0.9)
+}
+
+#raised-hands-image {
+    position: relative;
+    left: 520px;
+    top: 100px;
+    transform: scale(0.75)
+}
+
+#welcome-page-initial-text {
+    position: fixed;
+    top: 300px;
+    left: 520px;
+    font-size: 18px;
+}
+
+#next-button {
+    position: fixed; 
+    left: 1000px;
+    top: 550px;
+    transform: scale(0.75);
+    border-width: 0px;
+    background-color: #FDFDF6;
+}
+
+#next-button:hover {
+    cursor: pointer;
+}
+
+#welcome-signup-forest {
+    position: fixed;
+    bottom: -80px;
+    /* bottom: 50px; */
+}

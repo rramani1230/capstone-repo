@@ -1,0 +1,112 @@
+#signed-in-topbar-component {
+    background-color: #FDFDF6;
+    height: 85px;
+}
+
+
+
+#learn-button {
+    position: relative;
+    left: 380px;
+    top: 22px;
+    background-color: #CCFFB4;
+    height: 40px;
+    width: 120px;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+#learn-button:hover {
+    cursor: pointer;
+}
+
+#act-button {
+    position: relative;
+    left: 390px;
+    top: 18px;
+    background-color: #CCFFB4;
+    height: 40px;
+    width: 120px;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+#act-button:hover {
+    cursor: pointer;
+}
+
+#track-button {
+    position: relative;
+    left: 400px;
+    top: 20px;
+    background-color: #CCFFB4;
+    height: 40px;
+    width: 120px;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+#track-button:hover {
+    cursor: pointer;
+}
+
+
+
+#light-bulb-image {
+    position: relative;
+    right: 5px;
+
+}
+
+#learn-text {
+    color: black;
+    position: relative;
+    bottom: 5px;
+    font-family: Avenir
+}
+
+#account-button {
+    position: relative;
+    left: 700px;
+    top: 25px;
+    transform: scale(0.66);
+    border-width: 0px;
+    background-color: #FDFDF6;
+}
+
+#account-button:hover {
+    cursor: pointer;
+}
+
+#learn-button-selected {
+    position: relative;
+    left: 380px;
+    top: 22px;
+    background-color: #f79b94;
+    height: 40px;
+    width: 120px;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+#act-button-selected {
+    position: relative;
+    left: 390px;
+    top: 18px;
+    background-color: #f79b94;
+    height: 40px;
+    width: 120px;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+#track-button-selected {
+    position: relative;
+    left: 400px;
+    top: 20px;
+    background-color: #f79b94;
+    height: 40px;
+    width: 120px;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+}

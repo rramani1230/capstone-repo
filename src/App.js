@@ -3,7 +3,7 @@ import LandingScreen from './Components/LandingScreen/LandingScreen';
 import './index.css'
 import SignUpScreen from './Components/SignUpScreen/SignUpScreen';
 import LoginScreen from './Components/Login/LoginScreen';
-
+import WelcomeScreen from './Components/WelcomeScreen/WelcomeScreen';
 import { useRoutes } from 'hookrouter';
 
 function App() {
