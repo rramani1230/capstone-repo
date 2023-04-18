@@ -2,7 +2,7 @@ import React from "react";
 import LandingTopBar from "../LandingTopBar/LandingTopBar";
 import LoginForm from "../LoginForm/LoginForm";
 import './LoginScreen.css'; 
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 
 export const LoginContext = createContext();
 
