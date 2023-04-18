@@ -6,11 +6,12 @@ import './SignUpScreen.css';
 import { useState } from 'react';
 import SignUpForest from '../../Images/SignUpForest.svg';
 import { Image } from "react-bootstrap";
-import CreateAccountButton from "../../Images/CreateAccountButton.svg";
 import FilledCreateAccount from '../../Images/FilledCreateAccount.svg';
 import NotFilledCreateAccount from '../../Images/NotFilledCreateAccount.svg';
 //importing the supabase client
 import supabase from '../Config/dbconnection';
+import { navigate } from 'hookrouter';
+
 
 
 //create a context object to pass data between SignUpScreen and SignUpForm
@@ -25,37 +26,49 @@ export default function SignUpScreen() {
     //declare another state variable to store the form data for the user
     const [form_data, set_form_data] = useState({ first_name: '', last_name: '', email: '', username: '', password: '' });
 
-    //create a function to insert the data into the database
-    const saveToDB = async (e) => {
-        console.log("Saving Sign up data to DB");
-        console.log(filled_in)
-        console.log(form_data)
-        e.preventDefault(); //prevent the page from refreshing when the user clicks the submit button
+    const authorize_user = async(e) => {
 
-        // //check if we actually have data in the state variables
-        // console.log(email, age, interest);
+        console.log(form_data);
+        let proceed = true;
 
-        // if (!email || !age || !interest) {
-        //     alert('Please enter all fields')
-        //     return
-        // }
+        await supabase.from('user_data').select('email_address').eq('email_address', form_data.email).then((item) => {
+            if (item.data.length > 0) {
+                proceed = false;
+            }
+        })
 
-        //convert the interest array into a format that can be inserted into the post gres database
-        //setInterest(JSON.stringify(interest).replace('[', '{').replace(']', '}')) //check why this line is not working for proper formatting
+        
+        if (proceed) {
+            let { data, error} = await supabase.auth.signUp(
+                {
+                    email: form_data.email,
+                    password: form_data.password,
+                }
+            );
 
-        //make a call to the users table and insert the data into the table
-        let { data: new_user, error } = await supabase //data now would be the new row that was inserted into the table if insert was successful
+            if (error) {
+                console.log("This is the error", error)
+            } else {
+                console.log("We succeeded: ", data);
+            }
 
-            .from('user_data')
-            .insert([
-                { first_name: form_data['first_name'], last_name: form_data['last_name'], email_address: form_data['email'], user_name: form_data['username'], password: form_data['password'] }
-            ])
+            let { user_data, user_error } = await supabase.from('user_data').insert([{ 
+                first_name: form_data['first_name'],
+                last_name: form_data['last_name'],
+                email_address: form_data['email'],
+                user_name: form_data['username'],
+                password: form_data['password'] 
+            }])
 
-        //if there is an error, log it to the console
-        if (error) console.log('error', error)
-        else
-            console.log("Data successfully saved to DB")
-    }
+            if (user_error) {
+                console.log("There's an error in pushing to DB");
+            } else {
+                console.log("User data has been pushed", user_data);
+            }
+        }
+    };
+        
+    
 
 
     //combine form_data and filled_in into an object to pass to the FilledInContext object
@@ -73,18 +86,28 @@ export default function SignUpScreen() {
                 </div>
             </FilledInContext.Provider>
 
-            <div id="create-account" onClick={saveToDB}>
-                <Button id="create-account-button">
-                    {filled_in && <Image id="create-account-button-image" src={FilledCreateAccount} />}
-                    {!filled_in && <Image id="create-account-button-image" src={NotFilledCreateAccount} />}
-                    {/* {!filled_in && <h3 id="create-account-text-not-filled"> Create Account </h3>}
-                    {filled_in && <h3 id="create-account-text-filled"> Create Account </h3>} */}
+            <div id="create-account">
+                {filled_in && 
+
+                <Button id="create-account-button" onClick={ () => {
+                    authorize_user().then(navigate("/confirm-email-screen"));
+                    ;
+                }}>
+                    <Image id="create-account-button-image" src={FilledCreateAccount} />
                 </Button>
+                }
+
+                {!filled_in &&
+                    <Button id="create-account-button">
+                        <Image id="create-account-button-image" src={NotFilledCreateAccount} />
+                    </Button>
+                }
             </div>
 
             <div id="signup-forest">
                 <Image id="signup-forest-image" src={SignUpForest} />
             </div>
+
         </>
     )
 }

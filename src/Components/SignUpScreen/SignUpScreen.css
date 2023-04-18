@@ -23,6 +23,10 @@
     right: 70px;
 }
 
+#create-account-button:hover {
+    cursor: pointer;
+}
+
 #create-account-text-not-filled {
     position: realtive;
     bottom: 30px;

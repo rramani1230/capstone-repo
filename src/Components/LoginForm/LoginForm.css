@@ -1,0 +1,62 @@
+#sign-in-text {
+    position: relative;
+    bottom: 330px;
+    left: 30px;
+    color: green;
+}
+
+#login-username {
+    position: relative;
+    bottom: 290px;
+    left: 90px;
+    padding: 10px;
+    width: 200px;
+}
+
+#login-password {
+    position: relative;
+    bottom: 270px;
+    left: 90px;
+    padding: 10px;
+    width: 200px;
+}
+
+#sign-in-message {
+    position: relative;
+    bottom: 353px;
+    left: 135px;
+    color: green;
+}
+
+#username-text-login {
+    position: relative;
+    bottom: 290px;
+    right: 133px;
+}
+
+#password-text-login {
+    position: relative;
+    left: 90px;
+    bottom: 270px;
+}
+
+#loginscreen-button {
+
+}
+
+#loginscreen-button:hover {
+    cursor: pointer;
+}
+
+#login-screen-button {
+    position: relative;
+    transform: scale(0.50);
+    left: 290px;
+    bottom: 230px;
+    border-width: 0px;
+    background-color: white;
+}
+
+#login-screen-button:hover {
+    cursor: pointer;
+}
