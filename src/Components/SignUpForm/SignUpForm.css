@@ -155,3 +155,18 @@
     left: 400px;
 }
 
+#password-lock-icon:hover {
+    cursor: pointer;
+}
+
+#password-unlock-icon:hover {
+    cursor: pointer;
+}
+
+#confirm-password-unlock-icon:hover {
+    cursor: pointer;
+}
+
+#confirm-password-lock-icon:hover {
+    cursor: pointer;
+}

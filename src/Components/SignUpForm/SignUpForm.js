@@ -25,13 +25,13 @@ export default function SignUpForm() {
 
     function check_all_fields() {
         return (
-            first_name != "" &&
-            last_name != "" &&
-            email != "" &&
-            confirm_email != "" &&
-            username != "" &&
-            password != "" &&
-            confirm_password != ""
+            first_name !== "" &&
+            last_name !== "" &&
+            email !== "" &&
+            confirm_email !== "" &&
+            username !== "" &&
+            password !== "" &&
+            confirm_password !== ""
         )
     }
 
@@ -47,11 +47,12 @@ export default function SignUpForm() {
                         id="signup-form-first-name"
                         placeholder="Text"
                         onChange={(event) => {
-                            console.log(event.target.value);
                             set_first_name(event.target.value);
                             set_filled_in(check_all_fields());
                             //pass the data to the SignUpScreen component using set_form_data method from the FilledInContext object
                             set_form_data({ ...form_data, first_name: event.target.value });
+                            
+                            console.log(filled_in)
                         }}
                     />
 
