@@ -1,0 +1,18 @@
+#mini-selectioncard-image {
+
+}
+
+#radio-check {
+    position: relative;
+    bottom: 42px;
+    right: 300px;
+    transform: scale(1.5);
+}
+
+#mini-text {
+    position: absolute;
+    /* right: 290px; */
+    left: 40px;
+    bottom: 41px;
+    font-family: 'Avenir-Roman'
+}

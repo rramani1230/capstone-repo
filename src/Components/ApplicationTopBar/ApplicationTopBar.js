@@ -1,18 +1,20 @@
 import React from "react";
 import { Image } from "react-bootstrap";
-import './SignedInTopBar.css'
+import './ApplicationTopBar.css'
 import SustainifyLogo from '../../Images/SustainifyLogo.svg';
 import AccountButton from '../../Images/AccountButton.svg';
 import LightBulb from '../../Images/LightBulb.svg';
 import Leaf from '../../Images/Leaf.svg';
 import Chart from '../../Images/Chart.svg';
 import { Button } from "@blueprintjs/core";
-import { useState } from "react";
+import { useContext } from "react";
+import { TopBarContext } from "../ApplicationScreen/ApplicationScreen";
+
+export default function ApplicationTopBar () {
 
 
-export default function SignedInTopBar () {
+    const [current_tab, set_current_tab] = useContext(TopBarContext);
 
-    const [current_tab, set_current_tab] = useState("Learn");
     return (
         <div id="signed-in-topbar-component">
             <Image id="sustainify-logo-image" src={SustainifyLogo} />

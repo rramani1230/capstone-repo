@@ -45,6 +45,7 @@ export default function SignUpForm() {
                     <span id="first-name-text"> First Name </span>
                     <InputGroup
                         id="signup-form-first-name"
+                        className="form-control form-control-warning"
                         placeholder="Text"
                         onChange={(event) => {
                             set_first_name(event.target.value);
@@ -138,7 +139,8 @@ export default function SignUpForm() {
                             onClick={() => {
                                 set_show_password((prev) => !prev)
                             }}
-                        />}
+                        />
+                    }
 
                     {show_password &&
                         <Icon
@@ -147,7 +149,8 @@ export default function SignUpForm() {
                             onClick={() => {
                                 set_show_password((prev) => !prev)
                             }}
-                        />}
+                        />
+                    }
 
                     {!show_confirm_password &&
                         <Icon
@@ -156,7 +159,8 @@ export default function SignUpForm() {
                             onClick={() => {
                                 set_show_confirm_password((prev) => !prev)
                             }}
-                        />}
+                        />
+                    }
 
                     {show_confirm_password &&
                         <Icon
@@ -165,7 +169,8 @@ export default function SignUpForm() {
                             onClick={() => {
                                 set_show_confirm_password((prev) => !prev)
                             }}
-                        />}
+                        />
+                    }
                 </FormGroup>
             </div>
         </>

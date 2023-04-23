@@ -9,38 +9,35 @@ import { useContext } from "react";
 import { Button } from "@blueprintjs/core";
 import supabase from '../Config/dbconnection';
 import { navigate } from "hookrouter";
+import SignInCard from '../../Images/SignInCard.svg';
+import { useState } from "react";
+import { FormGroup, Icon } from "@blueprintjs/core";
 
 
 export default function LoginForm () {
 
     const [username, set_username, password, set_password] = useContext(LoginContext);
+    const [show_password, set_show_password] = useState(false);
 
     const sign_in_user = async() => {
 
-        // console.log("This is the username", username);
-        // console.log("This is the password", password);
-        // let session = "";
-        // let error = "";
 
         await supabase.auth.signInWithPassword({
             email: username,
             password: password,
         }).then((event) => {
-            navigate('/welcome-page')
-            // supabase.auth.getUser().then((user) => {
-            //     console.log(user);
-            // })
+            console.log(event);
+            if (event.data.user) {
+                navigate('/application')
+            }
         })
-    
-
     }
 
     return (
         <>
-            <Image id="login-card-image" src={EmptyCard}/>
+            <Image id="login-card-image" src={SignInCard}/>
 
-            <h1 id="sign-in-text"> Sign In </h1>
-            <span id="sign-in-message"> with your username and password </span>
+            <span id="sign-in-text"> Sign In </span>
 
             <span id="username-text-login"> Email </span>
 
@@ -54,15 +51,37 @@ export default function LoginForm () {
             <InputGroup
                 id="login-password"
                 placeholder="Text"
+                type={!show_password ? "text" : "password"}
                 onChange={(event) => set_password(event.target.value)}
             />
+            <div id="signup-lock-icon">
+                {show_password &&
+                    <Icon
+                        id="signup-password-lock"
+                        icon="lock"
+                        onClick={() => {
+                            set_show_password((prev) => !prev)
+                        }}
+                    />
+                }
 
-            <Button 
+                {!show_password &&
+                    <Icon
+                        id="signup-password-lock"
+                        icon="unlock"
+                        onClick={() => {
+                            set_show_password((prev) => !prev)
+                        }}
+                    />
+                }
+            </div>
+
+            {/* <Button 
                 id="login-screen-button"
                 onClick={sign_in_user}
             >
                 <Image id="loginscreen-button" src={LoginButton}/>
-            </Button>
+            </Button> */}
 
         </>
     )

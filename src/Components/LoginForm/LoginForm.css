@@ -1,24 +1,32 @@
+#login-card-image {
+
+}
+
 #sign-in-text {
     position: relative;
-    bottom: 330px;
-    left: 30px;
-    color: green;
+    bottom: 230px;
+    right: 400px;
+    color: black;
+    font-family: 'Avenir-Black';
+    font-size: 30px;
 }
 
 #login-username {
     position: relative;
-    bottom: 290px;
-    left: 90px;
+    bottom: 180px;
+    left: 34px;
     padding: 10px;
-    width: 200px;
+    width: 330px;
 }
 
 #login-password {
     position: relative;
-    bottom: 270px;
-    left: 90px;
+    bottom: 160px;
+    left: 35px;
     padding: 10px;
-    width: 200px;
+    width: 330px;
+    border-width: 1px;
+    border-radius: 5px;
 }
 
 #sign-in-message {
@@ -30,19 +38,24 @@
 
 #username-text-login {
     position: relative;
-    bottom: 290px;
-    right: 133px;
+    bottom: 180px;
+    right: 500px;
+    font-size: 18px;
+    font-family: 'Avenir-Roman';
+    color: #386667
 }
 
 #password-text-login {
     position: relative;
-    left: 90px;
-    bottom: 270px;
+    left: 34px;
+    bottom: 160px;
+    font-size: 18px;
+    font-family: 'Avenir-Roman';
+    color: #386667
+
 }
 
-#loginscreen-button {
 
-}
 
 #loginscreen-button:hover {
     cursor: pointer;
@@ -58,5 +71,15 @@
 }
 
 #login-screen-button:hover {
+    cursor: pointer;
+}
+
+#signup-lock-icon {
+    position: relative;
+    bottom: 187px;
+    left: 360px;
+}
+
+#signup-password-lock:hover {
     cursor: pointer;
 }

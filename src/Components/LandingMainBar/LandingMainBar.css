@@ -35,3 +35,42 @@
     left: 460px;
     bottom: 180px;
 }
+
+#landing-left-text {
+    position: absolute;
+    top: 625px;
+    left: 240px;
+    font-size: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#left-strong-text {
+    font-family: 'Avenir Black';
+
+}
+
+#right-landing-text {
+    position: absolute;
+    /* bottom: 347px; */
+    top: 677px;
+    left: 740px;
+    /* font-size: 16px; */
+    padding-bottom: 50px;
+    font-family: 'Avenir-Roman';
+    /* font-family: 'Avenir-Black'; */
+    /* font-family: 'Times New Roman', Times, serif; */
+}
+
+
+
+#right-strong-text {
+    font-size: 18px;
+    font-family: 'Avenir-Black'
+}
+
+.strong-subtitle {
+    font-size: 18px;
+    font-family: 'Aventir-Black';
+}
+

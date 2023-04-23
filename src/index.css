@@ -2,3 +2,13 @@
   margin: 0px;
   padding: 0px;
 }
+
+@font-face {
+  font-family: 'Avenir-Black';
+  src: local('Avenir-Black'), url(Fonts/Avenir-Black.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Avenir-Roman';
+  src: local('Avenir-Roman'), url(Fonts/Avenir-Roman.woff) format('otf');
+}
