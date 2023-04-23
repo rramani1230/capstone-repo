@@ -1,0 +1,39 @@
+#confirmed-landing-mainbar {
+    position: relative;
+    top: 20px;
+}
+
+#confirmed-message {
+    position: relative;
+    top: 40px;
+    left: 70px;
+}
+
+#confirm-message-text {
+    position: relative;
+    top: 0px;
+}
+
+#confirmed-bar {
+    position: relative;
+    background-color: #BDFFDF;
+    width: 1100px;
+    height: 50px;
+    border-radius: 10px;
+    left: 150px;
+    top: 50px;
+}
+
+#confirmed-bar-message {
+    font-family: 'Avenir-Roman';
+    font-size: 18px;
+    position: relative;
+    left: 30px;
+    top: 8px;
+}
+
+#check-circle {
+    position: relative;
+    top: 15px;
+    left: 20px;
+}

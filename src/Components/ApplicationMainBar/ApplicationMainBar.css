@@ -1,0 +1,152 @@
+#dots-zero {
+    position: relative;
+    left: 725px;
+    transform: scale(0.75)
+}
+
+#dots-one {
+    position: relative;
+    left: 725px;
+    top: 65px;
+    transform: scale(0.75)
+}
+
+#status-1-text {
+    position: relative;
+    left: 380px;
+    top: 110px;
+    font-size: 28px;
+    font-family: 'Avenir-Roman'
+}
+
+#status-1-subtext {
+    position: relative;
+    right: 280px;
+    top: 130px;
+    font-family: 'Avenir-Roman'
+}
+
+#welcome-message-image {
+    position: relative;
+    left: 450px;
+    top: 100px;
+    transform: scale(0.9)
+}
+
+#raised-hands-image {
+    position: relative;
+    left: 450px;
+    top: 105px;
+    transform: scale(0.75)
+}
+
+#welcome-page-initial-text {
+    position: fixed;
+    top: 300px;
+    left: 580px;
+    font-size: 18px;
+    font-family: 'Avenir-Roman'
+}
+
+#next-button {
+    position: fixed; 
+    left: 1000px;
+    top: 550px;
+    transform: scale(0.75);
+    border-width: 0px;
+    background-color: #FDFDF6;
+}
+
+#next-button:hover {
+    cursor: pointer;
+}
+
+#welcome-signup-forest {
+    position: fixed;
+    bottom: -80px;
+    /* bottom: 50px; */
+}
+
+#selection-cards {
+    position: relative;
+    top: 170px;
+    left: 490px;
+}
+
+#next-button-greater {
+    position: fixed; 
+    left: 1030px;
+    top: 700px;
+    transform: scale(0.75);
+    border-width: 0px;
+    background-color: #FDFDF6;
+}
+
+#next-button-greater:hover {
+    cursor: pointer;
+}
+
+#survey-status-1 {
+    position: fixed;
+}
+
+#status-2-text {
+    position: relative;
+    left: 350px;
+    top: 110px;
+    font-size: 28px;
+    font-family: 'Avenir-Roman';
+}
+
+#dots-two {
+    position: relative;
+    left: 695px;
+    top: 65px;
+    transform: scale(0.75)
+}
+
+#dots-three {
+    position: relative;
+    left: 720px;
+    top: 65px;
+    transform: scale(0.75)
+}
+
+#dots-four {
+    position: relative;
+    left: 720px;
+    top: 65px;
+    transform: scale(0.75)
+}
+
+#status-4-text {
+    position: relative;
+    left: 480px;
+    top: 90px;
+    font-size: 24px;
+    font-family: 'Avenir-Roman'
+}
+
+.mini-selection-cards {
+    position: relative;
+    left: 480px;
+    top: 135px;
+}
+
+#submit-button-image {
+    position: relative;
+    top: 20px;
+    right: 40px;
+}
+
+#submit-button-hover {
+    cursor: pointer;
+}
+
+#survey-done-text {
+    position: relative;
+    top: 150px;
+    left: 430px;
+    font-size: 32px;
+    font-family: 'Avenir-Roman'
+}

@@ -23,6 +23,11 @@
     position: relative;
     padding: 10px;
     width: 150px;
+    /* border-color: black; */
+}
+
+input:focus {
+    outline-color: green;
 }
 
 #last-name-text {

@@ -3,13 +3,33 @@ import LandingTopBar from "../LandingTopBar/LandingTopBar";
 import LoginForm from "../LoginForm/LoginForm";
 import './LoginScreen.css'; 
 import { createContext, useState } from "react";
+import LoginButton from '../../Images/LoginButton.svg';
+import { Image } from "react-bootstrap";
+import { Button } from "@blueprintjs/core";
+import supabase from '../Config/dbconnection';
+import { navigate } from "hookrouter";
 
 export const LoginContext = createContext();
+
 
 export default function LoginScreen () {
 
     const [username, set_username] = useState("");
     const [password, set_password] = useState("");
+
+    const sign_in_user = async() => {
+
+
+        await supabase.auth.signInWithPassword({
+            email: username,
+            password: password,
+        }).then((event) => {
+            console.log(event);
+            if (event.data.user) {
+                navigate('/application')
+            }
+        })
+    }
     
     return (
         <>
@@ -22,6 +42,13 @@ export default function LoginScreen () {
                     <LoginForm/>
                 </div>
             </LoginContext.Provider>
+
+            <Button 
+                id="to-login-button"
+                onClick={sign_in_user}
+            >
+                <Image id="login-button-image" src={LoginButton}/>
+            </Button>
         </>
     )
 }

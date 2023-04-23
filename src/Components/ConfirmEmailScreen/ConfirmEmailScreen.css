@@ -1,7 +1,21 @@
-#confirm-message-text {
-    color: green;
+#confirm-message {
+    position: fixed;
+    top: 220px;
+    left: 350px;
+    font-family: 'Avenir-Roman'
+}
+
+#confirm-header {
+    color: green
+}
+
+#confirm-text {
     position: relative;
-    top: 300px;
-    left: 240px;
-    font-size: 30px;
+    top: 15px;
+}
+
+#confirm-trees {
+    position: fixed;
+    top: 375px;
+
 }

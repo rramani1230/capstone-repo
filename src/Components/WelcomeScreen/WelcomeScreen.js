@@ -1,8 +1,17 @@
 import React from "react";
-import SignedInTopBar from "../SignedInTopBar/SignedInTopBar";
-import WelcomeMainBar from "../WelcomeMainBar/WelcomeMainBar";
+import SignedInTopBar from "../ApplicationTopBar/ApplicationTopBar";
+import WelcomeMainBar from "../ApplicationMainBar/ApplicationMainBar";
+import supabase from '../Config/dbconnection';
+import './WelcomeScreen.css'
 
 export default function WelcomeScreen () {
+
+    async function checkUser () {
+        await supabase.auth.getUser().then((user) => console.log(user));
+    }
+
+    checkUser();
+
     return (
 
         <>
