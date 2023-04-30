@@ -16,7 +16,9 @@ import DotsThree from '../../Images/DotsThree.svg';
 import DotsFour from '../../Images/DotsFour.svg';
 import MiniSelectionCard from "../MiniSelectionCard/MiniSelectionCard";
 import SubmitButton from  '../../Images/SubmitButton.svg';
-
+import SurveyCard from '../../Images/SurveyCard.svg'
+import Option from "../Option/Option";
+import LetsGoButton from "../../Images/LetsGo.svg";
 
 export default function ApplicationMainBar () {
 
@@ -111,24 +113,41 @@ export default function ApplicationMainBar () {
             {survey_status === 3 && 
                 <div id="survey-status-3">
                     <Image id="dots-three" src={DotsThree}/>
-                    <span id="status-1-text"> Great! What are your food preferences? </span>
+                    <div id="status-1-text"> What are your food preferences? </div>
+                    <div id="status-3-subtext">Check all that apply: </div>
+                    <Image id="survey-card" src={SurveyCard}/>
+
+                    <div id="options-list">
+                        <div className="option-class">
+                            <Option text="Vegan"/>
+                        </div>
+
+                        <div className="option-class">
+                            <Option text="Vegetarian"/>
+                        </div>
+
+                        <div className="option-class">
+                            <Option text="No Red Meat"/>
+                        </div>
+
+                        <div className="option-class">
+                            <Option text="Gluten Free"/>
+                        </div>
+
+                        <div className="option-class">
+                            <Option text="Dairy Free"/>
+                        </div>
+                    </div>
+
+                    <div id="none-option">
+                        <Option text="None"/>
+                    </div>
+
+                    
+
+
                     {/* <span id="status-1-subtext">Feel free to check more than option</span> */}
-
-                    <div id="selection-cards">
-                        <SelectionCard id="selection-card-1" cardText="Option 1"></SelectionCard>
-                    </div>
-
-                    <div id="selection-cards">
-                        <SelectionCard id="selection-card-1" cardText="Option 2"></SelectionCard>
-                    </div>
-
-                    <div id="selection-cards">
-                        <SelectionCard id="selection-card-1" cardText="Option 3"></SelectionCard>
-                    </div>
-
-                    <div id="selection-cards">
-                        <SelectionCard id="selection-card-1" cardText="Option 4"></SelectionCard>
-                    </div>
+                    
 
                 </div>
             }
@@ -194,7 +213,15 @@ export default function ApplicationMainBar () {
             }
 
             {
-                survey_status === 5 && <span id="survey-done-text"> You did it! </span>
+                survey_status === 5 && 
+                <div>
+                    <div id="survey-done-text"> You did it! </div>
+                    <Image id="finished-raised-hands-image" src={RaisedHands}/>
+                    <span id="fun-begins-text"> Now the fun begins. </span>
+                    <Button id="lets-go-button">
+                        <Image id="lets-go-button-image" src={LetsGoButton}/>
+                    </Button>
+                </div>
             }
 
             {survey_status > 0 && survey_status < 4 && 

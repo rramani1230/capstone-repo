@@ -1,0 +1,15 @@
+#option-text {
+    position: relative;
+    left: 3px;
+    bottom: 1px;
+    color: green
+}
+
+#option-check {
+    outline: green;
+    border-color: green;
+}
+
+.option-class {
+    padding-bottom: 35px;
+}

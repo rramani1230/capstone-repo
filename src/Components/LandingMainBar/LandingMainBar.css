@@ -39,21 +39,24 @@
 #landing-left-text {
     position: absolute;
     top: 625px;
-    left: 240px;
+    left: 200px;
     font-size: 20px;
     padding-top: 50px;
     padding-bottom: 50px;
+    font-family: 'Avenir-Roman';
+    font-size: 17px;
+    color: #000000
 }
 
 #left-strong-text {
     font-family: 'Avenir Black';
-
+    font-size: 18px;
 }
 
 #right-landing-text {
     position: absolute;
     /* bottom: 347px; */
-    top: 677px;
+    top: 675px;
     left: 740px;
     /* font-size: 16px; */
     padding-bottom: 50px;

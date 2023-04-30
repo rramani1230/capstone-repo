@@ -1,24 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image } from "react-bootstrap";
 import SelectionBox from '../../Images/SelectionCard.svg';
+import BlueLongCard from '../../Images/BlueLongCard.svg';
 import './SelectionCard.css'
 
 export default function SelectionCard (props) {
 
-
-    let cutoff = 0;
-
-    if (props.cardText.length > 80) {
-        cutoff = props.cardText.indexOf(' ', 80);
-    }
-
-    console.log(cutoff);
-    console.log(props.cardText.substring(0, cutoff),  props.cardText.substring(cutoff+2, props.cardText.length))
-
+    let [checked, set_checked] = useState(false);
 
     return (
         <>
-            <Image id="selection-card-image" src={SelectionBox}/>
+            {!checked && 
+                <Image
+                id="selection-card-image"
+                onClick={() => set_checked((prev) => !prev)}
+                src={SelectionBox}/>
+            }
+
+            {checked && 
+                <Image
+                    id="selection-card-image"
+                    src={BlueLongCard}
+                    onClick={() => set_checked((prev) => !prev)}
+                />
+            }
             <input 
                 id="selection-check-box"
 
@@ -27,7 +32,13 @@ export default function SelectionCard (props) {
                     width: 20,
                     height: 20
                 }}
-                type="checkbox"></input>
+            type="checkbox"
+            checked={checked}
+            onClick={() => {
+                    set_checked((prev) => !prev)
+                    console.log(checked);
+                }}
+            />
                 {
                     <span id="card-text"> {props.cardText} </span>
                 }
