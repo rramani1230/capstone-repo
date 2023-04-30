@@ -27,16 +27,15 @@ export default function LandingMainBar() {
             <Image id="learn-act-track-image" src={LearnActTrack} />
 
             <div id="landing-left-text">
-                <strong id="left-strong-text"> Living more sustainable doesn't have to be <br/> stressful. </strong>
+                <strong id="left-strong-text"> Living more sustainably doesn't have to be stressful. <br/> </strong>
                 <span> 
-                    We’re here to help you with your <br/>  
-                    sustainability journey -- by curating relevant <br/>
-                    information, providing SMALL actionable <br/>
-                    steps, and a way to track your progress. You <br/>
-                    can do however little or much as you want <br/>
-                    and are able to.  You can choose specific <br/>
-                    areas to focus on, or let us get you started <br/>
-                    with a few. There’s no pressure to be perfect! <br/>
+                    We’re here to help you with your sustainability journey --<br/>
+                    by curating relevant information, providing SMALL steps,<br/> 
+                    and a way to track your progress. You can do however <br/>
+                    little or much as you want and are able to. You can choose <br/>
+                    specific areas to focus on, or let us get you started with a<br/>
+                    few! There's get you started with a few. There’s no pressure <br/>
+                    to be perfect! 
                 </span>
             </div>
 

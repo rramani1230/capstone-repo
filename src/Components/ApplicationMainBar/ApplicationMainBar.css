@@ -107,8 +107,8 @@
 
 #dots-three {
     position: relative;
-    left: 720px;
-    top: 65px;
+    left: 613px;
+    top: 85px;
     transform: scale(0.75)
 }
 
@@ -146,7 +146,71 @@
 #survey-done-text {
     position: relative;
     top: 150px;
-    left: 430px;
-    font-size: 32px;
+    left: 600px;
+    font-size: 40px;
     font-family: 'Avenir-Roman'
+}
+
+#status-3-subtext {
+    position: relative;
+    left: 385px;
+    top: 110px;
+}
+
+#survey-card {
+    position: relative;
+    top: 80px;
+    left: 320px;
+    transform: scale(0.8);
+}
+
+#survey-status-3 {
+    position: relative;
+    left: 100px;
+    bottom: 20px;
+}
+
+#options-list {
+    position: relative;
+    left: 440px;
+    bottom: 260px;
+}
+
+#survey-status-3 {
+    position: fixed;
+    top: 70px;
+}
+
+#none-option {
+    position: relative;
+    left: 680px;
+    bottom: 527px;
+}
+
+#finished-raised-hands-image {
+    position: relative;
+    left: 795px;
+    top: 82px;
+    transform: scale(0.8)
+}
+
+#fun-begins-text {
+    position: relative;
+    font-size: 34px;
+    color: green;
+    top: 140px;
+    left: 528px;
+}
+
+#lets-go-button {
+    position: relative;
+    top: 250px;
+    left: 300px;
+    transform: scale(0.8);
+    background-color: white;
+    border-width: 0px;
+}
+
+#lets-go-button:hover {
+    cursor: pointer;
 }
