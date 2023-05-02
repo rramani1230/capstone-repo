@@ -1,0 +1,141 @@
+#taglist {
+    position: relative;
+    left: 100px;
+}
+
+#closed-chevron {
+    position: relative;
+    right: 850px;
+    bottom: 90px;
+}
+
+#closed-chevron:hover {
+    cursor: pointer;
+}
+
+#expandable-header {
+    position: relative;
+    bottom: 119px;
+    left: 40px;
+    font-family: 'Avenir-Black';
+    font-size: 20px;
+}
+
+#tag-list {
+    position: relative;
+    bottom: 80px;
+    left: 720px;
+}
+
+#open-chevron {
+    position: relative;
+    /* bottom: 1000px; */
+    bottom: 365px;
+    right: 850px;
+}
+
+#open-chevron:hover {
+    cursor: pointer;
+}
+
+#expanded-header {
+    position: relative;
+    bottom: 392px;
+    left: 50px;
+    font-family: 'Avenir-Black';
+    font-size: 20px;
+}
+
+.long-buttons {
+    position: relative;
+    bottom: 350px;
+    left: 55px;
+    width: 700px;
+    height: 40px;
+    border-radius: 0px;
+    border-width: 0.5px;
+    border-bottom-width: 1px;
+    background-color: white;
+}
+
+.long-buttons:hover {
+    background-color: bisque;
+}
+
+.long-buttons-text {
+    position: relative;
+    right: 270px;
+    font-family: 'Avenir-Roman';
+}
+
+#topics-text {
+    position: relative;
+    right: 320px;
+}
+
+#overview-text {
+    position: relative;
+    right: 311px;
+}
+
+#compost-text {
+    position: relative;
+    right: 261px;
+}
+
+#home-compost-text {
+    position: relative;
+    right: 245px;
+}
+
+#expanded-tag-list {
+    position: relative;
+    bottom: 320px;
+    left: 630px;
+}
+
+#learn-button2 {
+    position: relative;
+    bottom: 300px;
+    left: 650px;
+    transform: scale(0.75);
+    background-color: white;
+    border-width: 0px;
+}
+
+#learn-button2:hover {
+    cursor: pointer;
+}
+
+#learn-component-wrapper {
+    position: fixed;
+}
+
+.expandables {
+    max-height: 300px;
+}
+
+#topics-button {
+    position: absolute;
+}
+
+#overview-button {
+    position: absolute;
+}
+
+#expandables {
+    position: relative;
+    max-width: 200px;
+}
+
+#composting-expandable {
+    position: absolute
+}
+
+#recycling-expandable {
+    position: absolute;
+}
+
+#expanded-wrapper {
+    height: 450px;
+}

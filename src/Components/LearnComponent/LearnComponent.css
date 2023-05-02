@@ -1,0 +1,45 @@
+#learn-header {
+    font-size: 32px;
+    font-family: 'Avenir-Roman'
+}
+
+#learn-header-name {
+    position: relative;
+    font-size: 32px;
+    color: green;
+}
+
+#waving-hand {
+    position: relative;
+    top: 7px;
+}
+
+#learn-header-subtext {
+    position: relative;
+    top: 15px;
+    left: 2px;
+    font-family: 'Avenir-Roman'
+}
+
+#ready-to-learn-text {
+    position: relative;
+    font-size: 28px;
+    top: 50px;
+    color: darkgreen;
+}
+
+#ready-to-learn-subtext {
+    position: relative;
+    top: 80px;
+    font-family: 'Avenir-Roman'
+}
+
+#dropdown-selector {
+    width: 250px;
+}
+
+#dropdown-selector {
+    position: relative;
+    left: 590px;
+    top: 40px;
+}

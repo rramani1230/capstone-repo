@@ -9,6 +9,7 @@ import ConfirmEmailScreen from './Components/ConfirmEmailScreen/ConfirmEmailScre
 import ApplicationScreen from './Components/ApplicationScreen/ApplicationScreen';
 import { navigate } from 'hookrouter';
 import ConfirmLandingScreen from './Components/ConfirmLandingScreen/ConfirmLandingScreen';
+import CompostScreen from './Components/CompostScreen/CompostScreen';
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
         },
         "/application": () => <ApplicationScreen/>,
         "/login": () => <LoginScreen/>, //when we have /login in the web URL, we will call the LoginScreen component
+        "/compost": () => <CompostScreen/>,
         
         // "/welcome-page": () => <WelcomeScreen/>,
         "/": () => <LandingScreen/>,
