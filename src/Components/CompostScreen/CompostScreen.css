@@ -1,0 +1,12 @@
+#compost-learn-topbar {
+    position: relative;
+    background-color: #FDFDF6;
+    height: 87px;
+
+}
+
+#compost-subcards {
+    position: relative;
+    top: 100px;
+    left: 60px;
+}

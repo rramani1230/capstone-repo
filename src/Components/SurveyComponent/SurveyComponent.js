@@ -2,7 +2,7 @@ import React from "react";
 import { Image } from "react-bootstrap";
 import WelcomeMessage from '../../Images/WelcomeMessage.svg';
 import RaisedHands from '../../Images/RaisedHands.svg';
-import './ApplicationMainBar.css';
+import './SurveyComponent.css';
 import NextButton from '../../Images/NextButton.svg';
 import { Button } from "@blueprintjs/core";
 import SignUpForest from '../../Images/SignUpForest.svg';
@@ -20,7 +20,7 @@ import SurveyCard from '../../Images/SurveyCard.svg'
 import Option from "../Option/Option";
 import LetsGoButton from "../../Images/LetsGo.svg";
 
-export default function ApplicationMainBar () {
+export default function SurveyComponent () {
 
     const [survey_status, set_survey_status] = useContext(MainBarContext);
 
@@ -218,10 +218,16 @@ export default function ApplicationMainBar () {
                     <div id="survey-done-text"> You did it! </div>
                     <Image id="finished-raised-hands-image" src={RaisedHands}/>
                     <span id="fun-begins-text"> Now the fun begins. </span>
-                    <Button id="lets-go-button">
+                    <Button 
+                        id="lets-go-button"
+                        onClick={(() => {
+                            set_survey_status(6);
+                        })}
+                    >
                         <Image id="lets-go-button-image" src={LetsGoButton}/>
                     </Button>
                 </div>
+                
             }
 
             {survey_status > 0 && survey_status < 4 && 
@@ -233,10 +239,11 @@ export default function ApplicationMainBar () {
                 </Button>
             }
 
-
-            <div id="welcome-signup-forest">
-                <Image id="welcome-signup-forest-image" src={SignUpForest}/>
-            </div>
+            {survey_status < 6 && 
+                <div id="welcome-signup-forest">
+                    <Image id="welcome-signup-forest-image" src={SignUpForest}/>
+                </div>
+            }
 
         </>
     )

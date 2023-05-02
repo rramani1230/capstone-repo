@@ -15,7 +15,7 @@ export default function MiniSelectionCard (props) {
                 <Image 
                     id="mini-selectioncard-image"
                     src={MiniSelectionCardImage}
-                    onClick={() => set_checked((prev) => !prev)}
+                    onChange={() => set_checked((prev) => !prev)}
                 />
             }
 
@@ -29,7 +29,7 @@ export default function MiniSelectionCard (props) {
             <input 
                 id="radio-check"
                 type="radio"
-                onClick={() => set_checked((prev) => !prev)}
+                onChange={() => set_checked((prev) => !prev)}
                 checked={checked}
             />
             <span id="mini-text"> {props.text} </span>
