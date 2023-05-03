@@ -1,0 +1,42 @@
+.fav-text {
+    padding-left: 10px;
+    font-family: 'Avenir-Roman';
+}
+
+/* Ready to act? */
+
+.module-text {
+    /* h2 */
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 44px;
+    color: #326B1F;
+
+}
+
+.module-heading {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.module-text2 {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+}
+.module-finish-button2{
+    border: none;
+    background: none;
+  }
+  .module-finish-button2:hover{
+    cursor: pointer;
+  }
