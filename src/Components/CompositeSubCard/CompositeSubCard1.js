@@ -76,9 +76,9 @@ export default function CompositeSubCard1({ status, setStatus, ...props }) {
                         <div style={{ padding: '7px' }}>
                             <Image src={Bookmark} />
                         </div>
-                        <div style={{textDecoration: 'underline'}}>
+                        <a href="https://www2.calrecycle.ca.gov/Docs/Web/112236" rel="noreferrer" target="_blank" style={{color:'green'}}>
                             CalRecycle - What to Put in Compost, Recycling, and Trash (Opens as a PDF)
-                        </div>
+                        </a>
                     </div>
                     <div className="bookmark-detail">
                         <div>

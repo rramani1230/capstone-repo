@@ -64,8 +64,9 @@ export default function CompositeSubCard2({ status, setStatus, ...props }) {
                                 <div style={{ padding: '7px' }}>
                                     <Image src={Bookmark} />
                                 </div>
-                                <div style={{ textDecoration: 'underline' }}>
-                                    Your 5-step guide to start composting and help fight climate change : Life Kit : NPR                                </div>
+                                <a href="https://www.npr.org/2020/04/07/828918397/how-to-compost-at-home" rel="noreferrer" target="_blank" style={{color:'green'}}>
+                                    Your 5-step guide to start composting and help fight climate change : Life Kit : NPR
+                                </a>
                             </div>
                             <div className="bookmark-detail">
                                 <div>
@@ -78,15 +79,15 @@ export default function CompositeSubCard2({ status, setStatus, ...props }) {
                                 <div style={{ padding: '7px' }}>
                                     <Image src={Bookmark} />
                                 </div>
-                                <div style={{ textDecoration: 'underline' }}>
+                                <a href="https://www.pbs.org/wnet/nature/blog/inside-nature-infographic-how-to-compost/" rel="noreferrer" target="_blank" style={{display: 'flex', justifyContent: 'center', alignItems: 'center' ,color:'green'}}>
                                     Infographic: How to Compost | PBS.org
-                                </div>
+                                </a>
                             </div>
                             <div className="bookmark-detail">
                                 <div style={{ padding: '7px' }}>
                                     <Image src={CompositeImage3} />
                                 </div>
-                                <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+                                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                     This infographic reviews the dos and donts of composting, where and how to compost, what to compost and what not to compost.
                                 </div>
                             </div>
