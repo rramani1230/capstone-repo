@@ -45,7 +45,8 @@ function App() {
     const routeResult = useRoutes(routes);
 
     return (
-        <h1> Hello World </h1>
+        <LandingScreen/>
+        // <h1> Hello World </h1>
         // routeResult
     );
 }
