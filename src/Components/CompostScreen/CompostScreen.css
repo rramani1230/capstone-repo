@@ -4,9 +4,48 @@
     height: 87px;
 
 }
-
+#compost-breadcrumbs {
+    position: relative;
+    top: 50px;
+    padding-left: 60px;
+}
 #compost-subcards {
     position: relative;
     top: 100px;
-    left: 60px;
+    padding-left: 60px;
 }
+.breadcrumbs {
+    margin: 10px 0;
+  }
+  
+  .breadcrumbs ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .breadcrumbs li {
+    display: inline-block;
+    margin: 0;
+  }
+  
+  .breadcrumbs span {
+    margin: 0 5px;
+  }
+  .module-finish-button{
+    position: relative;
+    top: 150px;
+    left: 1000px;
+    border: none;
+    background: none;
+  }
+  .module-finish-button:hover{
+    cursor: pointer;
+  }
+  .module-disabled-finish-button{
+    position: relative;
+    top: 150px;
+    left: 1000px;
+    border: none;
+    background: none;
+  }
