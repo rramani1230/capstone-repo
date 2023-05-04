@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/capstone-repo/static/css/main.f4ff962f.chunk.css",
-    "main.js": "/capstone-repo/static/js/main.ab236c6c.chunk.js",
-    "main.js.map": "/capstone-repo/static/js/main.ab236c6c.chunk.js.map",
+    "main.js": "/capstone-repo/static/js/main.a2f7c6a6.chunk.js",
+    "main.js.map": "/capstone-repo/static/js/main.a2f7c6a6.chunk.js.map",
     "runtime-main.js": "/capstone-repo/static/js/runtime-main.6f50e797.js",
     "runtime-main.js.map": "/capstone-repo/static/js/runtime-main.6f50e797.js.map",
     "static/js/2.1541b7e9.chunk.js": "/capstone-repo/static/js/2.1541b7e9.chunk.js",
@@ -56,6 +56,6 @@
     "static/js/runtime-main.6f50e797.js",
     "static/js/2.1541b7e9.chunk.js",
     "static/css/main.f4ff962f.chunk.css",
-    "static/js/main.ab236c6c.chunk.js"
+    "static/js/main.a2f7c6a6.chunk.js"
   ]
 }
