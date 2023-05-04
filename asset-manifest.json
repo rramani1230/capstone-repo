@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/capstone-repo/static/css/main.f4ff962f.chunk.css",
-    "main.js": "/capstone-repo/static/js/main.6e52a594.chunk.js",
-    "main.js.map": "/capstone-repo/static/js/main.6e52a594.chunk.js.map",
+    "main.js": "/capstone-repo/static/js/main.ab236c6c.chunk.js",
+    "main.js.map": "/capstone-repo/static/js/main.ab236c6c.chunk.js.map",
     "runtime-main.js": "/capstone-repo/static/js/runtime-main.6f50e797.js",
     "runtime-main.js.map": "/capstone-repo/static/js/runtime-main.6f50e797.js.map",
-    "static/js/2.d2bb0c1a.chunk.js": "/capstone-repo/static/js/2.d2bb0c1a.chunk.js",
-    "static/js/2.d2bb0c1a.chunk.js.map": "/capstone-repo/static/js/2.d2bb0c1a.chunk.js.map",
+    "static/js/2.1541b7e9.chunk.js": "/capstone-repo/static/js/2.1541b7e9.chunk.js",
+    "static/js/2.1541b7e9.chunk.js.map": "/capstone-repo/static/js/2.1541b7e9.chunk.js.map",
     "index.html": "/capstone-repo/index.html",
     "static/css/main.f4ff962f.chunk.css.map": "/capstone-repo/static/css/main.f4ff962f.chunk.css.map",
-    "static/js/2.d2bb0c1a.chunk.js.LICENSE.txt": "/capstone-repo/static/js/2.d2bb0c1a.chunk.js.LICENSE.txt",
+    "static/js/2.1541b7e9.chunk.js.LICENSE.txt": "/capstone-repo/static/js/2.1541b7e9.chunk.js.LICENSE.txt",
     "static/media/AccountButton.93824a17.svg": "/capstone-repo/static/media/AccountButton.93824a17.svg",
     "static/media/index.css": "/capstone-repo/static/media/Avenir-Roman.670587f8.woff",
     "static/media/BlankCard.c9c5b6f4.svg": "/capstone-repo/static/media/BlankCard.c9c5b6f4.svg",
@@ -54,8 +54,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.6f50e797.js",
-    "static/js/2.d2bb0c1a.chunk.js",
+    "static/js/2.1541b7e9.chunk.js",
     "static/css/main.f4ff962f.chunk.css",
-    "static/js/main.6e52a594.chunk.js"
+    "static/js/main.ab236c6c.chunk.js"
   ]
 }
