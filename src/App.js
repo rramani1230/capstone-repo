@@ -10,6 +10,7 @@ import ApplicationScreen from './Components/ApplicationScreen/ApplicationScreen'
 import { navigate } from 'hookrouter';
 import ConfirmLandingScreen from './Components/ConfirmLandingScreen/ConfirmLandingScreen';
 import CompostScreen from './Components/CompostScreen/CompostScreen';
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
 
@@ -42,12 +43,22 @@ function App() {
     }
     
     //we pass the routes to useRouter() hook from to register the routes with their corresponding component.
-    const routeResult = useRoutes(routes);
+    // const routeResult = useRoutes(routes);
 
     return (
-        <LandingScreen/>
-        // <h1> Hello World </h1>
-        // routeResult
+
+        <BrowserRouter>
+            <Routes>
+                <Route exact path="/" element={<LandingScreen/>}/>
+                <Route exact path="/capstone-repo" element={<LandingScreen/>}/>
+                <Route exact path="/confirm-landing-screen" element={<ConfirmLandingScreen/>}/>
+                <Route exact path="/signup" element={<SignUpScreen/>}/>
+                <Route exact path="/application" element={<ApplicationScreen/>}/>
+                <Route exact path="/login" element={<LoginScreen/>}/>
+                <Route exact path="/compost" element={<CompostScreen/>}/>
+            </Routes>
+        </BrowserRouter>
+
     );
 }
 
