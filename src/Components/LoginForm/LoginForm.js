@@ -1,37 +1,21 @@
 import React from "react";
-import EmptyCard from '../../Images/EmptyCard.svg';
 import { Image } from "react-bootstrap";
 import './LoginForm.css';
 import { InputGroup } from "@blueprintjs/core";
-import LoginButton from '../../Images/LoginButton.svg';
 import { LoginContext } from "../LoginScreen/LoginScreen";
 import { useContext } from "react";
-import { Button } from "@blueprintjs/core";
-import supabase from '../Config/dbconnection';
 import { navigate } from "hookrouter";
 import SignInCard from '../../Images/SignInCard.svg';
 import { useState } from "react";
-import { FormGroup, Icon } from "@blueprintjs/core";
+import { Icon } from "@blueprintjs/core";
 
 
 export default function LoginForm () {
 
+    // const navigate = useNavigate();
+
     const [username, set_username, password, set_password] = useContext(LoginContext);
     const [show_password, set_show_password] = useState(false);
-
-    const sign_in_user = async() => {
-
-
-        await supabase.auth.signInWithPassword({
-            email: username,
-            password: password,
-        }).then((event) => {
-            console.log(event);
-            if (event.data.user) {
-                navigate('/application')
-            }
-        })
-    }
 
     return (
         <>

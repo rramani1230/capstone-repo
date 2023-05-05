@@ -1,7 +1,7 @@
 import React from "react";
 import './LearnComponent.css'
 import WavingHand from '../../Images/WavingHand.svg';
-import { Collapse, Image } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 import { MultiSelect } from "react-multi-select-component";
 import { useState } from "react";
 import ExpandableComponent from "../ExpandableComponent/ExpandableComponent";
@@ -40,7 +40,7 @@ export default function LearnComponent(props) {
     useEffect(() => {
         setComponents(sortComponents(components, selected));
     }, [selected]);
-    console.log(components);
+    
     return (
         <>
 

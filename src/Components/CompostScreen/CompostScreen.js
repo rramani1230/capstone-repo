@@ -1,6 +1,5 @@
 import React from "react";
 import './CompostScreen.css';
-import ApplicationTopBar from "../ApplicationTopBar/ApplicationTopBar";
 import LearnTopBar from "../LearnTopBar/LearnTopBar";
 import SubCard from "../CompositeSubCard/CompositeSubCard";
 import SubCard1 from "../CompositeSubCard/CompositeSubCard1";
