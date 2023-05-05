@@ -9,12 +9,16 @@ import ExpandedCard from '../../Images/SubCardExpanded.svg';
 import OpenChevron from '../../Images/OpenChevron.svg';
 import Vector from '../../Images/Vector.svg'
 import bulb from '../../Images/bulb.svg'
-import Bookmark from '../../Images/Bookmark.svg'
 import CompositeImage2 from '../../Images/CompositeImage2.svg'
 import CompositeImage3 from '../../Images/CompositeImage3.svg'
 import SmallTick from '../../Images/SmallTick.svg'
-
-export default function CompositeSubCard2({ status, setStatus, ...props }) {
+import { useContext } from "react";
+import { AccountContext } from "../../App";
+import favFilled from '../../Images/favFilled.svg'
+import SubBookmark from "../Bookmarks/Bookmark";
+export default function CompositeSubCard2({ status, setStatus, skip, ...props }) {
+    const { favourite: Favourite } = useContext(AccountContext)
+    const [favourite, setFavourite] = Favourite
     const [open, setOpen] = useState(false);
     if (status === 4) {
         open && setOpen(false)
@@ -25,11 +29,11 @@ export default function CompositeSubCard2({ status, setStatus, ...props }) {
                 <>
                     <Image id="sub-card-image" src={SubCardImage} />
                     {status > 3 ? <Image id="closed-chevron1" src={SmallTick} /> :
-                        <Image id="closed-chevron1" src={ClosedChevron} onClick={() => { status > 1 && setOpen((prev) => !prev); status > 1 && !open ? setStatus(3) : setStatus(status) }} />
+                        <Image id="closed-chevron1" src={ClosedChevron} onClick={() => { (status > 1 || skip) && setOpen((prev) => !prev); (status > 1 && !skip) && (!open ? setStatus(3) : !skip && setStatus(status)) }} />
                     }
-
-                    <Image id="closed-favIcon" src={Vector} />
-                    <span id="subcard-text"> {props.text} </span>
+                    {favourite.includes(3) ? <Image id="closed-favIcon" src={favFilled} onClick={() => setFavourite(prev => prev.filter(item => item !== 3))} /> :
+                        <Image id="closed-favIcon" src={Vector} onClick={() => setFavourite(prev => [...prev, 3])} />}
+                    <span id="subcard-text"> {props.text ?? 'How to start your own compost'} </span>
 
 
                 </>
@@ -42,10 +46,11 @@ export default function CompositeSubCard2({ status, setStatus, ...props }) {
                         src={OpenChevron}
                         onClick={() => setOpen((prev) => !prev)}
                     />
-                    <Image id="open-favIcon" src={Vector} />
+                    {favourite.includes(3) ? <Image id="open-favIcon" src={favFilled} onClick={() => setFavourite(prev => prev.filter(item => item !== 3))} /> :
+                        <Image id="open-favIcon" src={Vector} onClick={() => setFavourite(prev => [...prev, 3])} />}
 
                     <div id="expanded-header0">
-                        {props.text}
+                        {props.text ?? 'How to start your own compost'}
                     </div>
 
                     <div className="text-container">
@@ -60,42 +65,15 @@ export default function CompositeSubCard2({ status, setStatus, ...props }) {
                     </div>
                     <div style={{ display: 'flex' }}>
                         <span style={{ paddingRight: '20px' }}>
-                            <div className="bookmark-container">
-                                <div style={{ padding: '7px' }}>
-                                    <Image src={Bookmark} />
-                                </div>
-                                <a href="https://www.npr.org/2020/04/07/828918397/how-to-compost-at-home" rel="noreferrer" target="_blank" style={{color:'green'}}>
-                                    Your 5-step guide to start composting and help fight climate change : Life Kit : NPR
-                                </a>
-                            </div>
-                            <div className="bookmark-detail">
-                                <div>
-                                    <Image src={CompositeImage2} />
-                                </div>
-                            </div>
+                            <SubBookmark id='3' heading="Your 5-step guide to start composting and help fight climate change : Life Kit : NPR" link="https://www.npr.org/2020/04/07/828918397/how-to-compost-at-home" image={CompositeImage2} />
+
                         </span>
                         <span>
-                            <div className="bookmark-container">
-                                <div style={{ padding: '7px' }}>
-                                    <Image src={Bookmark} />
-                                </div>
-                                <a href="https://www.pbs.org/wnet/nature/blog/inside-nature-infographic-how-to-compost/" rel="noreferrer" target="_blank" style={{display: 'flex', justifyContent: 'center', alignItems: 'center' ,color:'green'}}>
-                                    Infographic: How to Compost | PBS.org
-                                </a>
-                            </div>
-                            <div className="bookmark-detail">
-                                <div style={{ padding: '7px' }}>
-                                    <Image src={CompositeImage3} />
-                                </div>
-                                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                                    This infographic reviews the dos and donts of composting, where and how to compost, what to compost and what not to compost.
-                                </div>
-                            </div>
+                            <SubBookmark id='4' heading="Infographic: How to Compost | PBS.org" link="https://www.pbs.org/wnet/nature/blog/inside-nature-infographic-how-to-compost/" image={CompositeImage3} text="This infographic reviews the dos and donts of composting, where and how to compost, what to compost and what not to compost." />
                         </span>
                     </div>
                 </div>
             }
-
         </div>
     )
 }

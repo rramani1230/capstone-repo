@@ -1,0 +1,68 @@
+.expanded-header2{
+    position: relative;
+    bottom: 390px;
+    left: 58px;
+    font-family: 'Avenir-Black';
+    font-size: 24px;
+}
+.open-chevron2 {
+    position: relative;
+    bottom: 360px;
+    right: 1080px;
+}
+.open-chevron2:hover {
+    cursor: pointer;
+}
+#open-favIcon2 {
+    position: relative;
+    bottom: 345px;
+    right: 115px;
+    z-index: 1;
+}
+#open-favIcon2:hover {
+    cursor: pointer;
+}
+#closed-favIcon2 {
+    position: relative;
+    bottom: 25px;
+    right: 106px;
+    z-index: 1;
+}
+#closed-favIcon2:hover {
+    cursor: pointer;
+}
+.long-buttons2 {
+    position: relative;
+    bottom: 350px;
+    left: 55px;
+    width: 925px;
+    height: 40px;
+    border-radius: 0px;
+    border-width: 0.5px;
+    border-bottom-width: 1px;
+    background-color: white;
+}
+
+
+.long-buttons-text2 {
+    display: flex;
+    font-family: 'Avenir-Roman';
+    padding-left: 10px;
+}
+.act-button {
+    position: relative;
+    bottom: 300px;
+    left: 850px;
+    transform: scale(0.75);
+    background-color: white;
+    border-width: 0px;
+}
+.act-button:hover {
+    cursor: pointer;
+}
+.Hovering:hover{
+    cursor: pointer;
+}
+.expanded-wrapper2{
+    height: 400px;
+}

@@ -1,0 +1,19 @@
+.act-compos-heading {
+    font-family: 'Avenir-Roman';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 49px;
+    color: #000000;
+}
+.act-compos-sub-heading {
+    font-family: 'Avenir-Black';
+    font-size: 36px;
+    line-height: 49px;
+    color: #000000;
+}
+.act-topheader{
+    position: relative;
+    top: 70px;
+    left: 60px;
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image } from "react-bootstrap";
 import './ApplicationTopBar.css'
 import SustainifyLogo from '../../Images/SustainifyLogo.svg';
@@ -9,9 +9,17 @@ import Chart from '../../Images/Chart.svg';
 import { Button } from "@blueprintjs/core";
 import { useContext } from "react";
 import { TopBarContext } from "../ApplicationScreen/ApplicationScreen";
+import { navigate } from "hookrouter";
+import BookmarkIcon from '../../Images/BookmarkIcon.svg';
+import ProfileIcon from '../../Images/ProfileIcon.svg';
+import HeartIcon from '../../Images/HeartIcon.svg';
 
-export default function ApplicationTopBar () {
+export default function ApplicationTopBar() {
+    const [isOpen, setIsOpen] = useState(false);
 
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+    }
 
     const [current_tab, set_current_tab] = useContext(TopBarContext);
 
@@ -20,77 +28,91 @@ export default function ApplicationTopBar () {
             <Image id="sustainify-logo-image" src={SustainifyLogo} />
 
             {current_tab === "Learn" &&
-                <Button 
+                <Button
                     id="learn-button-selected"
                     onClick={() => {
-                        set_current_tab("Learn")
-                }}>
-                    <Image id="light-bulb-image" src={LightBulb}/>
+                        set_current_tab("Learn");
+                        navigate('/application');
+                    }}>
+                    <Image id="light-bulb-image" src={LightBulb} />
                     <span id="learn-text"> Learn </span>
                 </Button>
             }
 
             {current_tab !== "Learn" &&
-                <Button 
+                <Button
                     id="learn-button"
                     onClick={() => {
-                        set_current_tab("Learn")
-                }}>
-                    <Image id="light-bulb-image" src={LightBulb}/>
+                        set_current_tab("Learn");
+                        navigate('/application');
+                    }}>
+                    <Image id="light-bulb-image" src={LightBulb} />
                     <span id="learn-text"> Learn </span>
                 </Button>
             }
 
             {current_tab === "Act" &&
-                <Button 
+                <Button
                     id="act-button-selected"
                     onClick={() => {
                         set_current_tab("Act")
+                        navigate('/act');
+
                     }}
                 >
-                    <Image id="light-bulb-image" src={Leaf}/>
+                    <Image id="light-bulb-image" src={Leaf} />
                     <span id="learn-text"> Act </span>
                 </Button>
             }
 
             {current_tab !== "Act" &&
-                <Button 
+                <Button
                     id="act-button"
                     onClick={() => {
                         set_current_tab("Act")
+                        navigate('/act');
+
                     }}
                 >
-                    <Image id="light-bulb-image" src={Leaf}/>
+                    <Image id="light-bulb-image" src={Leaf} />
                     <span id="learn-text"> Act </span>
                 </Button>
-            } 
+            }
 
-        {current_tab === "Track" && 
-            <Button 
-                id="track-button-selected"
-                onClick={() => {
-                    set_current_tab("Track")
-                }}
-            >
-                <Image id="light-bulb-image" src={Chart}/>
-                <span id="learn-text"> Track </span>
-            </Button>
-        }
+            {current_tab === "Track" &&
+                <Button
+                    id="track-button-selected"
+                    onClick={() => {
+                        set_current_tab("Track")
+                    }}
+                >
+                    <Image id="light-bulb-image" src={Chart} />
+                    <span id="learn-text"> Track </span>
+                </Button>
+            }
 
-        {current_tab !== "Track" && 
-            <Button 
-                id="track-button"
-                onClick={() => {
-                    set_current_tab("Track")
-                }}
-            >
-                <Image id="light-bulb-image" src={Chart}/>
-                <span id="learn-text"> Track </span>
-            </Button>
-        }
-            <Button id="account-button">
-                <Image id="account-button-image" src={AccountButton}/>
-            </Button>
-        </div> 
+            {current_tab !== "Track" &&
+                <Button
+                    id="track-button"
+                    onClick={() => {
+                        set_current_tab("Track")
+                    }}
+                >
+                    <Image id="light-bulb-image" src={Chart} />
+                    <span id="learn-text"> Track </span>
+                </Button>
+            }
+            <div class="account-dropdown">
+                <button onClick={toggleDropdown} >Account</button>
+                {isOpen &&
+                    <ul className ="dropdown-menu">
+                        <li className="drop-items" onClick={()=>navigate('/account/favourite')}>Favourite<span className="icon"><Image src={HeartIcon}/></span></li>
+                        <li className="drop-items" onClick={()=>navigate('/account/bookmark')}>Bookmarks<span className="icon"><Image src={BookmarkIcon}/></span></li>
+                        <li className="drop-items">Profile<span className="icon"><Image src={ProfileIcon}/></span></li>
+                        <li className="drop-items">Sign Out </li>
+                    </ul>
+                }
+            </div>
+        </div>
     )
 }

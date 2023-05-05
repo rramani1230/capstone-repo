@@ -2,12 +2,12 @@ import React from "react";
 import './CompostScreen.css';
 import ApplicationTopBar from "../ApplicationTopBar/ApplicationTopBar";
 import LearnTopBar from "../LearnTopBar/LearnTopBar";
+import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import SubCard from "../CompositeSubCard/CompositeSubCard";
 import SubCard1 from "../CompositeSubCard/CompositeSubCard1";
 import SubCard2 from "../CompositeSubCard/CompositeSubCard2";
 import FinishModule from '../../Images/FinishModule.svg'
 import DisabledFinishButton from '../../Images/DisabledFinishButton.svg'
-import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import { useState } from "react";
 import { Button, Image } from "react-bootstrap";
 import ModuleFinishedScreen from "../ModuleFinishedScreen/ModuleFinishedScreen";
@@ -28,7 +28,7 @@ export default function CompostScreen() {
     </>) : (
         <>
             <div id="compost-learn-topbar">
-                <LearnTopBar />
+                <LearnTopBar current="Learn"/>
             </div>
             <div id="compost-breadcrumbs">
                 <Breadcrumbs paths={paths.slice(0, completed + 2)} />
