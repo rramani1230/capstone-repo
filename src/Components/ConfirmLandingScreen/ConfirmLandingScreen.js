@@ -3,7 +3,6 @@ import './ConfirmLandingScreen.css';
 import LandingTopBar from "../LandingTopBar/LandingTopBar";
 import LandingMainBar from "../LandingMainBar/LandingMainBar";
 import { Image } from "react-bootstrap";
-import ConfirmedBackground from "../../Images/ConfirmBackground.png";
 import CheckCircle from '../../Images/CheckCircle.svg';
 
 export default function ConfirmLandingScreen () {

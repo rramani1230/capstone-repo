@@ -4,7 +4,6 @@ import { Image } from "react-bootstrap";
 import SubCardImage from '../../Images/SubCard.svg';
 import ClosedChevron from '../../Images/ClosedChevron.svg'
 import { useState } from "react";
-import { navigate } from 'hookrouter';
 import ExpandedCard from '../../Images/SubCardExpanded.svg';
 import OpenChevron from '../../Images/OpenChevron.svg';
 import Vector from '../../Images/Vector.svg'

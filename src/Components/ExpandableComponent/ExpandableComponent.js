@@ -9,11 +9,14 @@ import Tag from "../Tags/Tag";
 import ExpandedCard from '../../Images/ExpandedCard.svg';
 import OpenChevron from '../../Images/OpenChevron.svg';
 import { Button } from "@blueprintjs/core";
-import { navigate } from 'hookrouter';
+// import { navigate } from 'hookrouter';
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function ExpandableComponent(props) {
+
+    const navigate = useNavigate();
 
     const [open, set_open] = useState(false);
 

@@ -10,7 +10,8 @@ import FilledCreateAccount from '../../Images/FilledCreateAccount.svg';
 import NotFilledCreateAccount from '../../Images/NotFilledCreateAccount.svg';
 //importing the supabase client
 import supabase from '../Config/dbconnection';
-import { navigate } from 'hookrouter';
+// import { navigate } from 'hookrouter';
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -19,6 +20,8 @@ export const FilledInContext = createContext();
 
 
 export default function SignUpScreen() {
+
+    const navigate = useNavigate();
 
     //filled_in is a boolean that is true if all fields are filled in
     const [filled_in, set_filled_in] = useState(false);

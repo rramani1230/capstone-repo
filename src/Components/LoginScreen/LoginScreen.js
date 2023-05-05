@@ -7,7 +7,8 @@ import LoginButton from '../../Images/LoginButton.svg';
 import { Image } from "react-bootstrap";
 import { Button } from "@blueprintjs/core";
 import supabase from '../Config/dbconnection';
-import { navigate } from "hookrouter";
+import { useNavigate } from "react-router-dom";
+// import { navigate } from "hookrouter";
 
 export const LoginContext = createContext();
 
@@ -16,9 +17,11 @@ export default function LoginScreen () {
 
     const [username, set_username] = useState("");
     const [password, set_password] = useState("");
+    const navigate = useNavigate();
 
     const sign_in_user = async() => {
 
+        console.log("fdsalkjfhasdkjl")
 
         await supabase.auth.signInWithPassword({
             email: username,
@@ -26,7 +29,7 @@ export default function LoginScreen () {
         }).then((event) => {
             console.log(event);
             if (event.data.user) {
-                navigate('/application')
+                navigate('/application');
             }
         })
     }
