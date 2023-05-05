@@ -7,19 +7,20 @@ import Leaf from '../../Images/Leaf.svg';
 import Chart from '../../Images/Chart.svg';
 import { Button } from "@blueprintjs/core";
 import './LearnTopBar.css'
-import { navigate } from "hookrouter";
 import BookmarkIcon from '../../Images/BookmarkIcon.svg';
 import ProfileIcon from '../../Images/ProfileIcon.svg';
 import HeartIcon from '../../Images/HeartIcon.svg';
+import { useNavigate } from "react-router-dom";
 
 export default function LearnTopBar({ current }) {
     const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate()
     console.log(current);
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     }
     const current_tab = current ?? "learn"
-
+    console.log(current);
     return (
         <>
             <Image id="sustainify-logo-image" src={SustainifyLogo} />

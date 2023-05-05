@@ -8,8 +8,12 @@ import ConfirmLandingScreen from './Components/ConfirmLandingScreen/ConfirmLandi
 import CompostScreen from './Components/CompostScreen/CompostScreen';
 import AccountScreen from './Components/AccountScreen/AccountScreen';
 import ActScreen from './Components/ActScreen/ActScreen';
-export const AccountContext = createContext();
+import AccountFavourite from './Components/AccountScreen/AccountFavourite';
+import AccountBookmark from './Components/AccountScreen/AccountBookmark';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ActSubScreen from './Components/ActScreen/ActSubScreen';
+import ActCompo from './Components/ActCompo/ActCompo';
+export const AccountContext = createContext();
 
 function App() {
     const [favourite, setFavourite] = useState([])
@@ -20,25 +24,34 @@ function App() {
 
     if (window.location.href.includes("access_token")) {
         console.log("I guess we atleast went here");
-        return <ConfirmLandingScreen/>
+        return <ConfirmLandingScreen />
     }
 
-    
+
     //we pass the routes to useRouter() hook from to register the routes with their corresponding component.
     // const routeResult = useRoutes(routes);
 
     return (
-
         <BrowserRouter>
-            <Routes>
-                <Route exact path="/" element={<LandingScreen/>}/>
-                <Route exact path="/capstone-repo" element={<LandingScreen/>}/>
-                <Route exact path="/confirm-landing-screen" element={<ConfirmLandingScreen/>}/>
-                <Route exact path="/signup" element={<SignUpScreen/>}/>
-                <Route exact path="/application" element={<ApplicationScreen/>}/>
-                <Route exact path="/login" element={<LoginScreen/>}/>
-                <Route exact path="/compost" element={<CompostScreen/>}/>
-            </Routes>
+            <AccountContext.Provider value={{ favourite: [favourite, setFavourite], bookmark: [bookmark, setBookmark] }}>
+                <Routes>
+                    <Route exact path="/" element={<LandingScreen />} />
+                    <Route exact path="/capstone-repo" element={<LandingScreen />} />
+                    <Route exact path="/confirm-landing-screen" element={<ConfirmLandingScreen />} />
+                    <Route exact path="/signup" element={<SignUpScreen />} />
+                    <Route exact path="/application" element={<ApplicationScreen />} />
+                    <Route exact path="/login" element={<LoginScreen />} />
+                    <Route exact path="/compost" element={<CompostScreen />} />
+                    <Route exact path="/account" element={<AccountScreen />}>
+                        <Route path='favourite' element={<AccountFavourite />} />
+                        <Route path='bookmark' element={<AccountBookmark />} />
+                    </Route>
+                    <Route exact path="/act" element={<ActScreen />}>
+                        <Route index element={<ActSubScreen />} />
+                        <Route path='composite' element={<ActCompo />} />
+                    </Route>
+                </Routes>
+            </AccountContext.Provider>
         </BrowserRouter>
 
     );

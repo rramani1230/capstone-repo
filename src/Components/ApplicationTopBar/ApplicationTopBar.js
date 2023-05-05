@@ -9,13 +9,14 @@ import Chart from '../../Images/Chart.svg';
 import { Button } from "@blueprintjs/core";
 import { useContext } from "react";
 import { TopBarContext } from "../ApplicationScreen/ApplicationScreen";
-import { navigate } from "hookrouter";
 import BookmarkIcon from '../../Images/BookmarkIcon.svg';
 import ProfileIcon from '../../Images/ProfileIcon.svg';
 import HeartIcon from '../../Images/HeartIcon.svg';
+import { useNavigate } from "react-router-dom";
 
 export default function ApplicationTopBar() {
     const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate();
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);

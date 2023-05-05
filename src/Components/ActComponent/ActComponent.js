@@ -3,14 +3,14 @@ import { Button, Image } from "react-bootstrap";
 import SubCardImage from '../../Images/SubCard.svg';
 import ClosedChevron from '../../Images/ClosedChevron.svg'
 import { useState } from "react";
-import { navigate } from 'hookrouter';
+import { useNavigate } from "react-router-dom";
 import ExpandedCard from '../../Images/ActCardExpanded.svg';
 import OpenChevron from '../../Images/OpenChevron.svg';
 import TakeAction from '../../Images/TakeAction.svg'
 import leafCompleted from '../../Images/leafCompleted.svg'
 import './ActComponent.css'
 export default function ActComponent(props) {
-
+    const navigate = useNavigate();
     const [open, setOpen] = useState(false);
     return (
         <div id="expandable-wrapper">
@@ -61,7 +61,7 @@ export default function ActComponent(props) {
                         </Button>
                     </div>
                     <Button className="act-button">
-                        <Image id="learn-button-image" src={TakeAction} onClick={() => navigate("act/composite")} />
+                        <Image id="learn-button-image" src={TakeAction} onClick={() => navigate("/act/composite")} />
                     </Button>
                 </div>
             }

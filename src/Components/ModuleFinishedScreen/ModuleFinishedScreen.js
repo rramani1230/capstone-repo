@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import LearnTopBar from "../LearnTopBar/LearnTopBar";
 import './ModuleFinishedScreen.css'
 import FinishModule from '../../Images/FinishModule.svg'
@@ -16,10 +16,15 @@ import Feed2 from '../../Images/Feed2.svg'
 import Feed3 from '../../Images/Feed3.svg'
 import Feed4 from '../../Images/Feed4.svg'
 import Feed5 from '../../Images/Feed5.svg'
+import { useNavigate } from "react-router-dom";
+import { AccountContext } from "../../App";
 
 export default function ModuleFinishedScreen({ paths }) {
-    const [completed, setCompleted] = useState(0)
-    const [moduleFinshed, setModuleFinshed] = useState(false)
+    const {favourite:Favourite} = useContext(AccountContext)
+    const [favourite,setFavourite] = Favourite
+    const { bookmark: Bookmarks } = useContext(AccountContext)
+    const [bookmark, setBookmark] = Bookmarks
+    const navigate = useNavigate()
 
     return (
         <>
@@ -37,11 +42,11 @@ export default function ModuleFinishedScreen({ paths }) {
                 <div style={{ padding: '50px' }}>
                     <div style={{ paddingBottom: '10px' }}>
                         <Image src={BookmarkFilled} />
-                        <spav className="fav-text">0 Bookmarks added </spav>
+                        <spav className="fav-text">{bookmark.length} Bookmarks added </spav>
                     </div>
                     <div>
                         <Image src={favFilled} />
-                        <spav className="fav-text">0 Favourites added </spav>
+                        <spav className="fav-text">{favourite.length} Favourites added </spav>
                     </div>
                 </div>
                 <div >
@@ -98,7 +103,7 @@ export default function ModuleFinishedScreen({ paths }) {
                             
                         </div>
                         <div style={{ paddingLeft: '180px', paddingTop: '50px' }}>
-                            <Button className='module-finish-button2'>
+                            <Button className='module-finish-button2' onClick={()=>navigate('/act')}>
                                 <Image src={NextModule} />
                             </Button>
                         </div>

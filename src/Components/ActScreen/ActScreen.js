@@ -4,21 +4,17 @@ import './ActScreen.css'
 import ActSubScreen from "./ActSubScreen";
 import ActCompo from "../ActCompo/ActCompo";
 import { useRoutes } from 'hookrouter';
-
+import {Outlet} from 'react-router-dom'
 export default function ActScreen() {
     
-    const routes = {
-        '/': () => <ActSubScreen/>,
-        '/composite': () => <ActCompo/>
-    };
-    const routeResult = useRoutes(routes);
+   
     console.log('Hello');
     return (
         <>
             <div id="compost-learn-topbar">
                 <LearnTopBar current='Act' />
             </div>
-            {routeResult}
+            <Outlet/>
         </>
     )
 }

@@ -3,7 +3,6 @@ import { Button, Image } from "react-bootstrap";
 import SubCardImage from '../../Images/SubCard.svg';
 import ClosedChevron from '../../Images/ClosedChevron.svg'
 import { useState } from "react";
-import { navigate } from 'hookrouter';
 import ExpandedCard from '../../Images/ActCardExpanded2.svg';
 import OpenChevron from '../../Images/OpenChevron.svg';
 import TakeAction from '../../Images/TakeAction.svg'
@@ -18,7 +17,6 @@ import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 import './ActSubComponent.css'
 export default function ActSubComponent1({ points, setPoints, ...props }) {
-
     const [open, setOpen] = useState(false);
     const [subPoint, setSubPoint] = useState([])
     const [mytext, setMytext] = useState()
