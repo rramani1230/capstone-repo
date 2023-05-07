@@ -1,45 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image } from "react-bootstrap";
 import SustainifyLogo from '../../Images/SustainifyLogo.svg';
-import AccountButton from '../../Images/AccountButton.svg';
+import AccountButton2 from '../../Images/AccountButton2.svg';
 import LightBulb from '../../Images/LightBulb.svg';
 import Leaf from '../../Images/Leaf.svg';
 import Chart from '../../Images/Chart.svg';
 import { Button } from "@blueprintjs/core";
 import './LearnTopBar.css'
+import BookmarkIcon from '../../Images/BookmarkIcon.svg';
+import ProfileIcon from '../../Images/ProfileIcon.svg';
+import HeartIcon from '../../Images/HeartIcon.svg';
+import { useNavigate } from "react-router-dom";
 
-export default function () {
-
-    const current_tab = "Learn"
-
+export default function LearnTopBar({ current }) {
+    const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate()
+    console.log(current);
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+    }
+    const current_tab = current ?? "learn"
+    console.log(current);
     return (
         <>
             <Image id="sustainify-logo-image" src={SustainifyLogo} />
 
-            {current_tab === "Learn" &&
-                <Button id="learn-button-selected">
-                    <Image id="light-bulb-image" src={LightBulb}/>
-                    <span id="learn-text"> Learn </span>
-                </Button>
-            }
-
-            {current_tab !== "Act" &&
-                <Button id="act-button">
-                    <Image id="light-bulb-image" src={Leaf}/>
-                    <span id="learn-text"> Act </span>
-                </Button>
-            } 
-
-            {current_tab !== "Track" && 
-                <Button id="track-button">
-                    <Image id="light-bulb-image" src={Chart}/>
-                    <span id="learn-text"> Track </span>
-                </Button>
-            }
-            
-            <Button id="account-button">
-                <Image id="account-button-image" src={AccountButton}/>
+            <Button id={`${current_tab === "Learn" ? "learn-button-selected" : "learn-button"}`} onClick={() => navigate('/application')}>
+                <Image id="light-bulb-image" src={LightBulb} />
+                <span id="learn-text"> Learn </span>
             </Button>
+
+
+            <Button id={`${current_tab === "Act" ? "act-button-selected" : "act-button"}`} onClick={() => navigate('/act')}>
+                <Image id="light-bulb-image" src={Leaf} />
+                <span id="learn-text"> Act </span>
+            </Button>
+
+
+            <Button id={`${current_tab === "Track" ? "track-button-selected" : "track-button"}`}>
+                <Image id="light-bulb-image" src={Chart} />
+                <span id="learn-text"> Track </span>
+            </Button>
+
+            <div class="account-dropdown">
+                <button onClick={toggleDropdown} >Account</button>
+                {isOpen &&
+                    <ul className="dropdown-menu">
+                        <li className="drop-items" onClick={() => navigate('/account/favourite')}>Favourite<span className="icon"><Image src={HeartIcon} /></span></li>
+                        <li className="drop-items" onClick={() => navigate('/account/bookmark')}>Bookmarks<span className="icon"><Image src={BookmarkIcon} /></span></li>
+                        <li className="drop-items">Profile<span className="icon"><Image src={ProfileIcon} /></span></li>
+                        <li className="drop-items">Sign Out </li>
+                    </ul>
+                }
+            </div>
+
+
         </>
     )
 }

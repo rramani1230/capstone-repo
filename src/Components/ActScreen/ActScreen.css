@@ -1,0 +1,25 @@
+.act-heading {
+    font-family: 'Avenir-Roman';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 44px;
+    display: flex;
+    align-items: center;
+    color: #326B1F;
+}
+
+.act-subheading {
+    font-family: 'Avenir-Roman';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+}
+.dropdown-select {
+    width: 300px;
+    position: relative;
+    left: 190px;
+    bottom: 10px;
+}

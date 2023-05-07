@@ -11,7 +11,7 @@ import { useEffect } from "react";
 export default function LearnComponent(props) {
 
     const [selected, setSelected] = useState([]);
-    const [components, setComponents] = useState(['composite','Recycling','Food Waste and Storage','Singe Use and Landfill',"Farmer's Markets",'Food Pantries','Grocery Stores'])
+    const [components, setComponents] = useState(['Composite','Recycling','Food Waste and Storage','Singe Use and Landfill',"Farmer's Markets",'Food Pantries','Grocery Stores'])
     const options = [
         { label: "groceries", value: "groceries" },
         { label: "savings", value: "savings" },
@@ -19,7 +19,7 @@ export default function LearnComponent(props) {
         { label: "test", value: "test" },
     ];
     const componentTags = {
-        'composite' : ['waste','savings'],
+        'Composite' : ['waste','savings'],
         'Recycling': ['waste','savings','test'],
         'Food Waste and Storage': ['waste','savings'],
         'Singe Use and Landfill':  ['waste','savings'],
@@ -80,7 +80,7 @@ export default function LearnComponent(props) {
                 <span className="expandables">
                     <div>
                         {components.map(title=>(
-                            <ExpandableComponent text={title} tags={componentTags[title]} />
+                            <ExpandableComponent key={title} text={title} tags={componentTags[title]} />
                         ))}
                     </div>
                 </span>

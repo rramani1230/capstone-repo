@@ -9,31 +9,35 @@ import ExpandedCard from '../../Images/SubCardExpanded.svg';
 import OpenChevron from '../../Images/OpenChevron.svg';
 import Vector from '../../Images/Vector.svg'
 import bulb from '../../Images/bulb.svg'
-import Bookmark from '../../Images/Bookmark.svg'
 import CompositeImage from '../../Images/CompositeImage.svg'
 import SmallTick from '../../Images/SmallTick.svg'
+import { useContext } from "react";
+import { AccountContext } from "../../App";
+import favFilled from '../../Images/favFilled.svg'
+import SubBookmark from "../Bookmarks/Bookmark";
+export default function CompositeSubCard({ status, setStatus,skip, ...props }) {
+    const {favourite:Favourite} = useContext(AccountContext)
+    const [favourite,setFavourite] = Favourite
 
-
-export default function CompositeSubCard({ status, setStatus, ...props }) {
     const [open, setOpen] = useState(false);
     if (status === 2) {
         open && setOpen(false)
     }
-    console.log(status);
     return (
         <div id="expandable-wrapper">
             {!open &&
                 <>
                     <Image id="sub-card-image" src={SubCardImage} />
                     {status > 1 ? <Image id="closed-chevron1" src={SmallTick} /> :
-                        <Image id="closed-chevron1" src={ClosedChevron} onClick={() => { setOpen((prev) => !prev); !open ? setStatus(1) : setStatus(status) }} />
+                        <Image id="closed-chevron1" src={ClosedChevron} onClick={() => { setOpen((prev) => !prev); (!open && !skip) ? setStatus(1) : !skip && setStatus(status) }} />
                     }
-                    <Image id="closed-favIcon" src={Vector} />
-                    <span id="subcard-text"> {props.text} </span>
+                    {favourite.includes(1) ? <Image id="closed-favIcon" src={favFilled} onClick={()=> setFavourite(prev => prev.filter(item=> item !== 1))}/> :
+                    <Image id="closed-favIcon" src={Vector} onClick={()=> setFavourite(prev=> [...prev,1])}/>}
+                    <span id="subcard-text"> {props.text ?? 'Overview'} </span>
 
                 </>
             }
-            {open && status <= 1 &&
+            {open && (status <= 1 || skip) &&
                 <div id="expanded-wrapper1">
                     <Image id="expanded-card1" src={ExpandedCard} />
                     <Image
@@ -41,10 +45,10 @@ export default function CompositeSubCard({ status, setStatus, ...props }) {
                         src={OpenChevron}
                         onClick={() => setOpen((prev) => !prev)}
                     />
-                    <Image id="open-favIcon" src={Vector} />
-
+                    {favourite.includes(1) ? <Image id="open-favIcon" src={favFilled} onClick={()=> setFavourite(prev => prev.filter(item=> item !== 1))}/> :
+                    <Image id="open-favIcon" src={Vector} onClick={()=> setFavourite(prev=> [...prev,1])}/>}
                     <div id="expanded-header0">
-                        {props.text}
+                        {props.text ?? 'Overview'}
                     </div>
 
                     <div className="text-container">
@@ -69,22 +73,7 @@ export default function CompositeSubCard({ status, setStatus, ...props }) {
                         <Image src={bulb} />
                         <span>Additional Resources</span>
                     </div>
-                    <div className="bookmark-container">
-                        <div style={{ padding: '7px' }}>
-                            <Image src={Bookmark} />
-                        </div>
-                        <div style={{textDecoration: 'underline'}}>
-                            Mapping Urban Access to Composting Programs | GreenBlue
-                        </div>
-                    </div>
-                    <div className="bookmark-detail">
-                        <div style={{ padding: '7px' }}>
-                            <Image src={CompositeImage} />
-                        </div>
-                        <div>
-                            “To better understand residential access to composting programs in urban areas of the United States, GreenBlue has developed interactive maps and charts of municipally-run and privately-run composting programs, available on Tableau Public.
-                        </div>
-                    </div>
+                    <SubBookmark id='1' heading="Mapping Urban Access to Composting Programs | GreenBlue" image={CompositeImage} text="To better understand residential access to composting programs in urban areas of the United States, GreenBlue has developed interactive maps and charts of municipally-run and privately-run composting programs, available on Tableau Public."/>
                 </div>
             }
 

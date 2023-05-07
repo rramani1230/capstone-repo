@@ -34,7 +34,7 @@ export default function ApplicationScreen () {
 
             {survey_status > 5 &&
                 <div id="learn-component">
-                    <LearnComponent tags={["waste", "savings"]}/>
+                    <LearnComponent/>
                 </div>
             }
 

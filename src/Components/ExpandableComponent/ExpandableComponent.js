@@ -30,7 +30,7 @@ export default function ExpandableComponent(props) {
                         <Image
                             id="closed-chevron"
                             src={ClosedChevron}
-                            onClick={() => set_open((prev) => !prev)}
+                            onClick={() => props.text === 'Composite' && set_open((prev) => !prev)}
                         />
                         <div id="expandable-header">
                             {props.text}
@@ -38,15 +38,15 @@ export default function ExpandableComponent(props) {
                     </div>
 
                     <div id="tag-list">
-                        {props.tags.map(tag=>(
-                            <Tag text={tag} />
+                        {props.tags.map((tag,idx)=>(
+                            <Tag key={idx} text={tag} />
                         ))}
                         {/* <Tag id="tag-1" text="waste"/> */}
                     </div>
                 </>
             }
 
-            {open &&
+            {open && props.text === 'Composite' &&
                 <div id="expanded-wrapper">
                     <span>
                         <Image id="expanded-card" src={ExpandedCard} />

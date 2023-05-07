@@ -9,35 +9,48 @@
     bottom: 454px;
     right: 1080px;
 }
-
+#open-chevron1:hover {
+    cursor: pointer;
+}
 #closed-favIcon {
     position: relative;
     bottom: 30px;
     right: 100px;
+    z-index: 1;
 }
-
+#closed-favIcon:hover {
+    cursor: pointer;
+}
 #open-favIcon {
     position: relative;
-    bottom: 457px;
-    right: 100px;
+    bottom: 450px;
+    right: 109px;
+    z-index: 1;
+}
+#open-favIcon:hover {
+    cursor: pointer;
+}
+.bookmark-icon{
+    z-index: 1;
+}
+.bookmark-icon:hover{
+    cursor: pointer;
 }
 
 #subcard-text {
     position: relative;
-    right: 1080px;
-    bottom: 34px;
+    display: flex;
+    left: 45px;
+    bottom: 61px;
     font-size: 24px;
     font-family: 'Avenir-Black';
-
 }
 
 #closed-chevron1:hover {
     cursor: pointer;
 }
 
-#open-chevron1:hover {
-    cursor: pointer;
-}
+
 
 #topics-text1 {
     position: relative;
@@ -84,7 +97,7 @@
     bottom: 480px;
     left: 50px;
     font-family: 'Avenir-Black';
-    font-size: 20px;
+    font-size: 24px;
 }
 #expanded-header1 {
     position: relative;
