@@ -14,25 +14,38 @@ import { useContext } from "react";
 import { AccountContext } from "../../App";
 import favFilled from '../../Images/favFilled.svg'
 import SubBookmark from "../Bookmarks/Bookmark";
-export default function CompositeSubCard1({ status, setStatus,skip, ...props }) {
-    const {favourite:Favourite} = useContext(AccountContext)
-    const [favourite,setFavourite] = Favourite
+import supabase from "../Config/dbconnection";
+
+export default function CompositeSubCard1({ status, setStatus, skip, ...props }) {
+    const { favourite: Favourite } = useContext(AccountContext)
+    const [favourite, setFavourite] = Favourite
     const [open, setOpen] = useState(false);
     if (status === 3) {
         open && setOpen(false)
     }
-
+    const updateLearnModule = async () => {
+        const { data: { user } } = await supabase.auth.getUser()
+        if (user) {
+            const { data, error } = await supabase.from('user_learn').select('user_id, learn_module_number').match({ user_id: user.id, learn_module_number: 2 })
+            if (data.length === 0) {
+                const { error } = await supabase
+                    .from('user_learn')
+                    .insert({ user_id: user.id, learn_module_number: 2 })
+                console.log(error);
+            }
+        }
+    }
     return (
         <div id="expandable-wrapper">
             {!open &&
                 <>
                     <Image id="sub-card-image" src={SubCardImage} />
                     {status > 2 ? <Image id="closed-chevron1" src={SmallTick} /> :
-                        <Image id="closed-chevron1" src={ClosedChevron} onClick={() => { (status > 0 || skip) && setOpen((prev) => !prev); (status > 0 && !skip) && ((!open && !skip) ? setStatus(2) : !skip && setStatus(status)) }} />
+                        <Image id="closed-chevron1" src={ClosedChevron} onClick={() => { (status > 0 || skip) && setOpen((prev) => !prev); updateLearnModule(); (status > 0 && !skip) && ((!open && !skip) ? setStatus(2) : !skip && setStatus(status)) }} />
                     }
 
-                    {favourite.includes(2) ? <Image id="closed-favIcon" src={favFilled} onClick={()=> setFavourite(prev => prev.filter(item=> item !== 2))}/> :
-                    <Image id="closed-favIcon" src={Vector} onClick={()=> setFavourite(prev=> [...prev,2])}/>}
+                    {favourite.includes(2) ? <Image id="closed-favIcon" src={favFilled} onClick={() => setFavourite(prev => prev.filter(item => item !== 2))} /> :
+                        <Image id="closed-favIcon" src={Vector} onClick={() => setFavourite(prev => [...prev, 2])} />}
                     <span id="subcard-text"> {props.text ?? 'What can be composted?'} </span>
 
                 </>
@@ -46,8 +59,8 @@ export default function CompositeSubCard1({ status, setStatus,skip, ...props }) 
                         src={OpenChevron}
                         onClick={() => setOpen((prev) => !prev)}
                     />
-                     {favourite.includes(2) ? <Image id="open-favIcon" src={favFilled} onClick={()=> setFavourite(prev => prev.filter(item=> item !== 2))}/> :
-                    <Image id="open-favIcon" src={Vector} onClick={()=> setFavourite(prev=> [...prev,2])}/>}
+                    {favourite.includes(2) ? <Image id="open-favIcon" src={favFilled} onClick={() => setFavourite(prev => prev.filter(item => item !== 2))} /> :
+                        <Image id="open-favIcon" src={Vector} onClick={() => setFavourite(prev => [...prev, 2])} />}
 
                     <div id="expanded-header0">
                         {props.text ?? 'What can be composted?'}
@@ -78,8 +91,8 @@ export default function CompositeSubCard1({ status, setStatus,skip, ...props }) 
                         <Image src={bulb} />
                         <span>Additional Resources</span>
                     </div>
-                    <SubBookmark id='2' heading="CalRecycle - What to Put in Compost, Recycling, and Trash (Opens as a PDF)" link = "https://www2.calrecycle.ca.gov/Docs/Web/112236" image={CompositeImage1}/>
-                   
+                    <SubBookmark id='2' heading="CalRecycle - What to Put in Compost, Recycling, and Trash (Opens as a PDF)" link="https://www2.calrecycle.ca.gov/Docs/Web/112236" image={CompositeImage1} />
+
                 </div>
             }
 

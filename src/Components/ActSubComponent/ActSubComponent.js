@@ -14,16 +14,31 @@ import CompositeImage2 from '../../Images/CompositeImage2.svg'
 import CompositeImage3 from '../../Images/CompositeImage3.svg'
 import SubBookmark from "../Bookmarks/Bookmark";
 import './ActSubComponent.css'
+import supabase from "../Config/dbconnection";
 export default function ActSubComponent({points,setPoints,...props}) {
 
     const [open, setOpen] = useState(false);
     const [subPoint, setSubPoint] = useState([])
     useEffect(() => {
       if(subPoint.length === 2){
+        (async()=>{
+            const { data: { user } } = await supabase.auth.getUser()
+            if (user) {
+                const { data, error } = await supabase.from('user_act').select('user_id, act_module_number').match({ user_id: user.id, act_module_number: 1 })
+                if (data.length === 0) {
+                    const { error } = await supabase
+                        .from('user_act')
+                        .insert({ user_id: user.id, act_module_number: 1 })
+                    console.log(error);
+                }
+            }
+        })()
         setPoints(prev => prev+1)
       }
     }, [subPoint])
-    
+    const updateActModule = async () => {
+        
+    }
     return (
         <div id="expandable-wrapper">
             {!open &&

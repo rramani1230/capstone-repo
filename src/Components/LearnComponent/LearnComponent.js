@@ -6,12 +6,16 @@ import { MultiSelect } from "react-multi-select-component";
 import { useState } from "react";
 import ExpandableComponent from "../ExpandableComponent/ExpandableComponent";
 import { useEffect } from "react";
+import supabase from '../Config/dbconnection';
 // import MultiSelect from "react-bootstrap"
 
 export default function LearnComponent(props) {
 
     const [selected, setSelected] = useState([]);
     const [components, setComponents] = useState(['Composite','Recycling','Food Waste and Storage','Singe Use and Landfill',"Farmer's Markets",'Food Pantries','Grocery Stores'])
+    
+
+
     const options = [
         { label: "groceries", value: "groceries" },
         { label: "savings", value: "savings" },
@@ -38,6 +42,7 @@ export default function LearnComponent(props) {
 
     // Update the component state whenever the selected tags change
     useEffect(() => {
+        
         setComponents(sortComponents(components, selected));
     }, [selected]);
     

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './CompositeSubCard.css'
 import { Image } from "react-bootstrap";
 import SubCardImage from '../../Images/SubCard.svg';
@@ -15,24 +15,38 @@ import { useContext } from "react";
 import { AccountContext } from "../../App";
 import favFilled from '../../Images/favFilled.svg'
 import SubBookmark from "../Bookmarks/Bookmark";
-export default function CompositeSubCard({ status, setStatus,skip, ...props }) {
-    const {favourite:Favourite} = useContext(AccountContext)
-    const [favourite,setFavourite] = Favourite
+import supabase from "../Config/dbconnection";
+export default function CompositeSubCard({ status, setStatus, skip, ...props }) {
+    const { favourite: Favourite } = useContext(AccountContext)
+    const [favourite, setFavourite] = Favourite
 
     const [open, setOpen] = useState(false);
     if (status === 2) {
         open && setOpen(false)
     }
+    const updateLearnModule = async () => {
+        const { data: { user } } = await supabase.auth.getUser()
+        if (user) {
+            const { data, error } = await supabase.from('user_learn').select('user_id, learn_module_number').match({ user_id: user.id, learn_module_number: 1 })
+            if (data.length === 0) {
+                const { error } = await supabase
+                    .from('user_learn')
+                    .insert({ user_id: user.id, learn_module_number: 1 })
+                console.log(error);
+            }
+        }
+    }
+
     return (
         <div id="expandable-wrapper">
             {!open &&
                 <>
                     <Image id="sub-card-image" src={SubCardImage} />
                     {status > 1 ? <Image id="closed-chevron1" src={SmallTick} /> :
-                        <Image id="closed-chevron1" src={ClosedChevron} onClick={() => { setOpen((prev) => !prev); (!open && !skip) ? setStatus(1) : !skip && setStatus(status) }} />
+                        <Image id="closed-chevron1" src={ClosedChevron} onClick={() => { setOpen((prev) => !prev); updateLearnModule(); (!open && !skip) ? setStatus(1) : !skip && setStatus(status) }} />
                     }
-                    {favourite.includes(1) ? <Image id="closed-favIcon" src={favFilled} onClick={()=> setFavourite(prev => prev.filter(item=> item !== 1))}/> :
-                    <Image id="closed-favIcon" src={Vector} onClick={()=> setFavourite(prev=> [...prev,1])}/>}
+                    {favourite.includes(1) ? <Image id="closed-favIcon" src={favFilled} onClick={() => setFavourite(prev => prev.filter(item => item !== 1))} /> :
+                        <Image id="closed-favIcon" src={Vector} onClick={() => setFavourite(prev => [...prev, 1])} />}
                     <span id="subcard-text"> {props.text ?? 'Overview'} </span>
 
                 </>
@@ -45,8 +59,8 @@ export default function CompositeSubCard({ status, setStatus,skip, ...props }) {
                         src={OpenChevron}
                         onClick={() => setOpen((prev) => !prev)}
                     />
-                    {favourite.includes(1) ? <Image id="open-favIcon" src={favFilled} onClick={()=> setFavourite(prev => prev.filter(item=> item !== 1))}/> :
-                    <Image id="open-favIcon" src={Vector} onClick={()=> setFavourite(prev=> [...prev,1])}/>}
+                    {favourite.includes(1) ? <Image id="open-favIcon" src={favFilled} onClick={() => setFavourite(prev => prev.filter(item => item !== 1))} /> :
+                        <Image id="open-favIcon" src={Vector} onClick={() => setFavourite(prev => [...prev, 1])} />}
                     <div id="expanded-header0">
                         {props.text ?? 'Overview'}
                     </div>
@@ -73,7 +87,7 @@ export default function CompositeSubCard({ status, setStatus,skip, ...props }) {
                         <Image src={bulb} />
                         <span>Additional Resources</span>
                     </div>
-                    <SubBookmark id='1' heading="Mapping Urban Access to Composting Programs | GreenBlue" image={CompositeImage} text="To better understand residential access to composting programs in urban areas of the United States, GreenBlue has developed interactive maps and charts of municipally-run and privately-run composting programs, available on Tableau Public."/>
+                    <SubBookmark id='1' heading="Mapping Urban Access to Composting Programs | GreenBlue" image={CompositeImage} text="To better understand residential access to composting programs in urban areas of the United States, GreenBlue has developed interactive maps and charts of municipally-run and privately-run composting programs, available on Tableau Public." />
                 </div>
             }
 

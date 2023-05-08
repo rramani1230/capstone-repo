@@ -15,6 +15,8 @@ import { useContext } from "react";
 import { AccountContext } from "../../App";
 import favFilled from '../../Images/favFilled.svg'
 import SubBookmark from "../Bookmarks/Bookmark";
+import supabase from "../Config/dbconnection";
+
 export default function CompositeSubCard2({ status, setStatus, skip, ...props }) {
     const { favourite: Favourite } = useContext(AccountContext)
     const [favourite, setFavourite] = Favourite
@@ -22,13 +24,25 @@ export default function CompositeSubCard2({ status, setStatus, skip, ...props })
     if (status === 4) {
         open && setOpen(false)
     }
+    const updateLearnModule = async () => {
+        const { data: { user } } = await supabase.auth.getUser()
+        if (user) {
+            const { data, error } = await supabase.from('user_learn').select('user_id, learn_module_number').match({ user_id: user.id, learn_module_number: 3 })
+            if (data.length === 0) {
+                const { error } = await supabase
+                    .from('user_learn')
+                    .insert({ user_id: user.id, learn_module_number: 3 })
+                console.log(error);
+            }
+        }
+    }
     return (
         <div id="expandable-wrapper">
             {!open &&
                 <>
                     <Image id="sub-card-image" src={SubCardImage} />
                     {status > 3 ? <Image id="closed-chevron1" src={SmallTick} /> :
-                        <Image id="closed-chevron1" src={ClosedChevron} onClick={() => { (status > 1 || skip) && setOpen((prev) => !prev); (status > 1 && !skip) && (!open ? setStatus(3) : !skip && setStatus(status)) }} />
+                        <Image id="closed-chevron1" src={ClosedChevron} onClick={() => { (status > 1 || skip) && setOpen((prev) => !prev); updateLearnModule(); (status > 1 && !skip) && (!open ? setStatus(3) : !skip && setStatus(status)) }} />
                     }
                     {favourite.includes(3) ? <Image id="closed-favIcon" src={favFilled} onClick={() => setFavourite(prev => prev.filter(item => item !== 3))} /> :
                         <Image id="closed-favIcon" src={Vector} onClick={() => setFavourite(prev => [...prev, 3])} />}

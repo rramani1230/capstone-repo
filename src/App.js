@@ -13,12 +13,12 @@ import AccountBookmark from './Components/AccountScreen/AccountBookmark';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ActSubScreen from './Components/ActScreen/ActSubScreen';
 import ActCompo from './Components/ActCompo/ActCompo';
+import TrackScreen from './Components/TrackScreen/TrackScreen';
 export const AccountContext = createContext();
 
 function App() {
     const [favourite, setFavourite] = useState([])
     const [bookmark, setBookmark] = useState([])
-    console.log(favourite);
     console.log("In the App component");
     console.log(window.location.href);
 
@@ -50,6 +50,8 @@ function App() {
                         <Route index element={<ActSubScreen />} />
                         <Route path='composite' element={<ActCompo />} />
                     </Route>
+                    <Route exact path="/track" element={<TrackScreen />}/>
+                       
                 </Routes>
             </AccountContext.Provider>
         </BrowserRouter>
