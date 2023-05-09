@@ -71,7 +71,12 @@ export default function ActSubComponent2({ points, setPoints, ...props }) {
         }
     }
     useEffect(() => {
-        if (subPoint.length === 2) {
+        if(subPoint?.length < 2 && points?.list?.includes(3)){
+            setSubPoint([1,2])
+        }
+    },[])
+    useEffect(() => {
+        if (!(points?.list?.includes(3)) && subPoint.length === 2) {
             (async () => {
                 const { data: { user } } = await supabase.auth.getUser()
                 if (user) {
@@ -84,7 +89,7 @@ export default function ActSubComponent2({ points, setPoints, ...props }) {
                     }
                 }
             })()
-            setPoints(prev => prev + 1)
+            setPoints(prev => ({ ...prev, count: prev.count + 1 }))
         }
     }, [subPoint])
 

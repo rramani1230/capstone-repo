@@ -10,15 +10,17 @@ import AccountScreen from './Components/AccountScreen/AccountScreen';
 import ActScreen from './Components/ActScreen/ActScreen';
 import AccountFavourite from './Components/AccountScreen/AccountFavourite';
 import AccountBookmark from './Components/AccountScreen/AccountBookmark';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 import ActSubScreen from './Components/ActScreen/ActSubScreen';
 import ActCompo from './Components/ActCompo/ActCompo';
 import TrackScreen from './Components/TrackScreen/TrackScreen';
+import ConfirmEmailScreen from './Components/ConfirmEmailScreen/ConfirmEmailScreen';
 export const AccountContext = createContext();
 
 function App() {
     const [favourite, setFavourite] = useState([])
     const [bookmark, setBookmark] = useState([])
+
     console.log("In the App component");
     console.log(window.location.href);
 
@@ -37,6 +39,7 @@ function App() {
                 <Routes>
                     <Route exact path="/" element={<LandingScreen />} />
                     <Route exact path="/capstone-repo" element={<LandingScreen />} />
+                    <Route exact path="/confirm-email-screen" element={<ConfirmEmailScreen />} />
                     <Route exact path="/confirm-landing-screen" element={<ConfirmLandingScreen />} />
                     <Route exact path="/signup" element={<SignUpScreen />} />
                     <Route exact path="/application" element={<ApplicationScreen />} />
@@ -51,7 +54,7 @@ function App() {
                         <Route path='composite' element={<ActCompo />} />
                     </Route>
                     <Route exact path="/track" element={<TrackScreen />}/>
-                       
+
                 </Routes>
             </AccountContext.Provider>
         </BrowserRouter>

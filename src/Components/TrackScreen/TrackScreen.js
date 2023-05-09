@@ -39,17 +39,10 @@ export default function TrackScreen() {
             console.log('hello');
             const { data: { user } } = await supabase.auth.getUser()
             setCurrentUser(user);
-
             if (user) {
-                const { data: goal, error: goal_error } = await supabase.from('user_custom_goals').select('user_id, goal,created_at').match({ user_id: user.id })
-                console.log(goal);
-                setMytext(goal[0].goal)
-                setGoalDate(goal[0].created_at)
-                const { data: mydate } = await supabase.from('user_custom_date').select('id,user_id, date,created_at').match({ user_id: user.id })
-                setCustomDate([mydate[0].created_at, mydate[0].date])
-                const { data, error } = await supabase.from('user_act').select('user_id, act_module_number')
+                const { data, error } = await supabase.from('user_act').select('user_id, act_module_number').match({ user_id: user?.id })
                 var current_points = 0
-                if (data.length > 0) {
+                if (data?.length > 0) {
                     for (let i in data) {
                         if (data[i].act_module_number === 2) {
                             current_points += 2
@@ -59,6 +52,11 @@ export default function TrackScreen() {
                     }
                 }
                 setPoints(current_points)
+                const { data: goal, error: goal_error } = await supabase.from('user_custom_goals').select('user_id, goal,created_at').match({ user_id: user?.id })
+                goal?.length > 0 && setMytext(goal[0]?.goal)
+                goal?.length > 0 && setGoalDate(goal[0]?.created_at)
+                const { data: mydate } = await supabase.from('user_custom_date').select('id,user_id, date,created_at').match({ user_id: user?.id })
+                mydate?.length > 0 && setCustomDate([mydate[0]?.created_at, mydate[0]?.date])
             }
         })()
 
@@ -73,10 +71,10 @@ export default function TrackScreen() {
             error && console.log(error);
             var upsertObject = {}
             if (data.length > 0) {
-                upsertObject = { id: data[0].id, user_id: currentUser.id, mood_number: num, date: currentDate }
+                upsertObject = { id: data[0]?.id, user_id: currentUser?.id, mood_number: num, date: currentDate }
             }
             else {
-                upsertObject = { user_id: currentUser.id, mood_number: num, date: currentDate }
+                upsertObject = { user_id: currentUser?.id, mood_number: num, date: currentDate }
             }
             const { error: error2 } = await supabase
                 .from('user_mood')
@@ -93,8 +91,7 @@ export default function TrackScreen() {
         const firstDate = new Date(day1);
         const secondDate = new Date(day2);
         const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
-        console.log(diffDays);
-        return diffDays
+        return diffDays 
     }
 
     return (
@@ -234,7 +231,7 @@ export default function TrackScreen() {
                         }
                     </div>
                 </div>
-                <div style={{ padding: '0 60px', display: 'flex'}}>
+                <div style={{ padding: '0 60px', display: 'flex' }}>
                     <div>
                         <div className="">
                             <Image src={bars} />
@@ -305,7 +302,7 @@ export default function TrackScreen() {
                             </div>
                         </div>
                     </div>
-                    <div style={{paddingLeft:'100px',paddingTop:'20px'}}>
+                    <div style={{ paddingLeft: '100px', paddingTop: '20px' }}>
                         <TrackModule currentUser={currentUser} selectedEmoji={selectedEmoji} />
                     </div>
                 </div>

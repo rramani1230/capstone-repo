@@ -1,36 +1,43 @@
-.expanded-header2{
+.expanded-header2 {
     position: relative;
     bottom: 390px;
     left: 58px;
     font-family: 'Avenir-Black';
     font-size: 24px;
 }
+
 .open-chevron2 {
     position: relative;
     bottom: 360px;
     right: 1080px;
 }
+
 .open-chevron2:hover {
     cursor: pointer;
 }
+
 #open-favIcon2 {
     position: relative;
     bottom: 345px;
     right: 115px;
     z-index: 1;
 }
+
 #open-favIcon2:hover {
     cursor: pointer;
 }
+
 #closed-favIcon2 {
     position: relative;
     bottom: 25px;
     right: 106px;
     z-index: 1;
 }
+
 #closed-favIcon2:hover {
     cursor: pointer;
 }
+
 .long-buttons2 {
     position: relative;
     bottom: 350px;
@@ -49,6 +56,7 @@
     font-family: 'Avenir-Roman';
     padding-left: 10px;
 }
+
 .act-button {
     position: relative;
     bottom: 300px;
@@ -57,12 +65,32 @@
     background-color: white;
     border-width: 0px;
 }
+
 .act-button:hover {
     cursor: pointer;
 }
-.Hovering:hover{
+
+.Hovering:hover {
     cursor: pointer;
 }
-.expanded-wrapper2{
+
+.expanded-wrapper2 {
     height: 400px;
+}
+
+.fav_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 74px;
+    height: 40px;
+    position: absolute;
+    bottom: 246px;
+    left: 1107px;
+    z-index: 1;
+    background: #EEF3E5;
+    border-radius: 20px;
+}
+.fav_container_color {
+   color: red;
 }

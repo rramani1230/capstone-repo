@@ -15,9 +15,9 @@ export default function TrackModule({ currentUser, selectedEmoji }) {
     useEffect(() => {
         (async () => {
             if (currentUser) {
-                const { data: learn, error } = await supabase.from('user_learn').select('user_id, learn_module_number,created_at').match({ user_id: currentUser.id })
+                const { data: learn, error } = await supabase.from('user_learn').select('user_id, learn_module_number,created_at').match({ user_id: currentUser?.id })
                 setLearn(learn)
-                const { data: act } = await supabase.from('user_act').select('user_id, act_module_number,created_at').match({ user_id: currentUser.id })
+                const { data: act } = await supabase.from('user_act').select('user_id, act_module_number,created_at').match({ user_id: currentUser?.id })
                 setAct(act)
             }
         })()
@@ -272,7 +272,11 @@ export default function TrackModule({ currentUser, selectedEmoji }) {
                     </div>
                     {selectedEmoji !== 0 ?
                         <div className='module_info'>
-                            <Image src={BigDone} style={{ paddingBottom: '12px' }} />
+                            {(learn?.length === 3 && act?.length === 3) ?
+                                <Image src={TrackDone} style={{ paddingBottom: '12px' }} /> :
+                                <Image src={BigDone} style={{ paddingBottom: '12px' }} />
+                            }
+
                             <div className='hidden_info'>
                                 <div>
                                     Completed
