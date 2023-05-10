@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './CompostScreen.css';
 import LearnTopBar from "../LearnTopBar/LearnTopBar";
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
@@ -10,10 +10,27 @@ import DisabledFinishButton from '../../Images/DisabledFinishButton.svg'
 import { useState } from "react";
 import { Button, Image } from "react-bootstrap";
 import ModuleFinishedScreen from "../ModuleFinishedScreen/ModuleFinishedScreen";
+import supabase from "../Config/dbconnection";
 export default function CompostScreen() {
     const [completed, setCompleted] = useState(0)
     const [moduleFinshed, setModuleFinshed] = useState(false)
-
+    const [learnCompleted, setLearnCompleted] = useState(false)
+    const [loading, setLoading] = useState(false)
+    console.log(completed);
+    useEffect(() => {
+        (async () => {
+            setLoading(true)
+            const { data: { user } } = await supabase.auth.getUser();
+            if (user) {
+                const { data: mydata, error } = await supabase.from('user_learn').select('user_id, learn_module_number').match({ user_id: user.id})
+                console.log(mydata);
+                if (mydata && mydata?.length > 2) {
+                    setLearnCompleted(true)
+                }
+            }
+            setLoading(false)
+        })()
+    }, [completed])
     const paths = [
         { name: 'Learn' },
         { name: 'Compositing' },
@@ -22,12 +39,13 @@ export default function CompostScreen() {
         { name: 'How to start your own compost' },
         { name: 'Wrap Up' }
     ];
+   
     return moduleFinshed ? (<>
         <ModuleFinishedScreen paths={paths} />
     </>) : (
         <>
             <div id="compost-learn-topbar">
-                <LearnTopBar current="Learn"/>
+                <LearnTopBar current="Learn" />
             </div>
             <div id="compost-breadcrumbs">
                 <Breadcrumbs paths={paths.slice(0, completed + 2)} />
@@ -39,13 +57,13 @@ export default function CompostScreen() {
                     <SubCard2 text="How to start your own compost" status={completed} setStatus={setCompleted} />
                 </div>
             </span>
-            {completed < 4 && (completed === 3 ?
+            {(learnCompleted) ?
                 <Button className='module-finish-button' onClick={() => { setCompleted(4); setModuleFinshed(true) }}>
                     <Image src={FinishModule} />
                 </Button>
                 : <Button className='module-disabled-finish-button'>
                     <Image src={DisabledFinishButton} />
-                </Button>)}
+                </Button>}
         </>
     )
 }

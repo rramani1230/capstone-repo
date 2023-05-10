@@ -16,6 +16,7 @@ import Edit from '../../Images/Edit.svg'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 import './ActSubComponent.css'
+import supabase from "../Config/dbconnection";
 export default function ActSubComponent1({ points, setPoints, ...props }) {
     const [open, setOpen] = useState(false);
     const [subPoint, setSubPoint] = useState([])
@@ -32,8 +33,26 @@ export default function ActSubComponent1({ points, setPoints, ...props }) {
 
     }
     useEffect(() => {
-        if (subPoint.length === 2) {
-            setPoints(prev => prev + 2)
+        if(subPoint?.length === 0 && points?.list?.includes(2)){
+            setSubPoint([1,2])
+        }
+    },[])
+    useEffect(() => {
+        
+        if (!(points?.list?.includes(2)) && subPoint.length === 2) {
+            (async()=>{
+                const { data: { user } } = await supabase.auth.getUser()
+                if (user) {
+                    const { data, error } = await supabase.from('user_act').select('user_id, act_module_number').match({ user_id: user.id, act_module_number: 2 })
+                    if (data.length === 0) {
+                        const { error } = await supabase
+                            .from('user_act')
+                            .insert({ user_id: user.id, act_module_number: 2 })
+                        console.log(error);
+                    }
+                }
+            })()
+            setPoints(prev => ({ ...prev, count: prev.count + 2 }))
         }
     }, [subPoint])
 

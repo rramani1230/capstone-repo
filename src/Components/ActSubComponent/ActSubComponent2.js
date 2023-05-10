@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Image } from "react-bootstrap";
 import SubCardImage from '../../Images/SubCard.svg';
 import ClosedChevron from '../../Images/ClosedChevron.svg'
@@ -15,6 +15,7 @@ import Edit from '../../Images/Edit.svg'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
 import './ActSubComponent.css'
+import supabase from "../Config/dbconnection";
 export default function ActSubComponent2({ points, setPoints, ...props }) {
 
     const [open, setOpen] = useState(false);
@@ -31,9 +32,64 @@ export default function ActSubComponent2({ points, setPoints, ...props }) {
         }
 
     }
+    const updateText = async () => {
+        const { data: { user } } = await supabase.auth.getUser()
+        if (user) {
+            const { data, error } = await supabase.from('user_custom_goals').select('id,user_id, goal').match({ user_id: user.id })
+            console.log(data);
+            var upsertObject = {}
+            if (data.length > 0) {
+                upsertObject = { id: data[0].id, user_id: user.id, goal: mytext }
+            }
+            else {
+                upsertObject = { user_id: user.id, goal: mytext }
+            }
+            const { error: error2 } = await supabase
+                .from('user_custom_goals')
+                .upsert({ ...upsertObject })
+                .select()
+            error2 && console.log(error2);
+        }
+
+    }
+    const updateDate = async () => {
+        const { data: { user } } = await supabase.auth.getUser()
+        if (user) {
+            const { data, error } = await supabase.from('user_custom_date').select('id,user_id, date').match({ user_id: user.id })
+            var upsertObject = {}
+            if (data.length > 0) {
+                upsertObject = { id: data[0].id, user_id: user.id, date: value.toLocaleDateString() }
+            }
+            else {
+                upsertObject = { user_id: user.id, date: value.toLocaleDateString()}
+            }
+            const { error: error2 } = await supabase
+                .from('user_custom_date')
+                .upsert({ ...upsertObject })
+                .select()
+            error2 && console.log(error2);
+        }
+    }
     useEffect(() => {
-        if (subPoint.length === 2) {
-            setPoints(prev => prev + 1)
+        if(subPoint?.length < 2 && points?.list?.includes(3)){
+            setSubPoint([1,2])
+        }
+    },[])
+    useEffect(() => {
+        if (!(points?.list?.includes(3)) && subPoint.length === 2) {
+            (async () => {
+                const { data: { user } } = await supabase.auth.getUser()
+                if (user) {
+                    const { data, error } = await supabase.from('user_act').select('user_id, act_module_number').match({ user_id: user.id, act_module_number: 3 })
+                    if (data.length === 0) {
+                        const { error } = await supabase
+                            .from('user_act')
+                            .insert({ user_id: user.id, act_module_number: 3 })
+                        console.log(error);
+                    }
+                }
+            })()
+            setPoints(prev => ({ ...prev, count: prev.count + 1 }))
         }
     }, [subPoint])
 
@@ -43,7 +99,7 @@ export default function ActSubComponent2({ points, setPoints, ...props }) {
                 <>
                     <Image id="sub-card-image" src={SubCardImage} />
                     <Image id="closed-chevron1" src={ClosedChevron} onClick={() => { setOpen((prev) => !prev); }} />
-                    {subPoint.length >= 2 ? <Image id="closed-favIcon2" src={leafDone} />:
+                    {subPoint.length >= 2 ? <Image id="closed-favIcon2" src={leafDone} /> :
                         <Image id="closed-favIcon2" src={leafCompleted} />
                     }
                     <span id="subcard-text"> {props.text ?? 'Overview'} </span>
@@ -59,7 +115,7 @@ export default function ActSubComponent2({ points, setPoints, ...props }) {
                         onClick={() => setOpen((prev) => !prev)}
                     />
                     {subPoint.length >= 2 ? <Image className="open-favIcon" src={leafDone} />
-                    :<Image className="open-favIcon" src={leafCompleted} />
+                        : <Image className="open-favIcon" src={leafCompleted} />
                     }
                     <div className="expanded-header">
                         {props.text ?? 'Overview'}
@@ -83,7 +139,7 @@ export default function ActSubComponent2({ points, setPoints, ...props }) {
                                 </div>
                             </div>
                             <div className="image-container">
-                                {mytext ? (saved ? <Image src={Edit} /> : <Image src={SaveEntry} onClick={() => { setSaved(true); updatePoints(1) }} />) : <Image src={DisabledSaveEntry} />}
+                                {mytext ? (saved ? <Image src={Edit} onClick={()=>updateText()} /> : <Image src={SaveEntry} onClick={() => { setSaved(true); updatePoints(1); updateText() }} />) : <Image src={DisabledSaveEntry} />}
                             </div>
 
                         </div>
@@ -123,7 +179,7 @@ export default function ActSubComponent2({ points, setPoints, ...props }) {
                             {saved2 ? <Image style={{ paddingLeft: '32px' }} src={boxtick} /> : <Image style={{ paddingLeft: '32px' }} src={box} />}
                         </div>
                         <div className="image-container" style={{ marginBottom: '100px', paddingLeft: '678px' }}>
-                            {value ? <Image src={SaveEntry} onClick={() => { setSaved2(true); updatePoints(2) }} /> : <Image src={DisabledSaveEntry} />}
+                            {value ? <Image src={SaveEntry} onClick={() => { setSaved2(true); updatePoints(2); updateDate() }} /> : <Image src={DisabledSaveEntry} />}
                         </div>
                     </div>
                 </div>

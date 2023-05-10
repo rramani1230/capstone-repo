@@ -1,0 +1,383 @@
+.track_heading {
+    /* Fixed bg */
+
+    position: absolute;
+    width: 1440px;
+    height: 100px;
+    left: 1px;
+    top: 128px;
+
+    /* material-theme/white */
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(223, 228, 215, 0.25);
+
+}
+
+.track_heading_txt {
+
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 44px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+
+    /* material-theme/sys/light/primary */
+    color: #326B1F;
+
+
+}
+
+.track_progress {
+    background: #B2F497;
+    border-radius: 2px;
+    height: 4px;
+    width: 600px;
+}
+
+.track_progress2 {
+    background: #B2F497;
+    border-radius: 2px;
+    height: 4px;
+    width: 30px;
+}
+
+.track_heading_end_txt {
+    /* way to grow! */
+
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 18px;
+    /* identical to box height, or 75% */
+    display: flex;
+    align-items: center;
+
+    color: #326B1F;
+
+
+}
+
+.track_heading_end_sub_txt {
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+
+}
+
+.main_container {
+    padding-top: 170px;
+}
+
+.track_container_heading {
+    display: flex;
+    justify-content: center;
+}
+
+.track_mood_heading {
+    /* How are you feeling about your sustainability today? */
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+    color: #000000;
+}
+
+.emoji_container {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #97D77D;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.emoji_container:hover {
+    cursor: pointer;
+}
+
+.emoji_container_image {
+    display: flex;
+}
+
+.emoji_selected {
+    background: #B2F497;
+}
+
+.track_history {
+    position: absolute;
+    right: 300px;
+}
+
+.track_history:hover {
+    cursor: pointer;
+}
+
+.emoji_history_container {
+    width: 860px;
+    height: 376px;
+    background: #FDFDF6;
+}
+
+.emoji_list {
+    width: 800px;
+    justify-content: center;
+    display: flex;
+    padding: 30px;
+}
+
+.opened_emoji_container {
+    background: #FDFDF6;
+
+}
+
+.history_date {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.history_image_odd {
+    width: 338px;
+    margin-left: 23px;
+    background: white;
+}
+
+.history_image_even {
+    width: 338px;
+    margin-left: 23px;
+}
+
+.emoji_padding_1 {
+    padding-left: 0px;
+}
+
+.emoji_padding_2 {
+    padding-left: 80px;
+}
+
+.emoji_padding_3 {
+    padding-left: 152px;
+}
+
+.emoji_padding_4 {
+    padding-left: 221px;
+}
+
+.emoji_padding_5 {
+    padding-left: 296px;
+}
+
+.hide_history {
+    display: none !important;
+}
+
+.track_module1_heading {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 18px;
+    padding-left: 10px;
+    color: #000000;
+}
+
+.track_card {
+    box-sizing: border-box;
+    padding-top: 10px;
+    /* Auto layout */
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end; */
+    padding: 24px;
+    gap: 24px;
+    width: 530px;
+    height: 454px;
+    background: #FFFFFF;
+    border: 1px solid #DFE4D7;
+    box-shadow: 4px 4px 4px #97D77D;
+    border-radius: 10px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.track_card_heading {
+
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+
+}
+
+.track_heading_icon {
+    /* Small Icon */
+
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+
+}
+
+.heading_container {
+    display: flex;
+}
+
+.track_goal_heading {
+
+
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+
+}
+
+.track_textarea textarea {
+    height: 18px;
+    width: 482px;
+    left: 24px;
+    top: 118px;
+    border-radius: 4px;
+    padding: 10px 0;
+}
+
+.track_goal_button {
+    display: flex;
+    justify-content: end;
+}
+
+.track_goal_button:hover img{
+    cursor: pointer;
+}
+
+.track_heading2 {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.track_heading3 {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+
+    /* material-theme/sys/light/outline */
+    color: #73796E;
+}
+
+.track_clock_txt {
+
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+
+}
+
+.track_journey_heading {
+    /* Your learning journey */
+    /* h3 */
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 18px;
+    /* identical to box height, or 75% */
+    color: #000000;
+}
+
+.track_journey_subheading {
+    /* LEARN */
+
+
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+
+    /* material-theme/black */
+    color: #000000;
+}
+
+.hidden_info {
+    display: none;
+    width: 50px;
+    position: absolute;
+    height: 50px;
+    overflow: hidden;
+    background: #CCFFB4;
+    border-radius: 10px;
+    margin-right: 33px;
+}
+.module_info:hover .hidden_info{
+    display: flex;
+    font-size: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}

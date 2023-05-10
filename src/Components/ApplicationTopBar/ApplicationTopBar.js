@@ -85,6 +85,7 @@ export default function ApplicationTopBar() {
                     id="track-button-selected"
                     onClick={() => {
                         set_current_tab("Track")
+                        navigate('/track');
                     }}
                 >
                     <Image id="light-bulb-image" src={Chart} />
@@ -97,6 +98,7 @@ export default function ApplicationTopBar() {
                     id="track-button"
                     onClick={() => {
                         set_current_tab("Track")
+                        navigate('/track');
                     }}
                 >
                     <Image id="light-bulb-image" src={Chart} />

@@ -14,16 +14,42 @@ import CompositeImage2 from '../../Images/CompositeImage2.svg'
 import CompositeImage3 from '../../Images/CompositeImage3.svg'
 import SubBookmark from "../Bookmarks/Bookmark";
 import './ActSubComponent.css'
-export default function ActSubComponent({points,setPoints,...props}) {
-
+import supabase from "../Config/dbconnection";
+export default function ActSubComponent({ points, setPoints, ...props }) {
     const [open, setOpen] = useState(false);
     const [subPoint, setSubPoint] = useState([])
+    console.log(subPoint);
+    console.log(points);
     useEffect(() => {
-      if(subPoint.length === 2){
-        setPoints(prev => prev+1)
-      }
+        if (subPoint?.length < 2) {
+            console.log(points?.list?.includes(1));
+            if (points?.list?.includes(1)) {
+                setSubPoint([1, 2])
+            }
+        }
+    },[])
+    useEffect(() => {
+        console.log(!(points?.list?.includes(1)));
+        if (!(points?.list?.includes(1)) && subPoint?.length === 2) {
+            (async () => {
+                const { data: { user } } = await supabase.auth.getUser()
+                if (user) {
+                    const { data, error } = await supabase.from('user_act').select('user_id, act_module_number').match({ user_id: user.id, act_module_number: 1 })
+                    console.log(data);
+                    if (data.length === 0) {
+                        const { error } = await supabase
+                            .from('user_act')
+                            .insert({ user_id: user.id, act_module_number: 1 })
+                        console.log(error);
+                    }
+                }
+            })()
+            setPoints(prev => ({ ...prev, count: prev.count + 1 }))
+        }
     }, [subPoint])
-    
+    const updateActModule = async () => {
+
+    }
     return (
         <div id="expandable-wrapper">
             {!open &&
@@ -31,7 +57,7 @@ export default function ActSubComponent({points,setPoints,...props}) {
                     <Image id="sub-card-image" src={SubCardImage} />
                     <Image id="closed-chevron1" src={ClosedChevron} onClick={() => { setOpen((prev) => !prev); }} />
                     {subPoint.length >= 2 ? <Image id="closed-favIcon2" src={leafDone} />
-                    :<Image id="closed-favIcon2" src={leafCompleted} />
+                        : <Image id="closed-favIcon2" src={leafCompleted} />
                     }
                     <span id="subcard-text"> {props.text ?? 'Overview'} </span>
 
@@ -46,12 +72,12 @@ export default function ActSubComponent({points,setPoints,...props}) {
                         onClick={() => setOpen((prev) => !prev)}
                     />
                     {subPoint.length >= 2 ? <Image id="open-favIcon1" src={leafDone} />
-                    :<Image id="open-favIcon1" src={leafCompleted} />
+                        : <Image id="open-favIcon1" src={leafCompleted} />
                     }
                     <div id="expanded-header0">
                         {props.text ?? 'Overview'}
                     </div>
-                    <span style={{ bottom: '452px', position: 'relative', left: '973px' }}>{subPoint.length}/2 Completed</span>
+                    <span style={{ bottom: '452px', position: 'relative', left: '973px' }}>{subPoint?.length}/2 Completed</span>
                     <div style={{ display: 'flex', flexWrap: 'wrap', width: '900px' }}>
                         <div style={{ paddingLeft: '10px', paddingTop: '10px' }}>
                             <SubBookmark setSubPoint={setSubPoint} subPoint={subPoint} id='1' heading="Mapping Urban Access to Composting Programs | GreenBlue" image={CompositeImage} text="To better understand residential access to composting programs in urban areas of the United States, GreenBlue has developed interactive maps and charts of municipally-run and privately-run composting programs, available on Tableau Public." />

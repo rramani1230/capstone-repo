@@ -37,7 +37,7 @@ export default function LearnTopBar({ current }) {
             </Button>
 
 
-            <Button id={`${current_tab === "Track" ? "track-button-selected" : "track-button"}`}>
+            <Button id={`${current_tab === "Track" ? "track-button-selected" : "track-button"}`} onClick={() => navigate('/track')}>
                 <Image id="light-bulb-image" src={Chart} />
                 <span id="learn-text"> Track </span>
             </Button>

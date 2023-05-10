@@ -11,14 +11,27 @@ import OpenChevron from '../../Images/OpenChevron.svg';
 import { Button } from "@blueprintjs/core";
 // import { navigate } from 'hookrouter';
 import { useNavigate } from "react-router-dom";
-
-
+import supabase from "../Config/dbconnection";
 
 export default function ExpandableComponent(props) {
 
     const navigate = useNavigate();
 
     const [open, set_open] = useState(false);
+    const learnOngoing = async () => {
+        const { data: { user } } = await supabase.auth.getUser();
+        if (user) {
+            const { data: mydata, error } = await supabase.from('user_ongoing').select('user_id, ongoing').match({ user_id: user.id, module: 'learn' })
+            if (mydata.length === 0) {
+                const { error } = await supabase
+                    .from('user_ongoing')
+                    .insert({ user_id: user.id, ongoing: true, module: 'learn' })
+                console.log(error);
+            }
+
+        }
+        navigate("/compost")
+    }
 
     return (
         <div id="expandable-wrapper">
@@ -38,7 +51,7 @@ export default function ExpandableComponent(props) {
                     </div>
 
                     <div id="tag-list">
-                        {props.tags.map((tag,idx)=>(
+                        {props.tags.map((tag, idx) => (
                             <Tag key={idx} text={tag} />
                         ))}
                         {/* <Tag id="tag-1" text="waste"/> */}
@@ -91,7 +104,7 @@ export default function ExpandableComponent(props) {
                     </div>
 
                     <Button id="learn-button2">
-                        <Image id="learn-button-image" src={LearnButton} onClick={() => navigate("/compost")} />
+                        <Image id="learn-button-image" src={LearnButton} onClick={() => learnOngoing()} />
                     </Button>
                 </div>
             }
