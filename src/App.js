@@ -13,6 +13,7 @@ import AccountBookmark from './Components/AccountScreen/AccountBookmark';
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 import ActSubScreen from './Components/ActScreen/ActSubScreen';
 import ActCompo from './Components/ActCompo/ActCompo';
+import TrackScreen from './Components/TrackScreen/TrackScreen';
 import ConfirmEmailScreen from './Components/ConfirmEmailScreen/ConfirmEmailScreen';
 export const AccountContext = createContext();
 
@@ -38,7 +39,6 @@ function App() {
                 <Routes>
                     <Route exact path="/" element={<LandingScreen />} />
                     <Route exact path="/capstone-repo" element={<LandingScreen />} />
-                    <Route exact path="/confirm-email-screen" element={<ConfirmEmailScreen />} />
                     <Route exact path="/confirm-landing-screen" element={<ConfirmLandingScreen />} />
                     <Route exact path="/confirm-email-screen" element={<ConfirmEmailScreen/>} />
                     <Route exact path="/signup" element={<SignUpScreen />} />

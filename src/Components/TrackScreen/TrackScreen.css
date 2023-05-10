@@ -288,7 +288,7 @@
     justify-content: end;
 }
 
-.track_goal_button:hover {
+.track_goal_button:hover img{
     cursor: pointer;
 }
 

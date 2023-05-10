@@ -11,7 +11,9 @@ import Feed3 from '../../Images/Emoji2.svg'
 import Feed4 from '../../Images/Emoji3.svg'
 import Feed5 from '../../Images/Emoji4.svg'
 import bars from '../../Images/bars.svg'
-import addgoal from '../../Images/addgoal.svg'
+import addgoal from '../../Images/addGoal2.svg'
+import addEntry from '../../Images/addEntry.svg'
+import SaveEntry from '../../Images/SaveEntry.svg'
 import SaveGoal from '../../Images/SaveGoal.svg'
 import Clock from '../../Images/Clock.svg'
 import OpenChevron from '../../Images/OpenChevron.svg'
@@ -267,6 +269,7 @@ export default function TrackScreen() {
                                             </div>
                                         </>
                                     }
+                                    {console.log(newgoal)}
                                     {newgoal ? <div className="track_goal_button">
                                         <Image src={SaveGoal} />
                                     </div> : <div className="track_goal_button">
@@ -293,9 +296,9 @@ export default function TrackScreen() {
                                             <textarea value={mytext3} onChange={(e) => setMytext3(e.target.value)} id="w3review" name="w3review" rows="1" cols="65" placeholder="Text" style={{ resize: 'none' }}></textarea>
                                         </div></>}
                                     {newgoal2 ? <div className="track_goal_button">
-                                        <Image src={SaveGoal} />
+                                        <Image src={SaveEntry} />
                                     </div> : <div className="track_goal_button">
-                                        <Image src={addgoal} onClick={() => setNewgoal2(true)} />
+                                        <Image src={addEntry} onClick={() => setNewgoal2(true)} />
                                     </div>
                                     }
                                 </div>

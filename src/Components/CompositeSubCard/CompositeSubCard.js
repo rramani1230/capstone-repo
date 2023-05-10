@@ -19,13 +19,14 @@ import supabase from "../Config/dbconnection";
 export default function CompositeSubCard({ status, setStatus, skip, ...props }) {
     const { favourite: Favourite } = useContext(AccountContext)
     const [favourite, setFavourite] = Favourite
-
     const [open, setOpen] = useState(false);
-    if (status === 2) {
+    const [completed, setCompleted] = useState()
+    const [user, setUser] = useState()
+
+    if (!skip && status !== 1) {
         open && setOpen(false)
     }
     const updateLearnModule = async () => {
-        const { data: { user } } = await supabase.auth.getUser()
         if (user) {
             const { data, error } = await supabase.from('user_learn').select('user_id, learn_module_number').match({ user_id: user.id, learn_module_number: 1 })
             if (data.length === 0) {
@@ -33,17 +34,32 @@ export default function CompositeSubCard({ status, setStatus, skip, ...props }) 
                     .from('user_learn')
                     .insert({ user_id: user.id, learn_module_number: 1 })
                 console.log(error);
+                setCompleted(true)
             }
+            (!skip) && setStatus(1)
+
         }
     }
+    useEffect(() => {
+        (async () => {
+            const { data: { user } } = await supabase.auth.getUser();
+            setUser(user)
+            if (user) {
+                const { data: mydata, error } = await supabase.from('user_learn').select('user_id, learn_module_number').match({ user_id: user.id, learn_module_number: 1 })
+                if (mydata && mydata?.length > 0) {
+                    setCompleted(true)
+                }
+            }
+        })()
+    }, [])
 
     return (
         <div id="expandable-wrapper">
             {!open &&
                 <>
                     <Image id="sub-card-image" src={SubCardImage} />
-                    {status > 1 ? <Image id="closed-chevron1" src={SmallTick} /> :
-                        <Image id="closed-chevron1" src={ClosedChevron} onClick={() => { setOpen((prev) => !prev); updateLearnModule(); (!open && !skip) ? setStatus(1) : !skip && setStatus(status) }} />
+                    {(completed) ? <Image id="closed-chevron1" src={SmallTick} onClick={() => {setOpen((prev) => !prev);((!open && !skip) && setStatus(1))}} /> :
+                        <Image id="closed-chevron1" src={ClosedChevron} onClick={() => { setOpen((prev) => !prev); updateLearnModule(); (!open && !skip) && setStatus(1) }} />
                     }
                     {favourite.includes(1) ? <Image id="closed-favIcon" src={favFilled} onClick={() => setFavourite(prev => prev.filter(item => item !== 1))} /> :
                         <Image id="closed-favIcon" src={Vector} onClick={() => setFavourite(prev => [...prev, 1])} />}
@@ -54,11 +70,11 @@ export default function CompositeSubCard({ status, setStatus, skip, ...props }) 
             {open && (status <= 1 || skip) &&
                 <div id="expanded-wrapper1">
                     <Image id="expanded-card1" src={ExpandedCard} />
-                    <Image
+                    {completed ? <Image id="open-chevron1" src={SmallTick} onClick={() => setOpen((prev) => !prev)} /> : <Image
                         id="open-chevron1"
                         src={OpenChevron}
                         onClick={() => setOpen((prev) => !prev)}
-                    />
+                    />}
                     {favourite.includes(1) ? <Image id="open-favIcon" src={favFilled} onClick={() => setFavourite(prev => prev.filter(item => item !== 1))} /> :
                         <Image id="open-favIcon" src={Vector} onClick={() => setFavourite(prev => [...prev, 1])} />}
                     <div id="expanded-header0">

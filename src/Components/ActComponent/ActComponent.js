@@ -10,13 +10,27 @@ import TakeAction from '../../Images/TakeAction.svg'
 import leafCompleted from '../../Images/leafCompleted.svg'
 import leafTransparent from '../../Images/leafTransparent.svg'
 import SmallLeafFilled from '../../Images/SmallLeafFilled.svg'
-
+import supabase from "../Config/dbconnection";
 import './ActComponent.css'
 export default function ActComponent(props) {
     const [actPoints, setActPoints] = useOutletContext();
     console.log(actPoints);
     const navigate = useNavigate();
     const [open, setOpen] = useState(false);
+    const actOngoing = async () => {
+        const { data: { user } } = await supabase.auth.getUser();
+        if (user) {
+            const { data: mydata, error } = await supabase.from('user_ongoing').select('user_id, ongoing').match({ user_id: user.id, module: 'act' })
+            if (mydata.length === 0) {
+                const { error } = await supabase
+                    .from('user_ongoing')
+                    .insert({ user_id: user.id, ongoing: true, module: 'act' })
+                console.log(error);
+            }
+
+        }
+        navigate("/act/composite")
+    }
     return (
         <div id="expandable-wrapper">
             {!open &&
@@ -72,7 +86,7 @@ export default function ActComponent(props) {
                         </Button>
                     </div>
                     <Button className="act-button">
-                        <Image id="learn-button-image" src={TakeAction} onClick={() => navigate("/act/composite")} />
+                        <Image id="learn-button-image" src={TakeAction} onClick={() => actOngoing()} />
                     </Button>
                 </div>
             }

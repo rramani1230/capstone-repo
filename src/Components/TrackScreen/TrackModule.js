@@ -11,10 +11,16 @@ import supabase from '../Config/dbconnection'
 export default function TrackModule({ currentUser, selectedEmoji }) {
     const [learn, setLearn] = useState()
     const [act, setAct] = useState()
+    const [onGoing, setOnGoing] = useState([])
     console.log(learn);
     useEffect(() => {
         (async () => {
             if (currentUser) {
+                const { data: mydata } = await supabase.from('user_ongoing').select('user_id,created_at, module').match({ user_id: currentUser.id, ongoing: true })
+                console.log('hELLO',mydata);
+                if (mydata.length > 0){
+                    setOnGoing(mydata)
+                }
                 const { data: learn, error } = await supabase.from('user_learn').select('user_id, learn_module_number,created_at').match({ user_id: currentUser?.id })
                 setLearn(learn)
                 const { data: act } = await supabase.from('user_act').select('user_id, act_module_number,created_at').match({ user_id: currentUser?.id })
@@ -62,6 +68,28 @@ export default function TrackModule({ currentUser, selectedEmoji }) {
         }
         return false
     }
+    const checkOngoing = (text) =>{
+        console.log(text,onGoing);
+
+        if (onGoing?.length > 0) {
+            for (let i in onGoing) {
+                if (onGoing[i]?.module === text) {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    const checkOngoingDate = (text) =>{
+        if (onGoing?.length > 0) {
+            for (let i in onGoing) {
+                if (onGoing[i]?.module === text) {
+                    return new Date(onGoing[i].created_at).toLocaleDateString()
+                }
+            }
+        }
+        return false
+    }
     return (
         <div style={{ paddingTop: '10px' }}>
             <div className='track_journey_heading'>
@@ -87,7 +115,15 @@ export default function TrackModule({ currentUser, selectedEmoji }) {
                                     {checklearndate(3)}
                                 </div>
                             </div>
-                        </div> :
+                        </div> : checkOngoing('learn')?
+                        <div className='module_info'>
+                            <Image src={Ongoing} className={`spacing`} />
+                            <div className='hidden_info'>
+                                <div>
+                                    In Progress
+                                </div>
+                            </div>
+                        </div>:
                         <div className='module_info'>
                             <Image src={BigNot} className={`spacing`} />
                             <div className='hidden_info'>
@@ -184,7 +220,15 @@ export default function TrackModule({ currentUser, selectedEmoji }) {
                                     {checkactdate(3)}
                                 </div>
                             </div>
-                        </div> :
+                        </div> : checkOngoing('act')?
+                        <div className='module_info'>
+                            <Image src={Ongoing} className={`spacing`} />
+                            <div className='hidden_info'>
+                                <div>
+                                    In Progress
+                                </div>
+                            </div>
+                        </div>:
                         <div className='module_info'>
                             <Image src={BigNot} className={`spacing`} />
                             <div className='hidden_info'>
@@ -270,7 +314,7 @@ export default function TrackModule({ currentUser, selectedEmoji }) {
                     <div className="track_progress2">
 
                     </div>
-                    {selectedEmoji !== 0 ?
+                    {act?.length > 2 ?
                         <div className='module_info'>
                             {(learn?.length === 3 && act?.length === 3) ?
                                 <Image src={TrackDone} style={{ paddingBottom: '12px' }} /> :
