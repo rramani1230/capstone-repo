@@ -16,8 +16,8 @@ export default function SignUpForm() {
     const [username, set_username] = useState("");
     const [password, set_password] = useState("");
     const [confirm_password, set_confirm_password] = useState("");
-    const [show_password, set_show_password] = useState(false);
-    const [show_confirm_password, set_show_confirm_password] = useState(false);
+    const [show_password, set_show_password] = useState(true);
+    const [show_confirm_password, set_show_confirm_password] = useState(true);
 
 
     //we use the useContext hook to access the values from the FilledInContext object
@@ -46,7 +46,7 @@ export default function SignUpForm() {
                     <InputGroup
                         id="signup-form-first-name"
                         className="form-control form-control-warning"
-                        placeholder="Text"
+                        placeholder="Type here..."
                         onChange={(event) => {
                             set_first_name(event.target.value);
                             set_filled_in(check_all_fields());
@@ -60,7 +60,7 @@ export default function SignUpForm() {
                     <span id="last-name-text"> Last Name </span>
                     <InputGroup
                         id="signup-form-last-name"
-                        placeholder="Text"
+                        placeholder="Type here..."
                         onChange={(event) => {
                             set_last_name(event.target.value);
                             set_filled_in(check_all_fields())
@@ -73,7 +73,7 @@ export default function SignUpForm() {
                     <span id="email-text"> Email </span>
                     <InputGroup
                         id="signup-form-email"
-                        placeholder="Text"
+                        placeholder="Type here..."
                         onChange={(event) => {
                             set_email(event.target.value);
                             set_filled_in(check_all_fields())
@@ -85,7 +85,7 @@ export default function SignUpForm() {
                     <span id="confirm-email-text"> Confirm Email </span>
                     <InputGroup
                         id="signup-form-confirm-email"
-                        placeholder="Text"
+                        placeholder="Type here..."
                         onChange={(event) => {
                             set_confirm_email(event.target.value);
                             set_filled_in(check_all_fields())
@@ -96,7 +96,7 @@ export default function SignUpForm() {
                     <span id="username-text"> Username </span>
                     <InputGroup
                         id="signup-form-username"
-                        placeholder="Text"
+                        placeholder="Type here..."
                         onChange={(event) => {
                             set_username(event.target.value);
                             set_filled_in(check_all_fields())
@@ -108,7 +108,7 @@ export default function SignUpForm() {
                     <span id="password-text"> Password </span>
                     <InputGroup
                         id="signup-form-password"
-                        placeholder="Text"
+                        placeholder="Type here..."
                         onChange={(event) => {
                             set_password(event.target.value);
                             set_filled_in(check_all_fields())
@@ -122,7 +122,7 @@ export default function SignUpForm() {
                     <span id="confirm-password-text"> Confirm Password </span>
                     <InputGroup
                         id="signup-form-confirm-password"
-                        placeholder="Text"
+                        placeholder="Type here..."
                         round={true}
                         onChange={(event) => {
                             set_confirm_password(event.target.value);

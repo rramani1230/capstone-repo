@@ -1,0 +1,16 @@
+1) Change line height on landing page left
+2) Sustainify logo redirect to homepage (Done)
+3) Check Type Here on different sign ins for signup and signin
+4) Change first name on Welcome screen
+5) Ask Adeel about changing color of tabs when selected
+6) Change Search
+7) Filter based on value (***Adeel)
+8) Fix overview on Learn Composting page (***Adeel)
+9) Take out profile screen (Done)
+10) Sign out routes to home page
+
+
+1) Change Composite to Composting in Learn and Act
+2) Change Favourite to Favorites in account
+3) Change act text (Done)
+4) Delete Recent Modules 

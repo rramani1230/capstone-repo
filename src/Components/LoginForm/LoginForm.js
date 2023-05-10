@@ -15,7 +15,7 @@ export default function LoginForm () {
     // const navigate = useNavigate();
 
     const [username, set_username, password, set_password] = useContext(LoginContext);
-    const [show_password, set_show_password] = useState(false);
+    const [show_password, set_show_password] = useState(true);
 
     return (
         <>
@@ -27,14 +27,14 @@ export default function LoginForm () {
 
             <InputGroup
                 id="login-username"
-                placeholder="Text"
+                placeholder="Type here..."
                 onChange={(event) => set_username(event.target.value)}
             />
 
             <span id="password-text-login"> Password </span>
             <InputGroup
                 id="login-password"
-                placeholder="Text"
+                placeholder="Type here..."
                 type={!show_password ? "text" : "password"}
                 onChange={(event) => set_password(event.target.value)}
             />

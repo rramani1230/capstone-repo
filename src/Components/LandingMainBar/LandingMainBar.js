@@ -28,13 +28,13 @@ export default function LandingMainBar() {
 
             <div id="landing-left-text">
                 <strong id="left-strong-text"> Living more sustainably doesn't have to be stressful. <br/> </strong>
-                <span> 
-                    We’re here to help you with your sustainability journey --<br/>
-                    by curating relevant information, providing SMALL steps,<br/> 
-                    and a way to track your progress. You can do however <br/>
-                    little or much as you want and are able to. You can choose <br/>
-                    specific areas to focus on, or let us get you started with a<br/>
-                    few! There's get you started with a few. There’s no pressure <br/>
+                <span id="left-text-mover"> 
+                    We’re here to help you with your sustainability journey --<br className="left-text-styler"/>
+                    by curating relevant information, providing SMALL steps,<br className="left-text-styler"/>
+                    and a way to track your progress. You can do however <br className="left-text-styler"/>
+                    little or much as you want and are able to. You can choose <br className="left-text-styler"/>
+                    specific areas to focus on, or let us get you started with a <br className="left-text-styler"/>
+                    few! There's get you started with a few. There’s no pressure <br className="left-text-styler"/>
                     to be perfect! 
                 </span>
             </div>
@@ -42,24 +42,24 @@ export default function LandingMainBar() {
             <div id="right-landing-text">
                 <strong id="right-strong-text"> How does Sustainify Work?</strong> <br/>
                 <span>
-                    In order to get the best out of Sustainify we <br/>
-                    encourage yout to follow the Learn -{">"} Act -{">"} <br/>
-                    Track Path. <br/>
+                    In order to get the best out of Sustainify we encourage <br/>
+                    youth to follow the Learn -{">"} Act -{">"} Track Path. <br/>
+                     <br/>
 
                     <strong className="strong-subtitle"> Learn: </strong>
                     
-                    Simple, useful, meaningful, relevant <br/>
-                    and personalized information to start your <br/>
-                    Sustainability journey <br/>
+                    Simple, useful, meaningful, relevant and<br/>
+                    personalized information to start your sustainability journey <br/>
+                      <br/>
 
                     <strong className="strong-subtitle"> Act: </strong>
-                    Simple actionable steps to create <br/>
-                    sustainable habits in the long run. <br/>
+                    Simple actionable steps to create sustainable habits<br/>
+                    in the long run. <br/> <br/>
 
                     <strong className="strong-subtitle"> Track: </strong>
-                    Track your progress, journal to keep it <br/>
-                    personal or share with your community if you <br/>
-                    are feeling social.
+                    Track your progress, journal to keep it personal or <br/>
+                    share with your community if you are feeling social.<br/>
+                    
                 </span>
 
                 

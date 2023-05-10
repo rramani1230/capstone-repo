@@ -38,7 +38,7 @@ export default function ActComponent(props) {
                     <Image id="sub-card-image" src={SubCardImage} />
                     <Image id="closed-chevron1" src={ClosedChevron} onClick={() => { setOpen((prev) => !prev); }} />
 
-                    <div className={`fav_container`}>
+                    <div id="first-count" className={`fav_container`}>
                         <div>{actPoints?.count ?? 0}/4</div>
                         <div>{actPoints?.count === 4 ? <Image src={SmallLeafFilled} /> : <Image src={leafTransparent} />}</div>
                     </div>
@@ -46,6 +46,7 @@ export default function ActComponent(props) {
 
                 </>
             }
+            
             {open &&
                 <div className="expanded-wrapper2">
                     <Image id="expanded-card1" src={ExpandedCard} />

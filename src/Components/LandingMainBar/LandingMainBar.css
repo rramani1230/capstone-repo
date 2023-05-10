@@ -1,19 +1,19 @@
 #forest-with-background-image {
     position: relative;
-    transform: scale(0.8);
-    right: 260px;
+    transform: scale(0.9);
+    right: 200px;
 }
 
 #sustainify-landing-text-image {
     position: relative;
     bottom: 380px;
-    left: 620px;
+    left: 800px;
 }
 
 #get-started-button {
     position: relative;
     bottom: 280px;
-    left: 250px;
+    left: 430px;
     transform: scale(0.80);
     background-color: #FDFDF6;
     border-width: 0px;
@@ -49,8 +49,10 @@
 }
 
 #left-strong-text {
+    position: relative;
     font-family: 'Avenir Black';
     font-size: 18px;
+    top: 2px;
 }
 
 #right-landing-text {
@@ -77,3 +79,19 @@
     font-family: 'Aventir-Black';
 }
 
+.landing-left-spacing {
+    display: block;
+    margin-bottom: 1em;
+}
+
+.left-text-styler {
+    content: "";
+    margin-bottom: 0.5em;
+    display: block;
+    /* font-size: 24%; */
+  }
+
+#left-text-mover {
+    position: relative;
+    top: 10px;
+}

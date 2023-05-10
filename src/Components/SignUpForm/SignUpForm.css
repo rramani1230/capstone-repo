@@ -1,7 +1,6 @@
 #blank-card-image {
     position: relative;
-
-    transform: scale(0.85);
+    transform: scale(0.90);
 }
 
 #signup-form-group {
@@ -120,7 +119,7 @@ input:focus {
 
 #confirm-password-text {
     position: relative;
-    bottom: 122.4px;
+    bottom: 128px;
     left: 270px;
     color: #386667;
     font-size: 15px;
@@ -128,7 +127,7 @@ input:focus {
 
 #signup-form-confirm-password{
     position: relative;
-    bottom: 122.4px;
+    bottom: 128px;
     left: 270px;
     padding: 10px;
     width: 150px;
@@ -136,14 +135,14 @@ input:focus {
 
 #password-unlock-icon {
     position: relative;
-    bottom: 152px;
+    bottom: 158px;
     left: 140px;
     color: grey;
 }
 
 #password-lock-icon {
     position: relative;
-    bottom: 152px;
+    bottom: 158px;
     left: 139px;
 }
 
