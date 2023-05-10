@@ -45,6 +45,11 @@ export default function SignUpScreen() {
                 {
                     email: form_data.email,
                     password: form_data.password,
+                    options: {
+                        data: {
+                            name: form_data.first_name,userName: form_data.username
+                        }
+                      }
                 }
             );
 

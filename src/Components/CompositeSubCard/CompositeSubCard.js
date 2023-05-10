@@ -82,7 +82,7 @@ export default function CompositeSubCard({ status, setStatus, skip, ...props }) 
                     </div>
 
                     <div className="text-container">
-                        <div id="" className="text-detail">
+                        <div id="" className="text-detail" style={{paddingBottom:'5px',zIndex:'1'}}>
                             33% of the food produced for human consumption in the US is wasted. This uneaten food goes to landfill, which then releases methane, a potent greenhouse gas, into the atmosphere. Composting helps mitigate this amount.
                         </div>
                     </div>
@@ -91,12 +91,12 @@ export default function CompositeSubCard({ status, setStatus, skip, ...props }) 
                         <div id="" className="text-detail text-heading"> What is compost?  </div>
                     </div>
 
-                    <div className="text-container">
+                    <div className="text-container" style={{zIndex:'1'}}>
                         <span id="" className="text-detail"> Compost is created through a natural process in which organic material such as food waste and yard trimmings are assembled in the right ratios and allowed to decompose. The end product -- compost -- is a nutrient rich soil, or humus (pronounced HYOO-mus), that’s added to soil to improve its health.
                         </span>
                     </div>
 
-                    <div className="text-container">
+                    <div className="text-container" style={{bottom:'458px'}}>
                         <span id="" className="text-detail text-heading text-continue"> Composting has many benefits. </span><span className="text-detail text-continue">It reduces waste sent to landfills, reduces greenhouse gas emissions, and enriches soil with nutrients as a cheaper alternative to commercial fertilizers.</span>
                     </div>
                     <div id="expanded-header1">

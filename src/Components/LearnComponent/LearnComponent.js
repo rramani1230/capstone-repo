@@ -12,8 +12,8 @@ import supabase from '../Config/dbconnection';
 export default function LearnComponent(props) {
 
     const [selected, setSelected] = useState([]);
-    const [components, setComponents] = useState(['Composite','Recycling','Food Waste and Storage','Singe Use and Landfill',"Farmer's Markets",'Food Pantries','Grocery Stores'])
-    
+    const [components, setComponents] = useState(['Composting','Recycling','Food Waste and Storage','Singe Use and Landfill',"Farmer's Markets",'Food Pantries','Grocery Stores'])
+    const [user, setUser] = useState()
 
 
     const options = [
@@ -23,7 +23,7 @@ export default function LearnComponent(props) {
         { label: "test", value: "test" },
     ];
     const componentTags = {
-        'Composite' : ['waste','savings'],
+        'Composting' : ['waste','savings'],
         'Recycling': ['waste','savings','test'],
         'Food Waste and Storage': ['waste','savings'],
         'Singe Use and Landfill':  ['waste','savings'],
@@ -31,27 +31,23 @@ export default function LearnComponent(props) {
         'Food Pantries': ['waste','savings'],
         'Grocery Stores': ['waste','savings'],
     }
-    const sortComponents = (components, selectedTags) => {
-        const selectedComponents = components.filter(component => {
-            const tags = componentTags[component];
-            return selectedTags.some(tag => tags.includes(tag.value));
-        });
-        const unselectedComponents = components.filter(component => !selectedComponents.includes(component));
-        return [...selectedComponents, ...unselectedComponents];
-    };
+    const filteredComponents = selected.length > 0 ? components.filter(component =>
+        selected.some(tag => componentTags[component]?.includes(tag.value))
+    ) : components;
 
-    // Update the component state whenever the selected tags change
     useEffect(() => {
-        
-        setComponents(sortComponents(components, selected));
-    }, [selected]);
-    
+        (async () => {
+            const { data: { user } } = await supabase.auth.getUser();
+            setUser(user)
+        })()
+    }, []);
+    console.log(user);
     return (
         <>
 
             <span id="learn-header"> We're glad to have you here, </span>
 
-            <span id="learn-header-name"> Rohan </span>
+            <span id="learn-header-name"> {user?.user_metadata?.name ?? 'Rohan'} </span>
 
             <span id="waving-hand">
                 <Image id="waving-hand-image" src={WavingHand} />
@@ -84,7 +80,7 @@ export default function LearnComponent(props) {
 
                 <span className="expandables">
                     <div>
-                        {components.map(title=>(
+                        {filteredComponents.map(title=>(
                             <ExpandableComponent key={title} text={title} tags={componentTags[title]} />
                         ))}
                     </div>

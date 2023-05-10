@@ -43,7 +43,7 @@ export default function ExpandableComponent(props) {
                         <Image
                             id="closed-chevron"
                             src={ClosedChevron}
-                            onClick={() => props.text === 'Composite' && set_open((prev) => !prev)}
+                            onClick={() => props.text === 'Composting' && set_open((prev) => !prev)}
                         />
                         <div id="expandable-header">
                             {props.text}
@@ -59,7 +59,7 @@ export default function ExpandableComponent(props) {
                 </>
             }
 
-            {open && props.text === 'Composite' &&
+            {open && props.text === 'Composting' &&
                 <div id="expanded-wrapper">
                     <span>
                         <Image id="expanded-card" src={ExpandedCard} />

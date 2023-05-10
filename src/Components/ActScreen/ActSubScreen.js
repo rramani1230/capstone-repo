@@ -30,7 +30,7 @@ export default function ActSubScreen() {
                 Most recent modules
             </div>
             <div>
-                <ActComponent text='Compositing' />
+                <ActComponent text='Composting' />
                 <ActComponent1 text='Food waste and storage' />
             </div>
         </div>
