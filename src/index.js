@@ -14,6 +14,8 @@ import { BrowserRouter, HashRouter, Route } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     // <BrowserRouter>
+    <HashRouter>
         <App />
+    </HashRouter>
     // </BrowserRouter>
 ); //render the App component which has the routes and navigation

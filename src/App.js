@@ -34,11 +34,11 @@ function App() {
     // const routeResult = useRoutes(routes);
 
     return (
-        <BrowserRouter>
+
             <AccountContext.Provider value={{ favourite: [favourite, setFavourite], bookmark: [bookmark, setBookmark] }}>
                 <Routes>
-                    <Route exact path="/" element={<LandingScreen />} />
                     <Route exact path="/capstone-repo" element={<LandingScreen />} />
+                    <Route exact path="/" element={<ConfirmLandingScreen />} />
                     <Route exact path="/confirm-landing-screen" element={<ConfirmLandingScreen />} />
                     <Route exact path="/confirm-email-screen" element={<ConfirmEmailScreen/>} />
                     <Route exact path="/signup" element={<SignUpScreen />} />
@@ -57,7 +57,6 @@ function App() {
 
                 </Routes>
             </AccountContext.Provider>
-        </BrowserRouter>
 
     );
 }
