@@ -39,11 +39,11 @@ function App() {
                     <Route exact path="/" element={<LandingScreen />} />
                     <Route exact path="/capstone-repo" element={<LandingScreen />} />
                     <Route exact path="/confirm-landing-screen" element={<ConfirmLandingScreen />} />
+                    <Route exact path="/confirm-email-screen" element={<ConfirmEmailScreen/>} />
                     <Route exact path="/signup" element={<SignUpScreen />} />
                     <Route exact path="/application" element={<ApplicationScreen />} />
                     <Route exact path="/login" element={<LoginScreen />} />
                     <Route exact path="/compost" element={<CompostScreen />} />
-                    <Route exact path="/confirm-email-screen" element={<ConfirmEmailScreen />}/>
                     <Route exact path="/account" element={<AccountScreen />}>
                         <Route path='favourite' element={<AccountFavourite />} />
                         <Route path='bookmark' element={<AccountBookmark />} />

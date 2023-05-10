@@ -10,7 +10,6 @@ import FilledCreateAccount from '../../Images/FilledCreateAccount.svg';
 import NotFilledCreateAccount from '../../Images/NotFilledCreateAccount.svg';
 //importing the supabase client
 import supabase from '../Config/dbconnection';
-// import { navigate } from 'hookrouter';
 import { useNavigate } from "react-router-dom";
 
 
@@ -38,7 +37,7 @@ export default function SignUpScreen() {
             if (item.data.length > 0) {
                 proceed = false;
             }
-        })
+        }).then(() => navigate("/confirm-email-screen"));
 
         
         if (proceed) {
@@ -93,7 +92,8 @@ export default function SignUpScreen() {
                 {filled_in && 
 
                 <Button id="create-account-button" onClick={ () => {
-                    authorize_user().then(navigate("/confirm-email-screen"));
+                    // authorize_user().then(() => navigate("/confirm-email-screen"));
+                    authorize_user();
                 }}>
                     <Image id="create-account-button-image" src={FilledCreateAccount} />
                 </Button>
