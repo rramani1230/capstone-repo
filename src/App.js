@@ -13,6 +13,7 @@ import AccountBookmark from './Components/AccountScreen/AccountBookmark';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ActSubScreen from './Components/ActScreen/ActSubScreen';
 import ActCompo from './Components/ActCompo/ActCompo';
+import ConfirmEmailScreen from './Components/ConfirmEmailScreen/ConfirmEmailScreen';
 export const AccountContext = createContext();
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
     console.log(window.location.href);
 
     if (window.location.href.includes("access_token")) {
-        console.log("I guess we atleast went here");
+        console.log("I guess we atleast went here", window.local.href);
         return <ConfirmLandingScreen />
     }
 
@@ -42,6 +43,7 @@ function App() {
                     <Route exact path="/application" element={<ApplicationScreen />} />
                     <Route exact path="/login" element={<LoginScreen />} />
                     <Route exact path="/compost" element={<CompostScreen />} />
+                    <Route exact path="/confirm-email-screen" element={<ConfirmEmailScreen />}/>
                     <Route exact path="/account" element={<AccountScreen />}>
                         <Route path='favourite' element={<AccountFavourite />} />
                         <Route path='bookmark' element={<AccountBookmark />} />

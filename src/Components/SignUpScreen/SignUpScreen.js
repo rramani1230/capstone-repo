@@ -94,7 +94,6 @@ export default function SignUpScreen() {
 
                 <Button id="create-account-button" onClick={ () => {
                     authorize_user().then(navigate("/confirm-email-screen"));
-                    ;
                 }}>
                     <Image id="create-account-button-image" src={FilledCreateAccount} />
                 </Button>
