@@ -13,7 +13,6 @@ import AccountBookmark from './Components/AccountScreen/AccountBookmark';
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 import ActSubScreen from './Components/ActScreen/ActSubScreen';
 import ActCompo from './Components/ActCompo/ActCompo';
-import TrackScreen from './Components/TrackScreen/TrackScreen';
 import ConfirmEmailScreen from './Components/ConfirmEmailScreen/ConfirmEmailScreen';
 export const AccountContext = createContext();
 
@@ -25,7 +24,7 @@ function App() {
     console.log(window.location.href);
 
     if (window.location.href.includes("access_token")) {
-        console.log("I guess we atleast went here");
+        console.log("I guess we atleast went here", window.local.href);
         return <ConfirmLandingScreen />
     }
 
@@ -41,6 +40,7 @@ function App() {
                     <Route exact path="/capstone-repo" element={<LandingScreen />} />
                     <Route exact path="/confirm-email-screen" element={<ConfirmEmailScreen />} />
                     <Route exact path="/confirm-landing-screen" element={<ConfirmLandingScreen />} />
+                    <Route exact path="/confirm-email-screen" element={<ConfirmEmailScreen/>} />
                     <Route exact path="/signup" element={<SignUpScreen />} />
                     <Route exact path="/application" element={<ApplicationScreen />} />
                     <Route exact path="/login" element={<LoginScreen />} />
