@@ -12,7 +12,7 @@ export const MainBarContext = createContext();
 export default function ApplicationScreen () {
 
     const [current_tab, set_current_tab] = useState("Learn")
-    const [survey_status, set_survey_status] = useState(6);
+    const [survey_status, set_survey_status] = useState(0);
 
     return (
         <>

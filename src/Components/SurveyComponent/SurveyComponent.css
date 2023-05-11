@@ -76,7 +76,7 @@
 #next-button-greater {
     position: fixed; 
     left: 1030px;
-    top: 700px;
+    top: 750px;
     transform: scale(0.75);
     border-width: 0px;
     background-color: #FDFDF6;
@@ -184,7 +184,7 @@
 #none-option {
     position: relative;
     left: 680px;
-    bottom: 527px;
+    bottom: 545px;
 }
 
 #finished-raised-hands-image {

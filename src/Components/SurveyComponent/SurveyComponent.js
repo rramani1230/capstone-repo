@@ -32,8 +32,8 @@ export default function SurveyComponent () {
                     <Image id="welcome-message-image" src={WelcomeMessage}/>
                     <Image id="raised-hands-image" src={RaisedHands}/>
 
-                    <div id="welcome-page-initial-text">
-                        <div id="welcome-hello-message" style={{paddingBottom: 40}}> Hello, welcome </div>
+                    <div id="welcome-page-initial-text" style={{position: 'relative', top: '120px'}}>
+                        {/* <div id="welcome-hello-message" style={{paddingBottom: 40, position: 'relative', top: '20px'}}> Hello, welcome </div> */}
                         Congratulations on taking your first step towards your <br/>
                         sustainability journey. We are here to guide you through it <br/>
                         all -- one small step at a time. Please help us by answering <br/>
