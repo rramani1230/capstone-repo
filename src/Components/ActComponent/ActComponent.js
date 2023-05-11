@@ -71,7 +71,7 @@ export default function ActComponent(props) {
 
                     <div>
                         <Button className="long-buttons2">
-                            <div className="long-buttons-text2"> Check out at least 2 resources </div>
+                            <div className="long-buttons-text2"> Download this composting guide for your kitchen </div>
                         </Button>
                     </div>
 

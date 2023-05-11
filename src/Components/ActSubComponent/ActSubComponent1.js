@@ -90,10 +90,21 @@ export default function ActSubComponent1({ points, setPoints, ...props }) {
                             <span className="act1-subheading-text">Identify what materials you’ll need</span>
                         </div>
                         <div style={{ padding: '10px 25px' }}>
-                            <div>
-                                how will you get the materials you need for composting?
+                            <div style={{position: 'relative', top: '10px'}}>
+                                <h3 style={{fontFamily: 'Avenir-Black'}}> 1. Compostable materials </h3>
+                                <ul style={{position: 'relative', left: '50px'}}>
+                                    <li>Food scraps (Avoid meat and dairy)</li>
+                                    <li>Tea bags </li>
+                                    <li>Coffee grounds</li>
+                                </ul>
+
+                                <h3 style={{fontFamily: 'Avenir-Black', position: 'relative', top: '10px'}}> 2. Food scrap storage container </h3>
+                                <ul style={{position: 'relative', left: '50px', top: '10px', paddingBottom: '20px' }}>
+                                    <li> Doesn't have to be fancy! Can even be an old milk carton</li>
+                                </ul>
+                                {/* how will you get the materials you need for composting? */}
                             </div>
-                            <div style={{ paddingTop: '10px', display: 'flex' }}>
+                            {/* <div style={{ paddingTop: '10px', display: 'flex' }}>
                                 <div className="change-textarea-size">
                                     <textarea value={mytext} onChange={(e) => setMytext(e.target.value)} id="w3review" name="w3review" rows="1" cols="65" placeholder="Text" style={{ resize: 'none' }}></textarea>
 
@@ -101,10 +112,10 @@ export default function ActSubComponent1({ points, setPoints, ...props }) {
                                 <div style={{ paddingLeft: '100px', paddingTop: '40px' }}>
                                     {saved ? <Image src={boxtick} /> : <Image src={box} />}
                                 </div>
-                            </div>
-                            <div className="image-container">
+                            </div> */}
+                            {/* <div className="image-container">
                                 {mytext ? (saved ? <Image src={Edit} /> : <Image src={SaveEntry} onClick={() => { setSaved(true); updatePoints(1) }} />) : <Image src={DisabledSaveEntry} />}
-                            </div>
+                            </div> */}
 
                         </div>
                         <div className="act1-subheading" style={{ marginTop: '20px' }}>
