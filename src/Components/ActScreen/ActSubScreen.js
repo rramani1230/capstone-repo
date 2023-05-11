@@ -28,9 +28,7 @@ export default function ActSubScreen() {
                     />
                 </div>
             </div>
-            <div style={{ fontFamily: 'Avenir-Black', paddingBottom: '20px', fontSize: '24px' }}>
-                Most recent modules
-            </div>
+
             <div>
                 <ActComponent text='Compositing' />
                 <ActComponent1 text='Food waste and storage' />
