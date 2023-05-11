@@ -85,7 +85,7 @@
     width: 74px;
     height: 40px;
     position: absolute;
-    bottom: 310px;
+    bottom: 520px;
     left: 1107px;
     /* z-index: 1; */
     background: #EEF3E5;
@@ -97,7 +97,7 @@
 
 #first-count {
     position: fixed;
-    bottom: 320px;
+    bottom: 525px;
 }
 
 
