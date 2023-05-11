@@ -123,15 +123,15 @@ export default function ActSubComponent2({ points, setPoints, ...props }) {
                     <span style={{ bottom: '752px', position: 'relative', left: '973px' }}>{subPoint.length}/2 Completed</span>
                     <div className="act-position">
                         <div className="act1-subheading">
-                            <span className="act1-subheading-text">Write your own goal related to Composting here:</span>
+                            <span className="act1-subheading-text">What is your goal related to Composting here:</span>
                         </div>
                         <div style={{ padding: '10px 25px' }}>
-                            <div>
+                            {/* <div>
                                 how will you get the materials you need for composting?
-                            </div>
-                            <div style={{ paddingTop: '10px', display: 'flex' }}>
+                            </div> */}
+                            <div style={{ paddingTop: '10px', display: 'flex', position: 'relative', right: '20px' }}>
                                 <div className="change-textarea-size">
-                                    <textarea value={mytext} onChange={(e) => setMytext(e.target.value)} id="w3review" name="w3review" rows="1" cols="65" placeholder="Text" style={{ resize: 'none' }}></textarea>
+                                    <textarea value={mytext} onChange={(e) => setMytext(e.target.value)} id="w3review" name="w3review" rows="1" cols="65" placeholder=" write your goal here..." style={{ resize: 'none' }}></textarea>
 
                                 </div>
                                 <div style={{ paddingLeft: '100px', paddingTop: '40px' }}>

@@ -68,7 +68,7 @@ export default function LearnComponent(props) {
             </span>
 
             <div id="learn-header-subtext">
-                Note that we are still in beta testing, which means you may see a more limited selection of materials right now. Congrats on being an early <br /> adopter!
+                Note that we are still in beta testing, which means you may see a more limited selection of materials right now. <br/> Congrats on being an early adopter!
             </div>
 
             <div id="ready-to-learn-text">
