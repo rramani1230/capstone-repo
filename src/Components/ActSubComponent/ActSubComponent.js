@@ -78,21 +78,21 @@ export default function ActSubComponent({ points, setPoints, ...props }) {
                         {props.text ?? 'Overview'}
                     </div>
                     <span style={{ bottom: '452px', position: 'relative', left: '973px' }}>{subPoint?.length}/2 Completed</span>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', width: '900px' }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', width: '900px', position: 'relative', bottom: '70px' }}>
                         <div style={{ paddingLeft: '10px', paddingTop: '10px' }}>
-                            <SubBookmark setSubPoint={setSubPoint} subPoint={subPoint} id='1' heading="Mapping Urban Access to Composting Programs | GreenBlue" image={CompositeImage} text="To better understand residential access to composting programs in urban areas of the United States, GreenBlue has developed interactive maps and charts of municipally-run and privately-run composting programs, available on Tableau Public." />
+                            <SubBookmark setSubPoint={setSubPoint} subPoint={subPoint} id='1' heading="Mapping Urban Access to Composting Programs | GreenBlue" image={CompositeImage}link="https://greenblue.org/work/compostingaccess/" text="To better understand residential access to composting programs in urban areas of the United States, GreenBlue has developed interactive maps and charts of municipally-run and privately-run composting programs, available on Tableau Public." />
                         </div>
                         <div style={{ paddingLeft: '50px', paddingTop: '10px' }}>
                             <SubBookmark setSubPoint={setSubPoint} subPoint={subPoint} id='2' heading="CalRecycle - What to Put in Compost, Recycling, and Trash (Opens as a PDF)" link="https://www2.calrecycle.ca.gov/Docs/Web/112236" image={CompositeImage1} />
                         </div>
-
+{/* 
                         <div style={{ paddingLeft: '10px', paddingTop: '10px' }}>
                             <SubBookmark setSubPoint={setSubPoint} subPoint={subPoint} id='3' heading="Your 5-step guide to start composting and help fight climate change : Life Kit : NPR" link="https://www.npr.org/2020/04/07/828918397/how-to-compost-at-home" image={CompositeImage2} />
                         </div>
 
                         <div style={{ paddingLeft: '50px', paddingTop: '10px' }}>
                             <SubBookmark setSubPoint={setSubPoint} subPoint={subPoint} id='4' heading="Infographic: How to Compost | PBS.org" link="https://www.pbs.org/wnet/nature/blog/inside-nature-infographic-how-to-compost/" image={CompositeImage3} text="This infographic reviews the dos and donts of composting, where and how to compost, what to compost and what not to compost." />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             }

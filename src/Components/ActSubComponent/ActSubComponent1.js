@@ -90,12 +90,16 @@ export default function ActSubComponent1({ points, setPoints, ...props }) {
                             <span className="act1-subheading-text">Identify what materials you’ll need</span>
                         </div>
                         <div style={{ padding: '10px 25px' }}>
-                            <div>
-                                how will you get the materials you need for composting?
-                            </div>
-                            <div style={{ paddingTop: '10px', display: 'flex' }}>
+                        <h3 style={{fontFamily: 'Avenir-Black', position: 'relative', right: '20px', top: '0px'}}> 1. Compostable materials </h3>
+                        <ul style={{position: 'relative', left: '0px'}}>
+                                    <li>Food scraps (Avoid meat and dairy)</li>
+                                    <li>Tea bags </li>
+                                    <li>Coffee grounds</li>
+                        </ul>
+
+                            <div style={{ paddingTop: '10px', display: 'flex', position: 'relative', right: '10px', top: '20px' }}>
                                 <div className="change-textarea-size">
-                                    <textarea value={mytext} onChange={(e) => setMytext(e.target.value)} id="w3review" name="w3review" rows="1" cols="65" placeholder="Text" style={{ resize: 'none' }}></textarea>
+                                    <textarea value={mytext} onChange={(e) => setMytext(e.target.value)} id="w3review" name="w3review" rows="1" cols="65" placeholder=" What is another material you might need?" style={{ resize: 'none' }}></textarea>
 
                                 </div>
                                 <div style={{ paddingLeft: '100px', paddingTop: '40px' }}>
@@ -142,7 +146,7 @@ export default function ActSubComponent1({ points, setPoints, ...props }) {
                             </div>
                             {saved2 ? <Image style={{ paddingLeft: '32px' }} src={boxtick} /> : <Image style={{ paddingLeft: '32px' }} src={box} />}
                         </div>
-                        <div className="image-container" style={{marginBottom:'100px',paddingLeft:'678px'}}>
+                        <div className="image-container" style={{marginBottom:'100px',paddingLeft:'678px', position: 'relative', bottom: '60px'}}>
                             {value ? <Image src={SaveEntry} onClick={() => { setSaved2(true); updatePoints(2) }} /> : <Image src={DisabledSaveEntry} />}
                         </div>
                     </div>
