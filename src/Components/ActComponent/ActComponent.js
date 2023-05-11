@@ -56,8 +56,8 @@ export default function ActComponent(props) {
                         onClick={() => setOpen((prev) => !prev)}
                     />
                     <div className={`fav_container`}>
-                        <div>{actPoints?.count ?? 0}/4</div>
-                        <div>{actPoints?.count === 4 ? <Image src={SmallLeafFilled} /> : <Image src={leafTransparent} />}</div>
+                            <span >{actPoints?.count ?? 0}/4</span>
+                            <div>{actPoints?.count === 4 ? <Image src={SmallLeafFilled} /> : <Image src={leafTransparent} />}</div>
                     </div>
                     <div className="expanded-header2">
                         {props.text ?? 'Overview'}

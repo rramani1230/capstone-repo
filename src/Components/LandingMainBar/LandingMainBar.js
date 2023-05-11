@@ -6,8 +6,11 @@ import ForestWithBackground from '../../Images/ForestWithBackground.svg';
 import SustainifyLandingText from '../../Images/SustainifyLandingText.svg';
 import GetStartedImage from '../../Images/GetStarted.svg';
 import LearnActTrack from '../../Images/LearnActTrack.svg';
+import { useNavigate } from "react-router-dom";
 
 export default function LandingMainBar() {
+
+    const navigate = useNavigate();
 
     return (
         <div id="landing-main-bar-component">
@@ -18,7 +21,7 @@ export default function LandingMainBar() {
 
             <Image id="sustainify-landing-text-image" src={SustainifyLandingText} />
 
-            <Button id="get-started-button">
+            <Button id="get-started-button" onClick={() => navigate("/signup")}>
                 <Image src={GetStartedImage} />
             </Button>
 

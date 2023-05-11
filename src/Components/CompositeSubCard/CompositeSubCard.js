@@ -96,14 +96,16 @@ export default function CompositeSubCard({ status, setStatus, skip, ...props }) 
                         </span>
                     </div>
 
-                    <div className="text-container">
+                    {/* <div className="text-container">
                         <span id="" className="text-detail text-heading text-continue"> Composting has many benefits. </span><span className="text-detail text-continue">It reduces waste sent to landfills, reduces greenhouse gas emissions, and enriches soil with nutrients as a cheaper alternative to commercial fertilizers.</span>
-                    </div>
+                    </div> */}
                     <div id="expanded-header1">
                         <Image src={bulb} />
                         <span>Additional Resources</span>
                     </div>
-                    <SubBookmark id='1' heading="Mapping Urban Access to Composting Programs | GreenBlue" image={CompositeImage} text="To better understand residential access to composting programs in urban areas of the United States, GreenBlue has developed interactive maps and charts of municipally-run and privately-run composting programs, available on Tableau Public." />
+                    <div id="bookmarkable-tab">
+                        <SubBookmark id='1' heading="Mapping Urban Access to Composting Programs | GreenBlue" image={CompositeImage} text="To better understand residential access to composting programs in urban areas of the United States, GreenBlue has developed interactive maps and charts of municipally-run and privately-run composting programs, available on Tableau Public." />
+                    </div>
                 </div>
             }
 

@@ -9,6 +9,10 @@
     left: 60px;
 }
 
+#sustainify-logo-image:hover {
+    cursor: pointer;
+}
+
 #login-button {
     position: relative;
     left: 68%;

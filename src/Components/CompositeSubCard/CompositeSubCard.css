@@ -40,7 +40,7 @@
 #subcard-text {
     position: relative;
     display: flex;
-    left: 45px;
+    left: 47px;
     bottom: 61px;
     font-size: 24px;
     font-family: 'Avenir-Black';
@@ -94,8 +94,8 @@
 }
 #expanded-header0 {
     position: relative;
-    bottom: 480px;
-    left: 50px;
+    bottom: 487px;
+    left: 53px;
     font-family: 'Avenir-Black';
     font-size: 24px;
 }
@@ -126,4 +126,9 @@
 }
 #expanded-wrapper1 {
     height: 500px;
+}
+
+#bookmarkable-tab {
+    position: relative;
+    bottom: 10px;
 }

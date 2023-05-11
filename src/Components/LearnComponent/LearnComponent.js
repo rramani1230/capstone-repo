@@ -12,24 +12,23 @@ import supabase from '../Config/dbconnection';
 export default function LearnComponent(props) {
 
     const [selected, setSelected] = useState([]);
-    const [components, setComponents] = useState(['Composite','Recycling','Food Waste and Storage','Singe Use and Landfill',"Farmer's Markets",'Food Pantries','Grocery Stores'])
-    
+    const [components, setComponents] = useState(['Composting','Recycling','Food Waste and Storage','Singe Use and Landfill',"Farmer's Markets",'Food Pantries','Grocery Stores'])
+    const [user_name, set_user_name] = useState("Rohan")
 
 
     const options = [
         { label: "groceries", value: "groceries" },
         { label: "savings", value: "savings" },
         { label: "waste", value: "waste" },
-        { label: "test", value: "test" },
     ];
     const componentTags = {
-        'Composite' : ['waste','savings'],
-        'Recycling': ['waste','savings','test'],
-        'Food Waste and Storage': ['waste','savings'],
-        'Singe Use and Landfill':  ['waste','savings'],
-        "Farmer's Markets": ['waste','savings'],
-        'Food Pantries': ['waste','savings'],
-        'Grocery Stores': ['waste','savings'],
+        'Composting' : ['waste', 'savings'],
+        'Recycling': ['waste', 'savings'],
+        'Food Waste and Storage': ['waste', 'savings'],
+        'Singe Use and Landfill':  ['waste', 'savings'],
+        "Farmer's Markets": ['groceries', 'savings'],
+        'Food Pantries': ['groceries','savings'],
+        'Grocery Stores': ['groceries','savings'],
     }
     const sortComponents = (components, selectedTags) => {
         const selectedComponents = components.filter(component => {
@@ -42,6 +41,17 @@ export default function LearnComponent(props) {
 
     // Update the component state whenever the selected tags change
     useEffect(() => {
+        supabase.auth.getUser().then((user) => {
+            // console.log(user.data.user.email);
+            supabase.from('user_data').select().eq('email_address', user.data.user.email).then((entry) => {
+                // console.log(entry.data[0].first_name);
+                set_user_name(entry.data[0].first_name);
+            }
+            );
+        });
+    }, [])
+
+    useEffect(() => {
         
         setComponents(sortComponents(components, selected));
     }, [selected]);
@@ -51,7 +61,7 @@ export default function LearnComponent(props) {
 
             <span id="learn-header"> We're glad to have you here, </span>
 
-            <span id="learn-header-name"> Rohan </span>
+            <span id="learn-header-name"> {user_name} </span>
 
             <span id="waving-hand">
                 <Image id="waving-hand-image" src={WavingHand} />

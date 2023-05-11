@@ -82,7 +82,9 @@
     position: relative;
     left: 380px;
     top: 22px;
-    background-color: #f79b94;
+    background-color: #CCFFB4;
+    border-bottom-width: 4px;
+    border-bottom-color: #326B1F;
     height: 40px;
     width: 120px;
     padding: 10px;
@@ -93,7 +95,9 @@
     position: relative;
     left: 390px;
     top: 18px;
-    background-color: #f79b94;
+    background-color: #CCFFB4;
+    border-bottom-width: 4px;
+    border-bottom-color: #326B1F;
     height: 40px;
     width: 120px;
     padding: 10px;
@@ -104,7 +108,9 @@
     position: relative;
     left: 400px;
     top: 20px;
-    background-color: #f79b94;
+    background-color: #CCFFB4;
+    border-bottom-width: 4px;
+    border-bottom-color: #326B1F;
     height: 40px;
     width: 120px;
     padding: 10px;

@@ -142,7 +142,7 @@ export default function TrackModule({ currentUser, selectedEmoji }) {
                             <Image src={SmallDone} style={{ paddingBottom: '10px' }} className={`spacing`} />
                             <div className='hidden_info'>
                                 <div>
-                                    Module Name
+                                    Completed
                                 </div>
                                 <div>
                                     {checklearndate(1)}
@@ -166,7 +166,7 @@ export default function TrackModule({ currentUser, selectedEmoji }) {
                             <Image src={SmallDone} style={{ paddingBottom: '10px' }} className={`spacing`} />
                             <div className='hidden_info'>
                                 <div>
-                                    Module Name
+                                Completed
                                 </div>
                                 <div>
                                     {checklearndate(2)}
@@ -190,7 +190,7 @@ export default function TrackModule({ currentUser, selectedEmoji }) {
                             <Image src={SmallDone} style={{ paddingBottom: '10px' }} className={`spacing`} />
                             <div className='hidden_info'>
                                 <div>
-                                    Module Name
+                                Completed
                                 </div>
                                 <div>
                                     {checklearndate(3)}
@@ -214,7 +214,7 @@ export default function TrackModule({ currentUser, selectedEmoji }) {
                             <Image src={BigDone} style={{ paddingBottom: '10px' }} className={`spacing`} />
                             <div className='hidden_info'>
                                 <div>
-                                    Completed
+                                Completed
                                 </div>
                                 <div>
                                     {checkactdate(3)}
@@ -247,7 +247,7 @@ export default function TrackModule({ currentUser, selectedEmoji }) {
                             <Image src={SmallDone} style={{ paddingBottom: '10px' }} className={`spacing`} />
                             <div className='hidden_info'>
                                 <div>
-                                    Module Name
+                                Completed
                                 </div>
                                 <div>
                                     {checkactdate(1)}
@@ -271,7 +271,7 @@ export default function TrackModule({ currentUser, selectedEmoji }) {
                             <Image src={SmallDone} style={{ paddingBottom: '10px' }} className={`spacing`} />
                             <div className='hidden_info'>
                                 <div>
-                                    Module Name
+                                Completed
                                 </div>
                                 <div>
                                     {checkactdate(2)}
@@ -295,7 +295,7 @@ export default function TrackModule({ currentUser, selectedEmoji }) {
                             <Image src={SmallDone} style={{ paddingBottom: '10px' }} className={`spacing`} />
                             <div className='hidden_info'>
                                 <div>
-                                    Module Name
+                                    Completed
                                 </div>
                                 <div>
                                     {checkactdate(3)}
@@ -323,7 +323,7 @@ export default function TrackModule({ currentUser, selectedEmoji }) {
 
                             <div className='hidden_info'>
                                 <div>
-                                    Completed
+                                Completed
                                 </div>
                             </div>
                         </div> :

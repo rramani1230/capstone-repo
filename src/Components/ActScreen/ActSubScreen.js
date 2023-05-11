@@ -7,7 +7,9 @@ import ActComponent1 from "../ActComponent/ActComponent1";
 export default function ActSubScreen() {
     const [selected, setSelected] = useState([]);
     const options = [
-
+        { label: "groceries", value: "groceries" },
+        { label: "savings", value: "savings" },
+        { label: "waste", value: "waste" },
     ];
     return (
         <div style={{ padding: '100px' }}>

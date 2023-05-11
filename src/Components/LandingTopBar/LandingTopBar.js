@@ -15,7 +15,7 @@ export default function LandingTopBar() {
     return (
         <div id="landing-top-bar-component">
 
-            <Image id="sustainify-logo-image" src={SustainifyLogo} />
+            <Image id="sustainify-logo-image" src={SustainifyLogo} onClick={() => navigate('/')} />
 
             <Button id="login-button" onClick={() => navigate('/login')}>
                 <Image id="login-button-image" src={LoginButton} />

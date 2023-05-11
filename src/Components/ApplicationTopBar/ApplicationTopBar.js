@@ -111,8 +111,7 @@ export default function ApplicationTopBar() {
                     <ul className ="dropdown-menu">
                         <li className="drop-items" onClick={()=>navigate('/account/favourite')}>Favourite<span className="icon"><Image src={HeartIcon}/></span></li>
                         <li className="drop-items" onClick={()=>navigate('/account/bookmark')}>Bookmarks<span className="icon"><Image src={BookmarkIcon}/></span></li>
-                        <li className="drop-items">Profile<span className="icon"><Image src={ProfileIcon}/></span></li>
-                        <li className="drop-items">Sign Out </li>
+                        <li className="drop-items" onClick={() =>navigate('/')}>Sign Out </li>
                     </ul>
                 }
             </div>

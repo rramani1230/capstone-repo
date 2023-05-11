@@ -33,7 +33,7 @@ export default function AccountBookmark() {
                 <div style={{ paddingTop: '440px', display: 'flex', flexWrap: 'wrap' }}>
                     {bookmark.includes('1') &&
                         <div style={{ paddingLeft: '10px', paddingTop: '10px' }}>
-                            <SubBookmark id='1' heading="Mapping Urban Access to Composting Programs | GreenBlue" image={CompositeImage} text="To better understand residential access to composting programs in urban areas of the United States, GreenBlue has developed interactive maps and charts of municipally-run and privately-run composting programs, available on Tableau Public." />
+                            <SubBookmark id='1' heading="Mapping Urban Access to Composting Programs | GreenBlue" image={CompositeImage} link="https://greenblue.org/work/compostingaccess/" text="To better understand residential access to composting programs in urban areas of the United States, GreenBlue has developed interactive maps and charts of municipally-run and privately-run composting programs, available on Tableau Public." />
                         </div>
                     }
                     {bookmark.includes('2') &&

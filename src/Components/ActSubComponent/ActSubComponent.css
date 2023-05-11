@@ -34,7 +34,7 @@
 
 .act-position {
     position: relative;
-    bottom: 740px;
+    bottom: 760px;
     left: 34px;
 }
 
@@ -66,4 +66,9 @@
 }
 .expanded-wrapper3 {
     height: 800px;
+}
+
+#act-compost-1 {
+    position: relative;
+    bottom: 70px;
 }

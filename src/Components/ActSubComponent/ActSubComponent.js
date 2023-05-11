@@ -78,9 +78,9 @@ export default function ActSubComponent({ points, setPoints, ...props }) {
                         {props.text ?? 'Overview'}
                     </div>
                     <span style={{ bottom: '452px', position: 'relative', left: '973px' }}>{subPoint?.length}/2 Completed</span>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', width: '900px' }}>
+                    <div id="act-compost-1" style={{ display: 'flex', flexWrap: 'wrap', width: '900px' }}>
                         <div style={{ paddingLeft: '10px', paddingTop: '10px' }}>
-                            <SubBookmark setSubPoint={setSubPoint} subPoint={subPoint} id='1' heading="Mapping Urban Access to Composting Programs | GreenBlue" image={CompositeImage} text="To better understand residential access to composting programs in urban areas of the United States, GreenBlue has developed interactive maps and charts of municipally-run and privately-run composting programs, available on Tableau Public." />
+                            <SubBookmark setSubPoint={setSubPoint} subPoint={subPoint} id='1' heading="Mapping Urban Access to Composting Programs | GreenBlue" link="https://greenblue.org/work/compostingaccess/" image={CompositeImage} text="To better understand residential access to composting programs in urban areas of the United States, GreenBlue has developed interactive maps and charts of municipally-run and privately-run composting programs, available on Tableau Public." />
                         </div>
                         <div style={{ paddingLeft: '50px', paddingTop: '10px' }}>
                             <SubBookmark setSubPoint={setSubPoint} subPoint={subPoint} id='2' heading="CalRecycle - What to Put in Compost, Recycling, and Trash (Opens as a PDF)" link="https://www2.calrecycle.ca.gov/Docs/Web/112236" image={CompositeImage1} />

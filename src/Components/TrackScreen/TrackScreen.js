@@ -285,7 +285,7 @@ export default function TrackScreen() {
                                     <div style={{ display: 'flex' }}>
                                         <Image src={Clock} />
                                         <div className="track_clock_txt">
-                                            <span style={{ fontWeight: 'bold', padding: '0 5px' }}> {calRemainDays()}</span> until your scheduled reminder
+                                            <span style={{ fontWeight: 'bold', padding: '0 5px' }}> {calRemainDays()} days </span> until your scheduled reminder
                                         </div>
 
                                     </div>
