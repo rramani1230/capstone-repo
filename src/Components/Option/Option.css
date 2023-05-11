@@ -10,6 +10,10 @@
     border-color: green;
 }
 
+#option-check:checked {
+    accent-color: lightgreen;
+}
+
 .option-class {
     padding-bottom: 35px;
 }

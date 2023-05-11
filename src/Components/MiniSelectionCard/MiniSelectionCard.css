@@ -7,6 +7,17 @@
     bottom: 42px;
     right: 300px;
     transform: scale(1.5);
+    /* accent-color: 'lightgreen' */
+}
+
+input[type='radio'] {
+    accent-color: lightgreen;
+    border-color: white;
+    border-radius: 1%;
+}
+
+#radio-check:checked {
+    accent-color: 'lightgreen'
 }
 
 #mini-text {

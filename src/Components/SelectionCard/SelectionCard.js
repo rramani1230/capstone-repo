@@ -28,11 +28,13 @@ export default function SelectionCard (props) {
                 id="selection-check-box"
 
                 style={{ 
-                    color: "#00e676",
+                    // color: "#00e676",
                     width: 20,
-                    height: 20
+                    height: 20,
+                    // backgroundColor: "lightgreen"
                 }}
             type="checkbox"
+            
             checked={checked}
             onClick={() => {
                     set_checked((prev) => !prev)

@@ -16,3 +16,12 @@
     font-family: 'Avenir-Roman';
     font-size: 14px;
 }
+
+/* input[type="checkbox"]#checkbox1:checked + span {
+    border-color: lightgreen;
+  background-color:lightgreen;
+} */
+
+#selection-check-box:checked {
+    accent-color: lightgreen;
+}
