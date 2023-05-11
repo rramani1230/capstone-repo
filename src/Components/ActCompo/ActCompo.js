@@ -14,7 +14,7 @@ export default function ActCompo() {
     const paths = [
         { name: 'Act' },
         { name: 'Most recent modules' },
-        { name: 'Compositing' },
+        { name: 'Composting' },
 
     ];
     return (
