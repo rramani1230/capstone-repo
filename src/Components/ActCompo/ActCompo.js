@@ -41,7 +41,7 @@ export default function ActCompo() {
             <div style={{ paddingLeft: '60px' }}>
                 {actPoints ?
                     <>
-                        <ActSubComponent text='Check out at least 2 resources' points={actPoints} setPoints={setActPoints} />
+                        <ActSubComponent text='Download these composting guides for your kitchen' points={actPoints} setPoints={setActPoints} />
                         <ActSubComponent1 text='Try starting a home compost' points={actPoints} setPoints={setActPoints} />
                         <ActSubComponent2 text='Set a custom goal' points={actPoints} setPoints={setActPoints} />
 
